@@ -1,0 +1,14 @@
+.footer {
+  padding: 20px 12px;
+  position: absolute;
+  right: 0;
+  color: #74788d;
+  left: 0;
+  height: 60px;
+  background-color: #f2f2f5;
+  div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

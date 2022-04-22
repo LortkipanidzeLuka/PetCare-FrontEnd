@@ -8,6 +8,7 @@
   height: $header-height;
   background-color: $header-color;
   > .header-content{
+    justify-content: space-between;
     height: 100%;
   }
 }
@@ -34,4 +35,29 @@
   background-color: hsla(0,0%,100%,.25);
   padding: 4px;
   height: 40px;
+}
+
+.subheader{
+  position: fixed;
+  margin-top: $header-height;
+  width: 100%;
+  background-color: $subheader-color;
+}
+
+
+.subheader-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: $subheader-height;
+  padding: unset !important;
+  li{
+
+    margin-right: 50px;
+    display: inline;
+  }
+  li:hover{
+    cursor: pointer;
+    color: #d3dbf9;
+  }
 }

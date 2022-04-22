@@ -1,6 +1,6 @@
 import React from "react"
 import {withRouter} from "../helper";
-import Layout from "../../components/layout/layout";
+import Layout from "../../components/layout/Layout";
 
 const AuthRouteComponent = ({children: AppComponent, path}) => {
     // TODO
@@ -12,7 +12,6 @@ const AuthRouteComponent = ({children: AppComponent, path}) => {
 
     return (
         <Layout>
-
             <AppComponent path={path}/>
         </Layout>
     )

@@ -6,7 +6,7 @@ import TestUser from "../../assets/images/test-profile.jpg"
 const ProfileDropdown = ()=>{
     const [menu, setMenu] = useState(false);
 
-    const [username, setusername] = useState("admin");
+    const [username] = useState("admin");
 
     return(
         <React.Fragment>
@@ -14,13 +14,15 @@ const ProfileDropdown = ()=>{
                 <DropdownToggle className="btn header-item waves-effect" id="page-header-user-dropdown" tag="button">
                     <img className="rounded-circle profile-picture " src={TestUser} alt="Header Avatar" />
                     <span className="mrl-small">{username}</span>
+                    <i className="mdi mdi-chevron-down d-none d-xl-inline-block"/>
+
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem tag="a"  href="/profile"> Profile</DropdownItem>
-                    <DropdownItem tag="a" href="/crypto-wallet">My Wallet</DropdownItem>
-                    <DropdownItem tag="a" href="#">Settings</DropdownItem>
-                    <DropdownItem tag="a" href="auth-lock-screen">Lock screen</DropdownItem>
-                    <div className="dropdown-divider"></div>
+                    <DropdownItem tag="a" href="/my-uploads">My Uploads</DropdownItem>
+                    <DropdownItem tag="a" href="/charity">My Charity</DropdownItem>
+                    <DropdownItem tag="a" href="/adoption">My adoptions</DropdownItem>
+
                     <Link to="/logout" className="dropdown-item">
                         <span>Logout</span>
                     </Link>
