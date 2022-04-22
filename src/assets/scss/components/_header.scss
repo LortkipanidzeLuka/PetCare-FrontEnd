@@ -1,0 +1,37 @@
+
+.header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1002;
+  height: $header-height;
+  background-color: $header-color;
+  > .header-content{
+    height: 100%;
+  }
+}
+.header-left{
+  >img{
+  }
+}
+.header-right{
+  div{
+    button{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+.logo-sm>img{
+  width: $header-height;
+  height: $header-height;
+}
+
+.profile-picture{
+  width: 40px;
+  background-color: hsla(0,0%,100%,.25);
+  padding: 4px;
+  height: 40px;
+}
