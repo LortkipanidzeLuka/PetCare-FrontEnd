@@ -1,0 +1,10 @@
+.single-row-data{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    .single-row-data { grid-template-columns: repeat(4, 1fr); }
+}

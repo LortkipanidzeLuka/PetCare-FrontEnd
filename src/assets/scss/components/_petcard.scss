@@ -1,0 +1,43 @@
+.pet-card-col{
+  margin-top: $content-additional-padding;
+}
+
+.pet-card-content {
+  //max-width: $card-width;
+  background-color: #ffffff;
+  height: 100%;
+  background-repeat: repeat;
+  border-radius: 20px;
+  padding: $pet-card-padding;
+  padding-bottom: 0 !important;
+
+  .card-img-wrap {
+    width: fit-content;
+    margin: 0 auto;
+      > img {
+      width: #{$card-img-width};
+      height: 130px;
+      border-radius: $app-border-radius;
+    }
+  }
+  .pet-card-data{
+  }
+  .pet-card-footer{
+    display: flex;
+    align-items: center;
+    padding:10px 0;
+    .pet-card-footer-left{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .pet-card-footer-right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-left: 30px;
+      div{
+      }
+    }
+  }
+}
