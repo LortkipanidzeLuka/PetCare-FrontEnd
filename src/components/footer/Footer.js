@@ -1,6 +1,6 @@
 const Footer = () => {
     return(
-        <div className={"footer"}>
+        <footer className={"footer"}>
             <div className="content-width">
                 <div>
                     @2022 Beso_Tato_Luka
@@ -9,7 +9,7 @@ const Footer = () => {
                     All Right Reserved.
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 export default Footer

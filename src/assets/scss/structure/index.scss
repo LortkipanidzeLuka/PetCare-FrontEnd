@@ -2,3 +2,12 @@
   max-width: $layout-max-width;
   margin: 0 auto;
 }
+
+.content{
+  min-height: calc(#{$app-min-height} + 40px);
+  padding-bottom: 90px;
+  background-color: $content-background;
+  padding-top: calc(#{$header-height} + #{$subheader-height} + #{$content-additional-padding});
+}
+.main{
+}

@@ -1,9 +1,9 @@
-import Adoption from "../pages/test-page";
-import Charity from "../pages/test-page-2";
+import Adoption from "../pages/Adoption";
+import Charity from "../pages/Charity";
 
 
 const AppRoutes = [
-
+    { path: "/", component: Adoption },
     { path: "/adoption", component: Adoption },
     { path: "/charity", component: Charity },
 
@@ -17,3 +17,15 @@ const AuthorizationRoutes = [
 
 
 export {AppRoutes, AuthorizationRoutes}
+
+
+// card damtavreba
+// responsive
+// pagination
+// detail page
+// generic grid
+// generic detail page
+// services
+// redux
+
+

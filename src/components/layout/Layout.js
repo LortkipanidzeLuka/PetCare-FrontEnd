@@ -8,7 +8,7 @@ const Layout = (props) => {
         <div className="main">
             <Header/>
             <SubHeader/>
-            <div className="content" style={{height:"1000px"}}>
+            <div className="content">
                 <div className="content-width">
                     {props.children}
                 </div>
