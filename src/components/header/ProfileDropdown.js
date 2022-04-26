@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import {Link} from "react-router-dom";
-import TestUser from "../../assets/images/test-profile.jpg"
-
+// import TestUser from "../../assets/images/test-profile.jpg"
+// ../../assets/images/test-profile.jpg
 const ProfileDropdown = ()=>{
     const [menu, setMenu] = useState(false);
 
@@ -12,7 +12,7 @@ const ProfileDropdown = ()=>{
         <React.Fragment>
             <Dropdown isOpen={menu} toggle={() => setMenu(!menu)} className="d-inline-block" >
                 <DropdownToggle className="btn header-item waves-effect" id="page-header-user-dropdown" tag="button">
-                    <img className="rounded-circle profile-picture " src={TestUser} alt="Header Avatar" />
+                    {/*<img className="rounded-circle profile-picture " src={TestUser} alt="Header Avatar" />*/}
                     <span className="mrl-small">{username}</span>
                     <i className="mdi mdi-chevron-down d-none d-xl-inline-block"/>
 

@@ -1,6 +1,7 @@
 import PetCardGeneric from "../pet-card/PetCardGeneric";
-import Dog from "./../../assets/images/dog.jpg"
+// import Dog from "./../../assets/images/dog.jpg"
 import {Col, Row} from "reactstrap";
+import Dog from "../../assets/images/dog.jpg"
 
 const SingleRowPetList = () => {
 
