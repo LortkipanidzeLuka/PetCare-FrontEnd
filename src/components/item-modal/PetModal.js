@@ -31,17 +31,18 @@ const PetModal = ({open, closeModal}) => {
                         <img src={TestImage} className="modal-picture"/>
                     </Col>
                     <Col xl="6" lg="6" sm="6" xs="12">
-                        <div>{data.description}</div>
                         <div className={"d-flex justify-content-between"}>
                             <div className={"d-flex align-items-center"}>
                                 <i className={"mdi mdi-map-marker-radius mdi-dark"}/>
-                                <Text text={"Tbilisi, Georgia isani"} type={TextType.SMALL} classNames={["dotted-text"]}/>
+                                <Text text={"Tbilisi, Georgia isani"} type={TextType.SMALL}
+                                      classNames={["dotted-text"]}/>
                             </div>
                             <div className={"d-flex align-items-center"}>
                                 <i className="mdi mdi-calendar mdi-dark"/>
                                 <Text text={"11/22/2022"} type={TextType.SMALL}/>
                             </div>
                         </div>
+                        <div><Text text={data.description} type={TextType.REGULAR} stretched/></div>
                     </Col>
                 </Row>
                 <Row className={"mrt-big"}>
@@ -50,7 +51,7 @@ const PetModal = ({open, closeModal}) => {
                             {Object.keys(data.params).map(val => (
                                 <div className="d-flex">
                                     <i className="mdi mdi-calendar mdi-dark"/>
-                                    <div className={"mrl-small"}>{data.params[`${val}`]}</div>
+                                    <div className={"mrl-small"}><Text text={data.params[`${val}`]} type={TextType.REGULAR}/></div>
                                 </div>
                             ))}
                         </ul>

@@ -20,6 +20,10 @@
 }
 
 .header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   div {
     button {
       display: flex;
