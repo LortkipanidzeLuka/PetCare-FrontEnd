@@ -3,6 +3,7 @@
 }
 
 .pet-card-content {
+  cursor: pointer;
   //max-width: $card-width;
   background-color: #ffffff;
   height: 100%;
@@ -40,4 +41,13 @@
       }
     }
   }
+}
+
+.card-text{
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }

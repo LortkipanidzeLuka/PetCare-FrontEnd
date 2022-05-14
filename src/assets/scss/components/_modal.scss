@@ -1,0 +1,14 @@
+.modal-picture {
+  width: 100%;
+  height: 80%;
+}
+
+@media screen and (max-width: 575px) {
+  .modal-picture {
+    height: fit-content;
+  }
+}
+
+.small-modal {
+  min-width: 40%;
+}

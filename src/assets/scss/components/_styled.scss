@@ -1,17 +1,17 @@
-.block{
+.block {
   width: fit-content;
 }
 
-.shadow-block{
+.shadow-block {
   box-shadow: $app-shadow;
 }
 
-.border-block{
+.border-block {
   border: $app-border;
   border-radius: $app-border-radius;
 }
 
-.tag{
+.tag {
   background-color: $app-tag-default-color;
   border: $app-border;
   border-radius: calc(#{$app-border-radius} * 3);
@@ -20,8 +20,7 @@
   height: fit-content;
 }
 
-.tag-list{
-
+.tag-list {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(auto-fill, 40px);
   grid-row-gap: 3px;
@@ -30,7 +29,8 @@
   gap: 0;
   overflow: hidden;
   max-height: 120px;
-  .tag{
+
+  .tag {
     margin-bottom: 5px;
   }
 }

@@ -1,4 +1,4 @@
-.single-row-data{
+.single-row-data {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -6,5 +6,7 @@
 }
 
 @media (min-width: 600px) {
-    .single-row-data { grid-template-columns: repeat(4, 1fr); }
+  .single-row-data {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

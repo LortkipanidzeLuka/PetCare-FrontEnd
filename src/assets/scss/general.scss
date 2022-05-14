@@ -1,7 +1,26 @@
-.mrl-small{
+// TODO replace with vars
+.mrl-small {
   margin-left: 10px;
 }
 
-.mrr-small{
+.mrr-small {
   margin-right: 10px;
+}
+
+.mr-small-vert {
+  margin: 10px 0;
+}
+
+.mrt-big {
+  margin-top: 30px !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.dotted-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
