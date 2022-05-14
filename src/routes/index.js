@@ -18,14 +18,16 @@ const AuthorizationRoutes = [
 
 export {AppRoutes, AuthorizationRoutes}
 
-
-// card damtavreba
-// responsive
+// card damtavreba +
+// responsive +
 // pagination
+// modal
 // detail page
-// generic grid
-// generic detail page
 // services
-// redux
+// redux (shabat kvira)
+// generic grid (later)
+// generic detail page (later)
+
+
 
 

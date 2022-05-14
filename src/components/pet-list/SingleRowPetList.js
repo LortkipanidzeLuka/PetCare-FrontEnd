@@ -1,10 +1,13 @@
-import PetCardGeneric from "../pet-card/PetCardGeneric";
+import PetCardGeneric from "../item-card/PetCardGeneric";
 // import Dog from "./../../assets/images/dog.jpg"
 import {Col, Row} from "reactstrap";
 import Dog from "../../assets/images/dog.jpg"
+import PetModal from "../item-modal/PetModal";
+import {useModal} from "../../hooks/UseModal";
 
 const SingleRowPetList = () => {
 
+    const [petModalOpen, , toggleModal] = useModal();
     const data = [
         {
             imgUrl: Dog,
@@ -45,19 +48,23 @@ const SingleRowPetList = () => {
     ]
 
     return (
-        <Row >
-            {data.map((value, index) => (
-                <Col className="pet-card-col" xl="3" lg ="4" sm="6"  xs="12" key={index}>
-                    <PetCardGeneric
-                        description={value.description}
-                        hashTags={value.hashTags}
-                        title={value.title}
-                        imgUrl={value.imgUrl}/>
-                </Col>
-            ))}
-        </Row>
-    )
+        <>
+            <Row>
 
+                {data.map((value, index) => (
+                    <Col className="pet-card-col" xl="3" lg="4" sm="6" xs="12" key={index}>
+                        <PetCardGeneric
+                            description={value.description}
+                            hashTags={value.hashTags}
+                            title={value.title}
+                            openModal={toggleModal}
+                            imgUrl={value.imgUrl}/>
+                    </Col>
+                ))}
+            </Row>
+            <PetModal open={petModalOpen} closeModal={toggleModal}/>
+        </>
+    )
 }
 
 export default SingleRowPetList

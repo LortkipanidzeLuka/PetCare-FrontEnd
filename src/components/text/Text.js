@@ -1,6 +1,6 @@
 import {TextTypeParams} from "./TextType";
 
-const Text = ({type, text, styles}) => {
+const Text = ({type, text, styles, classNames}) => {
     const textParams = TextTypeParams[`${type}`]
     const textStyle = textParams && {
         fontFamily: `${textParams.fontFamily}`,
@@ -9,7 +9,8 @@ const Text = ({type, text, styles}) => {
     }
 
     return (
-        <div style={styles ? {...textStyle, ...styles} : {...textStyle}}>{text}</div>
+        <div className={classNames && typeof classNames == "object"? classNames.join(" ") : ""}
+             style={styles ? {...textStyle, ...styles} : {...textStyle}}>{text}</div>
     )
 }
 

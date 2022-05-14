@@ -3,27 +3,18 @@ import Text from "../text/Text";
 import {TextType} from "../text/TextType";
 import TagList from "../styled/TagList";
 
-const PetCardGeneric = ({imgUrl, title, description, hashTags}) => {
+const PetCardGeneric = ({imgUrl, title, description, hashTags, openModal}) => {
 
     return (
         <Block>
-            <div className="pet-card-content">
+            <div className="pet-card-content" onClick={openModal}>
                 <div className="card-img-wrap">
                     <img src={imgUrl}/>
                 </div>
                 <div className="pet-card-data">
-                    <Text text={title} type={TextType.HEADING} styles={{
-                        margin: "10px 0"
-                    }}/>
+                    <Text text={title} type={TextType.HEADING} classNames={["mr-small-vert"]}/>
                     <div style={{height: "210px"}}>
-                        <Text text={description} type={TextType.REGULAR} styles={{
-                            marginBottom: "10px",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            display: "-webkit-box",
-                            WebkitLineClamp: "5",
-                            WebkitBoxOrient: "vertical"
-                        }}/>
+                        <Text text={description} type={TextType.REGULAR} classNames={["card-text"]}/>
                         <TagList data={hashTags} randomizeColor={false}/>
                     </div>
                     <div className="pet-card-footer">
@@ -33,11 +24,7 @@ const PetCardGeneric = ({imgUrl, title, description, hashTags}) => {
                         </div>
                         <div className="pet-card-footer-right">
                             <i className={"mdi mdi-map-marker-radius mdi-dark"}/>
-                            <Text text={"Tbilisi, Georgia isani"} type={TextType.SMALL} styles={{
-                                overflow: "hidden",
-                                whiteSpace: "nowrap",
-                                textOverflow:"ellipsis"
-                            }}/>
+                            <Text text={"Tbilisi, Georgia isani"} type={TextType.SMALL} classNames={["dotted-text"]}/>
                         </div>
                     </div>
                 </div>
