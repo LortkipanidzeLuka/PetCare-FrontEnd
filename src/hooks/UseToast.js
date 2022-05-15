@@ -12,7 +12,7 @@ const useToast = ({ toastType, message }) => {
 		closeButton: true,
 		progressBar: toastType === ToastType.INFO,
 		preventDuplicates: true,
-		duration:4000,
+		duration: 4000,
 		newestOnTop: true,
 		showEasing: 'swing',
 		hideMethod: 'fadeOut'
@@ -23,16 +23,22 @@ const useToast = ({ toastType, message }) => {
 	}
 
 	function show() {
-		switch (toastType) {
-			case ToastType.INFO:
-				toastr.info(message);
-				break;
-			case ToastType.ERROR:
-				toastr.error(message);
-				break;
-			case ToastType.SUCCESS:
-				toastr.success(message);
-				break;
+		if (message) {
+
+			switch (toastType) {
+				case ToastType.INFO:
+					toastr.info(message);
+					break;
+				case ToastType.ERROR:
+					toastr.error(message);
+					break;
+				case ToastType.SUCCESS:
+					toastr.success(message);
+					break;
+				default:
+					toastr.error(message);
+					break;
+			}
 		}
 	}
 

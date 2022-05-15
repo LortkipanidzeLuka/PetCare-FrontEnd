@@ -2,7 +2,8 @@ export const TextType = {
     HEADER_TAB:"HEADER_TAB",
     HEADING:"HEADING",
     REGULAR:"REGULAR",
-    SMALL: "SMALL"
+    SMALL: "SMALL",
+    MEDIUM:"MEDIUM"
 
 //    MORE TYPES
 }
@@ -17,6 +18,11 @@ export const TextTypeParams = {
         fontFamily: `"Poppins",sans-serif`,
         fontWeight:500,
         fontSize: "18px"
+    },
+    MEDIUM:{
+        fontFamily: `"Poppins",sans-serif`,
+        fontWeight:400,
+        fontSize: "16px"
     },
     REGULAR:{
         fontFamily: `"Poppins",sans-serif`,
