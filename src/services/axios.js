@@ -14,6 +14,12 @@ function resetAuthTokenRequest() {
 	authTokenRequest = null;
 }
 
+export const deleteAuthHeader = () => {
+	storage('access_token').unset();
+	storage('refresh_token').unset();
+	delete instance.defaults.headers.common[authToken]; // remove on logout action
+};
+
 
 export const setAuthHeader = async (response) => {
 	storage('access_token').set(response.access_token);
