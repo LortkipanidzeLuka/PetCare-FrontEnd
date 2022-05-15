@@ -1,8 +1,9 @@
-import {Col, Modal, ModalBody, ModalHeader, Row} from "reactstrap";
-import TestImage from "../../assets/images/dog.jpg"
-import Text from "../text/Text";
-import {TextType} from "../text/TextType";
-import TagList from "../styled/TagList";
+import { Col, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
+import TestImage from 'src/assets/images/dog.jpg';
+import Text from 'src/components/text/Text';
+import { TextType } from 'src/components/text/TextType';
+import TagList from 'src/components/styled/TagList';
+
 
 const PetModal = ({open, closeModal}) => {
 
@@ -28,7 +29,7 @@ const PetModal = ({open, closeModal}) => {
             <ModalBody>
                 <Row>
                     <Col xl="6" lg="6" sm="6" xs="12" className="d-flex">
-                        <img src={TestImage} className="modal-picture"/>
+                        <img src={TestImage} alt={""} className="modal-picture"/>
                     </Col>
                     <Col xl="6" lg="6" sm="6" xs="12">
                         <div className={"d-flex justify-content-between"}>
