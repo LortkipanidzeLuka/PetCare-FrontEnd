@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { withRouter } from '../helper';
 import Layout from '../../components/layout/Layout';
 import storage from '../../utils/Storage';

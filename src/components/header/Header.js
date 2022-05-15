@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/test.png';
 import ProfileDropdown from './ProfileDropdown';
+import { useSelector } from 'react-redux';
+import { userSelectors } from '../../storage/user/Selector';
+import { useModal } from '../../hooks/UseModal';
+import RegisterModal from '../user/Register';
+import AuthModal from '../user/Login';
 
 const Header = () => {
+
+	const [registerOpen, , registerToggle] = useModal()
+	const [authOpen, , authToggle] = useModal()
+
+	let userInfo = useSelector(userSelectors.userInfo);
+	let userName = useSelector(userSelectors.userInitials);
+	useEffect(() => {
+		console.log(userName);
+	}, [userName]);
 
 
 	return (
@@ -19,11 +33,17 @@ const Header = () => {
 						</Link>
 					</div>
 					<div className='header-right'>
-						<ProfileDropdown />
+						{userInfo ? <ProfileDropdown user={userName} /> : (
+							<div className={"d-flex"}>
+								<div className={"header-button"} onClick={authToggle}>Log in</div>
+								<div className={"header-button mrl-small"} onClick={registerToggle}>Register</div>
+							</div>
+						)}
 					</div>
 				</div>
-
 			</header>
+			<RegisterModal closeModal={registerToggle} open={registerOpen}/>
+			<AuthModal closeModal={authToggle} open={authOpen}/>
 		</React.Fragment>
 	);
 };
