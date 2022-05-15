@@ -1,20 +1,18 @@
-import React from "react"
-import {withRouter} from "../helper";
-import Layout from "../../components/layout/Layout";
+import React, { useState } from 'react';
+import { withRouter } from '../helper';
+import Layout from '../../components/layout/Layout';
+import storage from '../../utils/Storage';
 
-const AuthRouteComponent = ({children: AppComponent, path}) => {
-    // TODO
-    // if (!localStorage.getItem("authUser")) {
-    // 		return (
-    // 			<Redirect to={{ pathname: "/login", state: { from: props.location } }} />
-    // 		);
-    // 	}
+const AuthRouteComponent = ({ children: AppComponent, path }) => {
+	if (!storage('token').isSet()) {
 
-    return (
-        <Layout>
-            <AppComponent path={path}/>
-        </Layout>
-    )
-}
+	}
 
-export default (withRouter(AuthRouteComponent))
+	return (
+		<Layout>
+			<AppComponent path={path} />
+		</Layout>
+	);
+};
+
+export default (withRouter(AuthRouteComponent));
