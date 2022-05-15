@@ -1,0 +1,9 @@
+.dotted-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.error-text {
+  color: $danger;
+}
