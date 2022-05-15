@@ -6,6 +6,7 @@
 @import "general";
 
 // external
+@import 'toastr/build/toastr.min.css';
 @import "bootstrap";
 
 
@@ -16,6 +17,7 @@
 @import "components/styled";
 @import "components/petlist";
 @import "components/modal";
+@import "components/toastr";
 
 // icons
 @import "icons";
