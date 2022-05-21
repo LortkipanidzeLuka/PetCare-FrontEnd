@@ -5,7 +5,7 @@ import { TextType } from 'src/components/text/TextType';
 import TagList from 'src/components/styled/TagList';
 
 
-const PetModal = ({open, closeModal}) => {
+const LostPetModal = ({open, closeModal}) => {
 
     const data = {
         title: "Dog was lost",
@@ -66,4 +66,4 @@ const PetModal = ({open, closeModal}) => {
     )
 }
 
-export default PetModal
+export default LostPetModal

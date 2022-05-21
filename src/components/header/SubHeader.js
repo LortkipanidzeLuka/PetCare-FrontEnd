@@ -1,26 +1,39 @@
-import Text from "../text/Text";
-import {TextType} from "../text/TextType";
+import Text from '../text/Text';
+import { TextType } from '../text/TextType';
+import { Link } from 'react-router-dom';
 
 const SubHeader = () => {
-    return (
-        <div className="subheader">
-            <ol className="subheader-list content-width">
-                <li>
-                    <Text type={TextType.HEADER_TAB} text={"Lost"}/>
-                </li>
+	const style = {
+			color: 'unset',
+			textDecoration: 'auto'
+		}
+	;
+	return (
+		<div className='subheader'>
+			<ol className='subheader-list content-width'>
+				<li>
+					<Link to={'/lost'} style={ style }>
+						<Text type={TextType.HEADER_TAB} text={'Lost And Found'} />
+					</Link>
+				</li>
+				<li>
+					<Link to={'/pet-care'} style={ style }>
+						<Text type={TextType.HEADER_TAB} text={'Pet Care'} />
+					</Link>
+				</li>
+				<li>
+					<Link to={'/adoption'} style={ style }>
+						<Text type={TextType.HEADER_TAB} text={'Adoption'} />
+					</Link>
+				</li>
+				<li>
+					<Link to={'/charity'} style={ style }>
+						<Text type={TextType.HEADER_TAB} text={'Charity'} />
+					</Link>
+				</li>
+			</ol>
+		</div>
+	);
+};
 
-                <li>
-                    <Text type={TextType.HEADER_TAB} text={"Found"}/>
-                </li>
-                <li>
-                    <Text type={TextType.HEADER_TAB} text={"Pet Care"}/>
-                </li>
-                <li>
-                    <Text type={TextType.HEADER_TAB} text={"Adoption"}/>
-                </li>
-            </ol>
-        </div>
-    )
-}
-
-export default SubHeader
+export default SubHeader;

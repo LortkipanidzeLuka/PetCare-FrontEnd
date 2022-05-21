@@ -1,4 +1,4 @@
-import SingleRowPetList from "../components/pet-list/SingleRowPetList";
+import SingleRowPetList from "../landing/SingleRowPetList";
 
 
 const Adoption = ()=> {
