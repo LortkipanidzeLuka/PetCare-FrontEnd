@@ -1,4 +1,5 @@
 import toastr from 'toastr';
+import { useEffect, useState } from 'react';
 
 export const ToastType = {
 	INFO: 'INFO',
@@ -6,7 +7,8 @@ export const ToastType = {
 	ERROR: 'ERROR'
 };
 
-const useToast = ({ toastType, message }) => {
+const useToast = (toastType) => {
+	const [message, setMessage] = useState('');
 	toastr.options = {
 		positionClass: 'toast-bottom-right',
 		closeButton: true,
@@ -17,6 +19,12 @@ const useToast = ({ toastType, message }) => {
 		showEasing: 'swing',
 		hideMethod: 'fadeOut'
 	};
+
+	useEffect(() => {
+		if (message) {
+			show();
+		}
+	}, [message]);
 
 	function clearToast() {
 		toastr.clear();
@@ -40,9 +48,10 @@ const useToast = ({ toastType, message }) => {
 					break;
 			}
 		}
+		setMessage('');
 	}
 
-	return { clearToast, show };
+	return { clearToast, show, setMessage };
 };
 
 export default useToast;
