@@ -13,11 +13,8 @@ const Header = () => {
 	const [registerOpen, , registerToggle] = useModal()
 	const [authOpen, , authToggle] = useModal()
 
-	let userInfo = useSelector(userSelectors.userInfo);
+	let isLoggedIn = useSelector(userSelectors.isLoggedIn);
 	let userName = useSelector(userSelectors.userInitials);
-	useEffect(() => {
-		console.log(userName);
-	}, [userName]);
 
 
 	return (
@@ -33,7 +30,7 @@ const Header = () => {
 						</Link>
 					</div>
 					<div className='header-right'>
-						{userInfo ? <ProfileDropdown user={userName} /> : (
+						{isLoggedIn ? <ProfileDropdown user={userName} /> : (
 							<div className={"d-flex"}>
 								<div className={"header-button"} onClick={authToggle}>Log in</div>
 								<div className={"header-button mrl-small"} onClick={registerToggle}>Register</div>

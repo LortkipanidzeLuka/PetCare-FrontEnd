@@ -2,18 +2,34 @@ import { Button, Col, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import { useForm } from 'react-hook-form';
 import Text from '../text/Text';
 import { TextType } from '../text/TextType';
+import Api from 'src/services/index';
+import { useDispatch } from 'react-redux';
+import useToast, { ToastType } from '../../hooks/UseToast';
+import { loginUser } from '../../storage/Actions';
 
 const AuthModal = ({ open, closeModal }) => {
-	const { register, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
-	const onSubmit = async data => {
-		//TODO
-		console.log(data);
+	const { register: auth, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
+	const { setMessage: setError } = useToast(ToastType.ERROR);
+	const dispatch = useDispatch();
+
+	const onSubmit = async params => {
+		try {
+			const { data } = await Api.User.login(params);
+			await loginUser({ data, dispatch });
+			closeModal();
+		} catch (error) {
+			if (error && error.errorCode) {
+				setError(error.errorCode);
+			} else {
+				setError('universal');
+			}
+		}
 	};
 
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'small-modal'}>
 			<ModalHeader>
-				register
+				Log in
 			</ModalHeader>
 			<ModalBody>
 				<div>
@@ -24,7 +40,7 @@ const AuthModal = ({ open, closeModal }) => {
 							</Col>
 							<Col xl='8' lg='8' sm='8' xs='12'>
 								<input
-									className={'form-control'} {...register('username', { required: 'Please enter username.' })}
+									className={'form-control'} {...auth('username', { required: 'Please enter username.' })}
 									name={'username'}
 									placeholder={'Enter your username'} type={'text'} required={false} />
 								{errors.username &&
@@ -37,7 +53,7 @@ const AuthModal = ({ open, closeModal }) => {
 							</Col>
 							<Col xl='8' lg='8' sm='8' xs='12'>
 								<input
-									className={'form-control'} {...register('password', { required: 'Please enter your password.' })}
+									className={'form-control'} {...auth('password', { required: 'Please enter your password.' })}
 									name={'password'}
 									placeholder={'Enter your name'} type={'password'} required={false} />
 								{errors.password &&

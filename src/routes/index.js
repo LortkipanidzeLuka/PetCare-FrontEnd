@@ -6,17 +6,10 @@ const AppRoutes = [
     { path: "/", component: Adoption },
     { path: "/adoption", component: Adoption },
     { path: "/charity", component: Charity },
-
-]
-
-
-const AuthorizationRoutes = [
-    { path: "/login", component: Adoption },
-    { path: "/logout", component: Charity },
-]
+ ]
 
 
-export {AppRoutes, AuthorizationRoutes}
+export {AppRoutes}
 
 // card damtavreba +
 // responsive +
