@@ -1,12 +1,11 @@
 import axios from 'axios';
 import storage from '../utils/Storage';
 
-const baseURL = process.env.API_BASE_URL;
-export const authToken = String(process.env.AUTH_TOKEN);
+const baseURL = process.env.REACT_APP_API_BASE_URL;
+export const authToken = String(process.env.REACT_APP_AUTH_TOKEN);
 
 const instance = axios.create({ baseURL });
 const noAuth = axios.create({ baseURL });
-
 
 let authTokenRequest;
 
@@ -15,18 +14,27 @@ function resetAuthTokenRequest() {
 }
 
 export const deleteAuthHeader = () => {
-	storage('access_token').unset();
-	storage('refresh_token').unset();
+	storage('accessToken').unset();
+	storage('refreshToken').unset();
 	delete instance.defaults.headers.common[authToken]; // remove on logout action
 };
 
 
 export const setAuthHeader = async (response) => {
-	storage('access_token').set(response.access_token);
-	storage('refresh_token').set(response.refresh_token);
-	instance.defaults.headers.common[authToken] = `Bearer ${response.access_token}`;
+	storage('accessToken').set(response.accessToken);
+	storage('refreshToken').set(response.refreshToken);
+	instance.defaults.headers.common[authToken] = `Bearer ${response.accessToken}`;
 	return Promise.resolve();
 };
+
+export async function refreshToken() {
+	const refreshTokenStr = storage('refreshToken').get();
+
+	const res = await getAuthToken(refreshTokenStr);
+	if ([200, 201].includes(res.status)) {
+		await setAuthHeader(res.data);
+	}
+}
 
 function getAuthToken(refreshToken) {
 	if (!authTokenRequest) {
@@ -43,7 +51,7 @@ instance.interceptors.response.use(
 		const originalRequest = error.config;
 
 		if (error.response?.status === 401) {
-			const refreshToken = storage('refresh_token').get();
+			const refreshToken = storage('refreshToken').get();
 			// @ts-ignore
 			if (!['undefined', 'null'].includes(String(refreshToken)) && !originalRequest._retry) {
 				delete originalRequest.headers[authToken];
@@ -52,7 +60,7 @@ instance.interceptors.response.use(
 					if ([200, 201].includes(res.status)) {
 						await setAuthHeader(res.data);
 						originalRequest._retry = true;
-						originalRequest.headers[authToken] = `Bearer ${res.data.access_token}`;
+						originalRequest.headers[authToken] = `Bearer ${res.data.accessToken}`;
 						return instance(originalRequest);
 					}
 				} catch (err) {
@@ -63,7 +71,6 @@ instance.interceptors.response.use(
 				return Promise.reject(error?.response?.data);
 			}
 		}
-
 		return Promise.reject(error?.response?.data);
 	}
 );
