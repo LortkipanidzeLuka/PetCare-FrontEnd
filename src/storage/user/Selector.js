@@ -5,13 +5,24 @@ export const userSelectors = {
 		(state) => state.user,
 		user => user.userInfo
 	),
-
+	isLoggedIn: createSelector(
+		(state) => state.user,
+		user => user.isLoggedIn
+	),
+	requiresVerification: createSelector(
+		(state) => state.user,
+		user => {
+			console.log(user.userInfo)
+			return user.userInfo && !user.userInfo.is_verified && user.isLoggedIn
+		}
+	),
 	userInitials: createSelector(
 		(state) => state.user,
-		user =>
-			user.userInfo?.fname && user.userInfo?.lname
-				? `${String(user.userInfo.fname).charAt(0)}${String(user.userInfo.lname).charAt(0)}`
-				: ''
+		user => {
+			return user.userInfo?.full_name && user.userInfo?.full_name.includes(' ')
+				? `${user.userInfo?.full_name[0].toUpperCase() + '.' + user.userInfo?.full_name.split(' ')[1]}`
+				: user.userInfo?.full_name ? user.userInfo?.full_name : '';
+		}
 	)
 };
 

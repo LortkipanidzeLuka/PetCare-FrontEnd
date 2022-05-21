@@ -49,8 +49,8 @@ const PetModal = ({open, closeModal}) => {
                 <Row className={"mrt-big"}>
                     <Col xl="6" lg="6" sm="6" xs="12">
                         <ul className={"no-padding"}>
-                            {Object.keys(data.params).map(val => (
-                                <div className="d-flex">
+                            {Object.keys(data.params).map((val, index) => (
+                                <div className="d-flex" key={index}>
                                     <i className="mdi mdi-calendar mdi-dark"/>
                                     <div className={"mrl-small"}><Text text={data.params[`${val}`]} type={TextType.REGULAR}/></div>
                                 </div>

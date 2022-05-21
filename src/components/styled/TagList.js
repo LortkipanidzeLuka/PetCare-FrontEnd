@@ -1,20 +1,21 @@
-import Tag from "./Tag";
+import Tag from './Tag';
 
-const TagList = ({data, randomizeColor}) => {
+const TagList = ({ data, randomizeColor }) => {
 
-    if (randomizeColor) {
-        // TODO
-    }
+	if (randomizeColor) {
+		// TODO
+	}
 
-    return (
-        <div className={"tag-list"}>
-            {data.map(value => (
-                <Tag style={{
-                    marginRight: "10px"
-                }} text={value}/>
-            ))}
-        </div>
-    )
-}
+	return (
+		<div className={'tag-list'}>
+			{data.map((value, index) => (
+				<Tag key={index}
+						 style={{
+							 marginRight: '10px'
+						 }} text={value} />
+			))}
+		</div>
+	);
+};
 
-export default TagList
+export default TagList;
