@@ -1,13 +1,49 @@
 import { Col, Row } from 'reactstrap';
 import PetCardGeneric from '../item-card/PetCardGeneric';
-import LostPetModal from '../item-modal/LostPetModal';
 import Dog from '../../assets/images/dog.jpg';
 import { useModal } from '../../hooks/UseModal';
+import GenericDataPagination from './GenericDataPagination';
+import usePagination from '../../hooks/UsePagination';
 
-const GenericDataGrid = () => {
-	const [petModalOpen, , toggleModal] = useModal();
+const GenericDataGrid = ({ DetailModal }) => {
 
 	const data = [
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
+		{
+			imgUrl: Dog,
+			title: 'Dog was lost',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			hashTags: ['dog', 'yellow', '5 kilos']
+		},
 		{
 			imgUrl: Dog,
 			title: 'Dog was lost',
@@ -45,6 +81,8 @@ const GenericDataGrid = () => {
 			hashTags: ['dog', 'yellow', '5 kilos']
 		}
 	];
+	const [petModalOpen, , toggleModal] = useModal();
+	const [pages, page, goToNextPage, goToPreviousPage, changePage] = usePagination({ data, itemsPerPage: 10 });
 
 
 	return (
@@ -62,7 +100,12 @@ const GenericDataGrid = () => {
 					</Col>
 				))}
 			</Row>
-			<LostPetModal open={petModalOpen} closeModal={toggleModal} />
+			<GenericDataPagination 	pages={pages}
+														 page={page}
+														 goToNextPage={goToNextPage}
+														 goToPreviousPage={goToPreviousPage}
+														 changePage={changePage} />
+			<DetailModal open={petModalOpen} closeModal={toggleModal} />
 		</>
 	);
 };
