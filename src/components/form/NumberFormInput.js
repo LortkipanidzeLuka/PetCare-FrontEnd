@@ -2,7 +2,13 @@ import { Col, Row } from 'reactstrap';
 import Text from '../text/Text';
 import { TextType } from '../text/TextType';
 
-export const NumberFormInput = ({ register, errors, requiredMessage, placeholder, name, heading, xl, lg, sm, xs }) => {
+export const NumberInputType = {
+	TEL:'tel',
+	NUMBER:'number',
+	FLOAT:'float'
+}
+
+export const NumberFormInput = ({ register, errors, type=NumberInputType.NUMBER, requiredMessage, placeholder, name, heading, xl, lg, sm, xs }) => {
 	return (
 		<Col xl={xl} lg={lg} sm={sm} xs={xs}>
 			<Row className={'mrb-medium'}>
@@ -13,7 +19,7 @@ export const NumberFormInput = ({ register, errors, requiredMessage, placeholder
 				})}
 					name={name}
 					placeholder={placeholder}
-					type={'number'}
+					type={type}
 					required={false} />
 				{errors[name] &&
 					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}

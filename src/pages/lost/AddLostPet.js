@@ -1,4 +1,4 @@
-import { Button, Col, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { useForm } from 'react-hook-form';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import { City, PetAdType, PetColor, PetSex, PetTypes } from '../../utils/Constants';
@@ -9,6 +9,7 @@ import { FileFormInput } from '../../components/form/FileFormInput';
 import { TextAreaFormInput } from '../../components/form/TextAreaFormInput';
 import Api from '../../services';
 import { TransformImageArrToBase64 } from '../../utils/UtilActions';
+import FormInput from '../../components/form/FormInput';
 
 const AddLostPet = ({ open, closeModal }) => {
 	const { register: createAdv, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
@@ -19,8 +20,6 @@ const AddLostPet = ({ open, closeModal }) => {
 		xl: '5',
 		sm: '5',
 		xs: '12',
-		name: 'city',
-		heading: 'City',
 		errors: errors,
 		register: createAdv
 	};
@@ -31,6 +30,8 @@ const AddLostPet = ({ open, closeModal }) => {
 			double: true,
 			first: {
 				...DefaultFormConfig,
+				name: 'city',
+				heading: 'City',
 				placeholder: 'Please enter city',
 				requiredMessage: 'City is required',
 				component: SelectFormInput,
@@ -189,31 +190,11 @@ const AddLostPet = ({ open, closeModal }) => {
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'small-modal'}>
 			<ModalHeader>
-				register
+				Create Lost Pet Announcement
 			</ModalHeader>
 			<ModalBody>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					{FormConfig.map((value, index) => {
-						const FirstFormComponent = value.first.component;
-						const SecondFormComponent = value.second.component;
-
-						if (!value.double) {
-							return (
-								<Row className={'d-flex p-small'} key={index}>
-									<FirstFormComponent {...value.first} />
-								</Row>
-							);
-						} else {
-							return (
-								<Row className={'d-flex p-small'} key={index}>
-									<FirstFormComponent {...value.first} />
-									<Col xl={'2'} lg={'2'} sm={'2'} xs={'2'}/>
-									<SecondFormComponent {...value.second} />
-								</Row>
-							);
-						}
-					})}
-					<Button type={'submit'}>Submit</Button>
+					<FormInput FormConfig={FormConfig} buttonName={"Create Announcement"} fullButton/>
 				</form>
 			</ModalBody>
 		</Modal>
