@@ -3,7 +3,7 @@ import Text from "../text/Text";
 import {TextType} from "../text/TextType";
 import TagList from "../styled/TagList";
 
-const PetCardGeneric = ({imgUrl, title, description, hashTags, openModal}) => {
+const PetCardGeneric = ({createDate,city,imgUrl, title, description, hashTags, openModal}) => {
 
     return (
         <Block>
@@ -20,11 +20,11 @@ const PetCardGeneric = ({imgUrl, title, description, hashTags, openModal}) => {
                     <div className="pet-card-footer">
                         <div className="pet-card-footer-left">
                             <i className="mdi mdi-calendar mdi-dark"/>
-                            <Text text={"11/22/2022"} type={TextType.SMALL}/>
+                            <Text text={createDate} type={TextType.SMALL}/>
                         </div>
                         <div className="pet-card-footer-right">
                             <i className={"mdi mdi-map-marker-radius mdi-dark"}/>
-                            <Text text={"Tbilisi, Georgia isani"} type={TextType.SMALL} classNames={["dotted-text"]}/>
+                            <Text text={city} type={TextType.SMALL} classNames={["dotted-text"]}/>
                         </div>
                     </div>
                 </div>

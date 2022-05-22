@@ -80,7 +80,7 @@ const AddLostPet = ({ open, closeModal }) => {
 			},
 			second: {
 				...DefaultFormConfig,
-				name: 'petColor',
+				name: 'color',
 				heading: 'Pet Color',
 				placeholder: 'Please enter pet color',
 				requiredMessage: 'Pet color is required',
@@ -129,6 +129,24 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: PetSex
 			}
+		},
+		{
+			double: false,
+			first: {
+				lg: '12',
+				xl: '12',
+				sm: '12',
+				xs: '12',
+				name: 'breed',
+				heading: 'Pet Breed',
+				placeholder: 'Please enter breed information',
+				errors: errors,
+				type:'text',
+				register: createAdv,
+				requiredMessage: 'Breed information is required',
+				component: TextFormInput
+			},
+			second: {}
 		},
 		{
 			double: false,

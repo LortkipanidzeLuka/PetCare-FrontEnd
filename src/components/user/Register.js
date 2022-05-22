@@ -35,7 +35,7 @@ const RegisterModal = ({ open, closeModal }) => {
 			double: false,
 			first: {
 				...DefaultFormConfig,
-				name: 'lastName',
+				name: 'lastname',
 				heading: 'Last Name',
 				placeholder: 'Please enter your last name.',
 				requiredMessage: 'Last name is required.',

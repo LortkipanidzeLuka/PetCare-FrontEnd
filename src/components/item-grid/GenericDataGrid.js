@@ -32,8 +32,10 @@ const GenericDataGrid = ({ DetailModal }) => {
 								<PetCardGeneric
 									description={value.description}
 									hashTags={value.tags}
-									title={value.title}
+									title={value.header}
 									openModal={toggleModal}
+									city={value.city}
+									createDate={value.createDate}
 									imgUrl={value.imgUrl} />
 							</Col>
 						))}
