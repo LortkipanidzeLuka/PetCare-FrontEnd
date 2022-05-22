@@ -47,7 +47,6 @@ const EmailVerify = ({ isOpen }) => {
 	};
 
 	useEffect(() => {
-		console.log(user);
 		if (isOpen && user && user.sub) {
 			sendVerification();
 		}

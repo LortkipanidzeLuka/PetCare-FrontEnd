@@ -12,7 +12,6 @@ export const userSelectors = {
 	requiresVerification: createSelector(
 		(state) => state.user,
 		user => {
-			console.log(user.userInfo)
 			return user.userInfo && !user.userInfo.is_verified && user.isLoggedIn
 		}
 	),

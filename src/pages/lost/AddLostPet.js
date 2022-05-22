@@ -189,11 +189,12 @@ const AddLostPet = ({ open, closeModal }) => {
 		const images = await TransformImageArrToBase64(data.picture);
 		const params = {
 			...data,
+			advertisementType:'LOST_FOUND',
 			tags:['tag1', 'tag2'],
 			images: images
 		}
 		try {
-			await Api.Adv.createAdv(params);
+			await Api.Adv.createLostFound(params);
 			setSuccessMessage('item-added');
 			closeModal();
 		} catch (error) {
