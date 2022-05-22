@@ -7,20 +7,20 @@ const SingleRowPetList = () => {
 	const data = [
 		{
 			imgUrl: Dog,
-			title: 'Dog was lost',
-			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			title: 'Dog was lostfound',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lostfound pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
 			hashTags: ['dog', 'yellow', '5 kilos']
 		},
 		{
 			imgUrl: Dog,
-			title: 'Dog was lost',
-			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			title: 'Dog was lostfound',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lostfound pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
 			hashTags: ['dog', 'yellow', '5 kilos']
 		},
 		{
 			imgUrl: Dog,
-			title: 'Dog was lost',
-			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lost pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
+			title: 'Dog was lostfound',
+			description: 'This staggering number is why we created Petco Love Lost, which simplifies and shortens the lostfound pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.',
 			hashTags: ['dog', 'yellow', '5 kilos', 'puppy', 'little', 'nose', '5 kilos', 'puppy', 'little', 'nose']
 		}
 	];

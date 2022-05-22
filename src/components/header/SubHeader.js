@@ -12,7 +12,7 @@ const SubHeader = () => {
 		<div className='subheader'>
 			<ol className='subheader-list content-width'>
 				<li>
-					<Link to={'/lost'} style={ style }>
+					<Link to={'/lostfound'} style={ style }>
 						<Text type={TextType.HEADER_TAB} text={'Lost And Found'} />
 					</Link>
 				</li>
