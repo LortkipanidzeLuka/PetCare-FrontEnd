@@ -8,7 +8,7 @@ const TagList = ({ data, randomizeColor }) => {
 
 	return (
 		<div className={'tag-list'}>
-			{data.map((value, index) => (
+			{data && data.map((value, index) => (
 				<Tag key={index}
 						 style={{
 							 marginRight: '10px'
