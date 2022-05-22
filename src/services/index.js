@@ -1,5 +1,8 @@
 import User from './user/UserApi';
+import Advertisement from './advertisement/Advertisement';
 
-export default {
-	User: User
+const Api = {
+	User: User,
+	Adv: Advertisement
 };
+export default Api;

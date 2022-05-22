@@ -1,5 +1,5 @@
 import toastr from 'toastr';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export const ToastType = {
 	INFO: 'INFO',
@@ -20,17 +20,8 @@ const useToast = (toastType) => {
 		hideMethod: 'fadeOut'
 	};
 
-	useEffect(() => {
-		if (message) {
-			show();
-		}
-	}, [message]);
 
-	function clearToast() {
-		toastr.clear();
-	}
-
-	function show() {
+	const show = useCallback(() => {
 		if (message) {
 
 			switch (toastType) {
@@ -49,9 +40,20 @@ const useToast = (toastType) => {
 			}
 		}
 		setMessage('');
+
+	}, [message, toastType]);
+
+
+	useEffect(() => {
+		if (message) {
+			show();
+		}
+	}, [message, show]);
+
+	function clearToast() {
+		toastr.clear();
 	}
+	return { clearToast, setMessage };
 
-	return { clearToast, show, setMessage };
 };
-
 export default useToast;

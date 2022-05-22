@@ -1,6 +1,9 @@
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 const GenericDataPagination = ({ pages, page, goToNextPage, goToPreviousPage, changePage }) => {
+	console.log(page)
+	console.log(pages)
+
 	return (
 		<Pagination className='pagination pagination-rounded justify-content-center mt-10 mb-5 mrt-big'>
 			<PaginationItem active>

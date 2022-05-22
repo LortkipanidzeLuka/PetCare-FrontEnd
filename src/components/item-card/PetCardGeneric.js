@@ -9,7 +9,7 @@ const PetCardGeneric = ({imgUrl, title, description, hashTags, openModal}) => {
         <Block>
             <div className="pet-card-content" onClick={openModal}>
                 <div className="card-img-wrap">
-                    <img src={imgUrl}/>
+                    <img src={imgUrl} alt={'this is card '}/>
                 </div>
                 <div className="pet-card-data">
                     <Text text={title} type={TextType.HEADING} classNames={["mr-small-vert"]}/>
