@@ -10,7 +10,7 @@ const GenericDataPagination = ({ pages, page, goToNextPage, goToPreviousPage, ch
 				<PaginationLink previous href='#' onClick={goToPreviousPage} />
 			</PaginationItem>
 			{[...Array(pages)].map((value, index) => (
-				<PaginationItem active={(index+1) === page}>
+				<PaginationItem active={(index+1) === page} key={index}>
 					<PaginationLink href='#' onClick={changePage}>{index + 1}</PaginationLink>
 				</PaginationItem>
 			))}
