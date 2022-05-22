@@ -4,10 +4,10 @@ import storage from '../utils/Storage';
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 export const authToken = String(process.env.REACT_APP_AUTH_TOKEN);
 
+let authTokenRequest;
+
 const instance = axios.create({ baseURL });
 const noAuth = axios.create({ baseURL });
-
-let authTokenRequest;
 
 function resetAuthTokenRequest() {
 	authTokenRequest = null;
@@ -17,6 +17,13 @@ export const deleteAuthHeader = () => {
 	storage('accessToken').unset();
 	storage('refreshToken').unset();
 	delete instance.defaults.headers.common[authToken]; // remove on logout action
+};
+
+export const checkAuthHeader = () => {
+
+	if (storage('accessToken').isSet()) {
+		instance.defaults.headers.common[authToken] = `Bearer ${storage('accessToken').get()}`;
+	}
 };
 
 
@@ -38,13 +45,13 @@ export async function refreshToken() {
 
 function getAuthToken(refreshToken) {
 	if (!authTokenRequest) {
-		authTokenRequest = noAuth.post('/auth/refresh', { refreshToken }, { headers: { } });
+		authTokenRequest = noAuth.post('/auth/refresh', { refreshToken }, { headers: {} });
 		authTokenRequest.then(resetAuthTokenRequest, resetAuthTokenRequest);
 	}
 	return authTokenRequest;
 }
 
-
+checkAuthHeader();
 instance.interceptors.response.use(
 	res => res,
 	async (error) => {
