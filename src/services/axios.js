@@ -1,8 +1,11 @@
 import axios from 'axios';
 import storage from '../utils/Storage';
+// import { useDispatch } from 'react-redux';
+// import UserActions from '../storage/user/Store';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 export const authToken = String(process.env.REACT_APP_AUTH_TOKEN);
+// const dispatch = useDispatch()
 
 let authTokenRequest;
 
@@ -36,10 +39,14 @@ export const setAuthHeader = async (response) => {
 
 export async function refreshToken() {
 	const refreshTokenStr = storage('refreshToken').get();
-
-	const res = await getAuthToken(refreshTokenStr);
-	if ([200, 201].includes(res.status)) {
-		await setAuthHeader(res.data);
+	try{
+		const res = await getAuthToken(refreshTokenStr);
+		if ([200, 201].includes(res.status)) {
+			await setAuthHeader(res.data);
+		}
+	}catch (error){
+		deleteAuthHeader();
+		return Promise.reject(error?.response?.data);
 	}
 }
 
@@ -59,7 +66,6 @@ instance.interceptors.response.use(
 
 		if (error.response?.status === 401) {
 			const refreshToken = storage('refreshToken').get();
-			// @ts-ignore
 			if (!['undefined', 'null'].includes(String(refreshToken)) && !originalRequest._retry) {
 				delete originalRequest.headers[authToken];
 				try {
@@ -71,7 +77,7 @@ instance.interceptors.response.use(
 						return instance(originalRequest);
 					}
 				} catch (err) {
-					// store.dispatch<any>(userActions.logout());
+					deleteAuthHeader();
 					return Promise.reject(err?.response?.data);
 				}
 			} else {
