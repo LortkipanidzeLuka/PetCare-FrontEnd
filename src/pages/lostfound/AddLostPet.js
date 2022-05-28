@@ -14,7 +14,7 @@ import ChipsFormInput from '../../components/form/ChipsFormInput';
 import { useState } from 'react';
 
 const AddLostPet = ({ open, closeModal }) => {
-	const { register: createAdv, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
+	const { register: createAdv, handleSubmit, formState: { errors }, setValue } = useForm({ shouldUseNativeValidation: true });
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const DefaultFormConfig = {
@@ -23,7 +23,8 @@ const AddLostPet = ({ open, closeModal }) => {
 		sm: '5',
 		xs: '12',
 		errors: errors,
-		register: createAdv
+		register: createAdv,
+		setValue: setValue
 	};
 	const [tags, setTags] = useState([]);
 
