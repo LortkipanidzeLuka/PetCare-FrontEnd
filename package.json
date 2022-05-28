@@ -22,7 +22,8 @@
     "react-hook-form": "^7.31.1",
     "jwt-decode": "^3.1.2",
     "materialui-pagination": "^0.0.6",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-select": "^5.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

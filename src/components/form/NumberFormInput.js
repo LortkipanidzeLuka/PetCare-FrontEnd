@@ -18,6 +18,7 @@ export const NumberFormInput = ({ register, errors, type=NumberInputType.NUMBER,
 					required: requiredMessage
 				})}
 					name={name}
+					step={0.000001}
 					placeholder={placeholder}
 					type={type}
 					required={false} />

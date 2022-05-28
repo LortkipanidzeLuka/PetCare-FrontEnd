@@ -22,6 +22,9 @@
     }
   }
   .pet-card-data{
+    .card-tags{
+      height: $pet-card-tag-height;
+    }
   }
   .pet-card-footer{
     display: flex;

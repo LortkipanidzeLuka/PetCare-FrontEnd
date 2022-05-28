@@ -34,7 +34,7 @@ const useGrid = ({ itemsPerPage, fetchData, params }) => {
 			try {
 				const res = await fetchData({ ...params, page:currentPage, size:itemsPerPage});
 				setData(res.data.items);
-				setPages(Math.ceil(res.data.items.length/itemsPerPage))
+				setPages(Math.ceil(res.data.totalCount/itemsPerPage))
 			} catch (error) {
 				setError(error);
 			}

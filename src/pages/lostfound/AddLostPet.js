@@ -10,6 +10,8 @@ import { TextAreaFormInput } from '../../components/form/TextAreaFormInput';
 import Api from '../../services';
 import { TransformImageArrToBase64 } from '../../utils/UtilActions';
 import FormInput from '../../components/form/FormInput';
+import ChipsFormInput from '../../components/form/ChipsFormInput';
+import { useState } from 'react';
 
 const AddLostPet = ({ open, closeModal }) => {
 	const { register: createAdv, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
@@ -23,6 +25,7 @@ const AddLostPet = ({ open, closeModal }) => {
 		errors: errors,
 		register: createAdv
 	};
+	const [tags, setTags] = useState([]);
 
 	const FormConfig = [
 		// city-header
@@ -141,10 +144,27 @@ const AddLostPet = ({ open, closeModal }) => {
 				heading: 'Pet Breed',
 				placeholder: 'Please enter breed information',
 				errors: errors,
-				type:'text',
+				type: 'text',
 				register: createAdv,
 				requiredMessage: 'Breed information is required',
 				component: TextFormInput
+			},
+			second: {}
+		},
+		{
+			double: false,
+			first: {
+				lg: '12',
+				xl: '12',
+				sm: '12',
+				xs: '12',
+				name: 'tags',
+				heading: 'Tags',
+				placeholder: 'Please enter tag and press enter',
+				errors: errors,
+				type: 'select',
+				component: ChipsFormInput,
+				setChips: setTags
 			},
 			second: {}
 		},
@@ -159,7 +179,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				heading: 'Description',
 				placeholder: 'Please enter description',
 				errors: errors,
-				type:'textarea',
+				type: 'textarea',
 				register: createAdv,
 				requiredMessage: 'Description is required',
 				component: TextAreaFormInput
@@ -189,16 +209,16 @@ const AddLostPet = ({ open, closeModal }) => {
 		const images = await TransformImageArrToBase64(data.picture);
 		const params = {
 			...data,
-			advertisementType:'LOST_FOUND',
-			tags:['tag1', 'tag2'],
+			advertisementType: 'LOST_FOUND',
+			tags: tags,
 			images: images
-		}
+		};
 		try {
 			await Api.Adv.createLostFound(params);
 			setSuccessMessage('item-added');
 			closeModal();
 		} catch (error) {
-			setError(error)
+			setError(error);
 		}
 	};
 
@@ -209,7 +229,7 @@ const AddLostPet = ({ open, closeModal }) => {
 			</ModalHeader>
 			<ModalBody>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<FormInput FormConfig={FormConfig} buttonName={"Create Announcement"} fullButton/>
+					<FormInput FormConfig={FormConfig} buttonName={'Create Announcement'} fullButton />
 				</form>
 			</ModalBody>
 		</Modal>

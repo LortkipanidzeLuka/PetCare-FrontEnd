@@ -3,7 +3,7 @@ import Text from '../styled/text/Text';
 import { TextType } from '../styled/text/TextType';
 import TagList from '../styled/tag/TagList';
 
-const GenericCardSquare = ({ createDate, city, title, description, primaryImage, tags, openModal, id }) => {
+const GenericCardSquare = ({ createDate, city, header, description, primaryImage, tags, openModal, id }) => {
 		return (
 			<Block>
 				<div className='pet-card-content' onClick={() => openModal({ data: { id: id } })}>
@@ -11,8 +11,8 @@ const GenericCardSquare = ({ createDate, city, title, description, primaryImage,
 						<img src={primaryImage && primaryImage.content} alt={'this is card '} />
 					</div>
 					<div className='pet-card-data'>
-						<Text text={title} type={TextType.HEADING} classNames={['mr-small-vert']} />
-						<div style={{ height: '210px' }}>
+						<Text text={header} type={TextType.HEADING} classNames={['mr-small-vert']} />
+						<div className={'card-tags'}>
 							<Text text={description} type={TextType.REGULAR} classNames={['card-text']} />
 							<TagList data={tags} randomizeColor={false} />
 						</div>

@@ -9,7 +9,7 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData , fetchSingle, fetchSing
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
-		itemsPerPage: 10,
+		itemsPerPage: 2,
 		params: params,
 		fetchData: fetchData
 	});
