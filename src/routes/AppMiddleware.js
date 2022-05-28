@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { withRouter } from '../helper';
-import Layout from '../../components/layout/Layout';
+import Layout from '../components/layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { useModal } from '../../hooks/UseModal';
-import { userSelectors } from '../../storage/user/Selector';
+import { useModal } from '../hooks/UseModal';
+import { userSelectors } from '../storage/user/Selector';
 import EmailVerify from 'src/components/user/EmailVerify';
-import { updateUserStore } from '../../storage/Actions';
+import { updateUserStore } from '../storage/Actions';
 
 const MiddleWareComponent = ({ children: AppComponent, path }) => {
 	const requiresVerification = useSelector(userSelectors.requiresVerification);
@@ -30,4 +29,4 @@ const MiddleWareComponent = ({ children: AppComponent, path }) => {
 	</Layout>);
 };
 
-export default (withRouter(MiddleWareComponent));
+export default MiddleWareComponent;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppRoutes } from './routes';
-import AppMiddleware from './routes/middleware/AppMiddleware';
+import { AppRoutes } from './routes/PetCareRoutes';
+import AppMiddleware from './routes/AppMiddleware';
 
 function App() {
 	const generateMiddleWareComponent = (route, index) => {

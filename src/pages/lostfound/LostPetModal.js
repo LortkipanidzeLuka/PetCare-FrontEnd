@@ -8,8 +8,8 @@ import TagList from 'src/components/styled/TagList';
 const LostPetModal = ({open, closeModal}) => {
 
     const data = {
-        title: "Dog was lostfound",
-        description: "This staggering number is why we created Petco Love Lost, which simplifies and shortens the lostfound pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.",
+        title: "Dog was api",
+        description: "This staggering number is why we created Petco Love Lost, which simplifies and shortens the api pet search with just one photo of your pet. We are here for you should the unthinkable happen to a pet you love or find.",
         hashTags: ["dog", "yellow", "5 kilos", "labrador"],
         params: {
             color: "yellow",

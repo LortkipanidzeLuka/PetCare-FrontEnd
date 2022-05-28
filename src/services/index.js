@@ -1,5 +1,5 @@
-import User from './user/UserApi';
-import Advertisement from './lostfound/LostFound';
+import User from './api/UserApi';
+import Advertisement from './api/LostFound';
 
 const Api = {
 	User: User,

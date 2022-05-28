@@ -1,5 +1,5 @@
-import Text from '../text/Text';
-import { TextType } from '../text/TextType';
+import Text from '../../text/Text';
+import { TextType } from '../../text/TextType';
 import { Link } from 'react-router-dom';
 
 const SubHeader = () => {
@@ -12,7 +12,7 @@ const SubHeader = () => {
 		<div className='subheader'>
 			<ol className='subheader-list content-width'>
 				<li>
-					<Link to={'/lostfound'} style={ style }>
+					<Link to={'/api'} style={ style }>
 						<Text type={TextType.HEADER_TAB} text={'Lost And Found'} />
 					</Link>
 				</li>

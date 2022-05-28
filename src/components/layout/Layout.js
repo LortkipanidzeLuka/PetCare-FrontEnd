@@ -1,6 +1,6 @@
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import SubHeader from "../header/SubHeader";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
+import SubHeader from "./header/SubHeader";
 
 
 const Layout = (props) => {

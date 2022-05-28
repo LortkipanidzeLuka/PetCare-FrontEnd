@@ -1,5 +1,5 @@
 import GenericDataGrid from '../../components/item-grid/GenericDataGrid';
-import LostPetModal from '../../components/item-modal/LostPetModal';
+import LostPetModal from './LostPetModal';
 import AddLostPet from './AddLostPet';
 import { useModal } from '../../hooks/UseModal';
 import { Button } from 'reactstrap';
