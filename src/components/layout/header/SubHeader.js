@@ -1,5 +1,5 @@
-import Text from '../../text/Text';
-import { TextType } from '../../text/TextType';
+import Text from '../../styled/text/Text';
+import { TextType } from '../../styled/text/TextType';
 import { Link } from 'react-router-dom';
 
 const SubHeader = () => {

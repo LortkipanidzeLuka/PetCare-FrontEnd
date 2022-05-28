@@ -1,5 +1,5 @@
-import Text from 'src/components/text/Text';
-import { TextType } from 'src/components/text/TextType';
+import Text from 'src/components/styled/text/Text';
+import { TextType } from 'src/components/styled/text/TextType';
 
 const Tag = (params) => {
     return (

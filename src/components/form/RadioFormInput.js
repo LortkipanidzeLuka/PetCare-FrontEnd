@@ -1,6 +1,6 @@
 import { Col, Row } from 'reactstrap';
-import Text from '../text/Text';
-import { TextType } from '../text/TextType';
+import Text from '../styled/text/Text';
+import { TextType } from '../styled/text/TextType';
 
 export const RadioFormInput = ({ register, errors, options, name, heading, xl, lg, sm, xs }) => {
 	return (<Col xl={xl} lg={lg} sm={sm} xs={xs}>

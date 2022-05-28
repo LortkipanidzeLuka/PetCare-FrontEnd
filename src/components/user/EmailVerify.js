@@ -4,9 +4,9 @@ import { userSelectors } from '../../storage/user/Selector';
 import { useCallback, useEffect, useState } from 'react';
 import Api from 'src/services/index';
 import useToast, { ToastType } from '../../hooks/UseToast';
-import Text from '../text/Text';
+import Text from '../styled/text/Text';
 import { useForm } from 'react-hook-form';
-import { TextType } from '../text/TextType';
+import { TextType } from '../styled/text/TextType';
 import { refreshToken } from '../../services/axios';
 import { updateUserStore } from '../../storage/Actions';
 

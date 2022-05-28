@@ -1,7 +1,7 @@
-import Block from '../styled/Block';
-import Text from '../text/Text';
-import { TextType } from '../text/TextType';
-import TagList from '../styled/TagList';
+import Block from '../styled/block/Block';
+import Text from '../styled/text/Text';
+import { TextType } from '../styled/text/TextType';
+import TagList from '../styled/tag/TagList';
 
 const PetCardGeneric = ({ createDate, city, title, description,primaryImage, tags, openModal }) => {
 	return (

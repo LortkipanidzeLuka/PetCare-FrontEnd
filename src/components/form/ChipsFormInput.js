@@ -1,6 +1,6 @@
 import { Col, Row } from 'reactstrap';
-import Text from '../text/Text';
-import { TextType } from '../text/TextType';
+import Text from '../styled/text/Text';
+import { TextType } from '../styled/text/TextType';
 
 export const ChipsFormInput = ({ chips, errors, name, heading, xl, lg, sm, xs }) => {
 

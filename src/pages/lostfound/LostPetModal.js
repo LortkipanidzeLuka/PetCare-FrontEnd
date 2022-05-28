@@ -1,8 +1,8 @@
 import { Col, Modal, ModalBody, ModalHeader, Row } from 'reactstrap';
 import TestImage from 'src/assets/images/dog.jpg';
-import Text from 'src/components/text/Text';
-import { TextType } from 'src/components/text/TextType';
-import TagList from 'src/components/styled/TagList';
+import Text from 'src/components/styled/text/Text';
+import { TextType } from 'src/components/styled/text/TextType';
+import TagList from 'src/components/styled/tag/TagList';
 
 
 const LostPetModal = ({open, closeModal}) => {
