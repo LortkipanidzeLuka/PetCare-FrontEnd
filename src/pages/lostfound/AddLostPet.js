@@ -29,9 +29,8 @@ const AddLostPet = ({ open, closeModal }) => {
 
 	const FormConfig = [
 		// city-header
-		{
-			double: true,
-			first: {
+		[
+			{
 				...DefaultFormConfig,
 				name: 'city',
 				heading: 'City',
@@ -40,7 +39,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: City
 			},
-			second: {
+			{
 				...DefaultFormConfig,
 				name: 'header',
 				heading: 'Header',
@@ -48,11 +47,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				requiredMessage: 'Header is required',
 				component: TextFormInput
 			}
-		},
+		],
 		// latitude-longitude
-		{
-			double: true,
-			first: {
+		[
+			{
 				...DefaultFormConfig,
 				name: 'latitude',
 				heading: 'Latitude',
@@ -60,7 +58,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				requiredMessage: 'Latitude is required',
 				component: NumberFormInput
 			},
-			second: {
+			{
 				...DefaultFormConfig,
 				name: 'longitude',
 				heading: 'Longitude',
@@ -68,11 +66,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				requiredMessage: 'Longitude is required',
 				component: NumberFormInput
 			}
-		},
+		],
 		// petType-petColor
-		{
-			double: true,
-			first: {
+		[
+			{
 				...DefaultFormConfig,
 				name: 'petType',
 				heading: 'Pet Type',
@@ -81,7 +78,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: PetTypes
 			},
-			second: {
+			{
 				...DefaultFormConfig,
 				name: 'color',
 				heading: 'Pet Color',
@@ -90,11 +87,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: PetColor
 			}
-		},
+		],
 		// ageFrom-ageUntil
-		{
-			double: true,
-			first: {
+		[
+			{
 				...DefaultFormConfig,
 				name: 'ageFrom',
 				heading: 'Age from',
@@ -102,7 +98,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				requiredMessage: 'Age from is required',
 				component: NumberFormInput
 			},
-			second: {
+			{
 				...DefaultFormConfig,
 				name: 'ageUntil',
 				heading: 'Age until',
@@ -110,11 +106,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				requiredMessage: 'Age until is required',
 				component: NumberFormInput
 			}
-		},
+		],
 		// addType-petSex
-		{
-			double: true,
-			first: {
+		[
+			{
 				...DefaultFormConfig,
 				name: 'type',
 				heading: 'Type',
@@ -123,7 +118,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: PetAdType
 			},
-			second: {
+			{
 				...DefaultFormConfig,
 				name: 'sex',
 				heading: 'Pet Sex',
@@ -132,10 +127,9 @@ const AddLostPet = ({ open, closeModal }) => {
 				component: SelectFormInput,
 				options: PetSex
 			}
-		},
-		{
-			double: false,
-			first: {
+		],
+		[
+			{
 				lg: '12',
 				xl: '12',
 				sm: '12',
@@ -148,12 +142,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				register: createAdv,
 				requiredMessage: 'Breed information is required',
 				component: TextFormInput
-			},
-			second: {}
-		},
-		{
-			double: false,
-			first: {
+			}
+		],
+		[
+			{
 				lg: '12',
 				xl: '12',
 				sm: '12',
@@ -165,12 +157,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				type: 'select',
 				component: ChipsFormInput,
 				setChips: setTags
-			},
-			second: {}
-		},
-		{
-			double: false,
-			first: {
+			}
+		],
+		[
+			{
 				lg: '12',
 				xl: '12',
 				sm: '12',
@@ -183,12 +173,10 @@ const AddLostPet = ({ open, closeModal }) => {
 				register: createAdv,
 				requiredMessage: 'Description is required',
 				component: TextAreaFormInput
-			},
-			second: {}
-		},
-		{
-			double: false,
-			first: {
+			}
+		],
+		[
+			{
 				lg: '12',
 				xl: '12',
 				sm: '12',
@@ -200,9 +188,8 @@ const AddLostPet = ({ open, closeModal }) => {
 				register: createAdv,
 				requiredMessage: 'Pictures are required',
 				component: FileFormInput
-			},
-			second: {}
-		}
+			}
+		]
 	];
 
 	const onSubmit = async data => {

@@ -30,29 +30,25 @@ const AuthModal = ({ open, closeModal }) => {
 		register: auth
 	};
 	const FormConfig = [
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'username',
-				heading: 'Username',
-				placeholder: 'Please enter your e-mail.',
-				requiredMessage: 'E-mail is required.',
-				component: TextFormInput
-			}, second: {}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'password',
-				heading: 'Password',
-				placeholder: 'Please enter password',
-				requiredMessage: 'Password required.',
-				component: TextFormInput,
-				type:TextInputType.PASSWORD
-			}
-		},
+		[{
+			...DefaultFormConfig,
+			name: 'username',
+			heading: 'Username',
+			placeholder: 'Please enter your e-mail.',
+			requiredMessage: 'E-mail is required.',
+			component: TextFormInput
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'password',
+			heading: 'Password',
+			placeholder: 'Please enter password',
+			requiredMessage: 'Password required.',
+			component: TextFormInput,
+			type: TextInputType.PASSWORD
+		}
+		]
 	];
 
 	return (
@@ -63,7 +59,7 @@ const AuthModal = ({ open, closeModal }) => {
 			<ModalBody>
 				<div>
 					<form onSubmit={handleSubmit(onSubmit)}>
-						<FormInput FormConfig={FormConfig} buttonName={'Log In'} fullButton/>
+						<FormInput FormConfig={FormConfig} buttonName={'Log In'} fullButton />
 					</form>
 				</div>
 			</ModalBody>

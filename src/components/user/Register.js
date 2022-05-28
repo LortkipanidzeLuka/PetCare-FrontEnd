@@ -20,78 +20,66 @@ const RegisterModal = ({ open, closeModal }) => {
 		register: register
 	};
 	const FormConfig = [
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'firstname',
-				heading: 'First name',
-				placeholder: 'Please enter your first name.',
-				requiredMessage: 'First name is required.',
-				component: TextFormInput
-			}, second: {}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'lastname',
-				heading: 'Last Name',
-				placeholder: 'Please enter your last name.',
-				requiredMessage: 'Last name is required.',
-				component: TextFormInput
-			}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'username',
-				heading: 'E-Mail',
-				placeholder: 'Please enter your e-mail.',
-				requiredMessage: 'E-mail is required.',
-				regex: /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/,
-				regexMessage: 'Enter valid email',
-				component: TextFormInput
-			}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'phoneNumber',
-				heading: 'Mobile phone',
-				placeholder: 'Please enter mobile number',
-				requiredMessage: 'Mobile number required.',
-				regex: /^5[0-9]{8}$/,
-				regexMessage: 'Enter valid phone number',
-				component: TextFormInput
-			}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'sex',
-				heading: 'Sex',
-				placeholder: 'Please enter sex',
-				requiredMessage: 'Sex number required.',
-				component: RadioFormInput,
-				options:PetSex
-			}
-		},
-		{
-			double: false,
-			first: {
-				...DefaultFormConfig,
-				name: 'password',
-				heading: 'Password',
-				placeholder: 'Please enter password',
-				requiredMessage: 'Password required.',
-				component: TextFormInput,
-				type:TextInputType.PASSWORD
-			}
-		},
+		[{
+			...DefaultFormConfig,
+			name: 'firstname',
+			heading: 'First name',
+			placeholder: 'Please enter your first name.',
+			requiredMessage: 'First name is required.',
+			component: TextFormInput
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'lastname',
+			heading: 'Last Name',
+			placeholder: 'Please enter your last name.',
+			requiredMessage: 'Last name is required.',
+			component: TextFormInput
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'username',
+			heading: 'E-Mail',
+			placeholder: 'Please enter your e-mail.',
+			requiredMessage: 'E-mail is required.',
+			regex: /^[a-zA-Z0-9_+&*-]+(?:\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$/,
+			regexMessage: 'Enter valid email',
+			component: TextFormInput
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'phoneNumber',
+			heading: 'Mobile phone',
+			placeholder: 'Please enter mobile number',
+			requiredMessage: 'Mobile number required.',
+			regex: /^5[0-9]{8}$/,
+			regexMessage: 'Enter valid phone number',
+			component: TextFormInput
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'sex',
+			heading: 'Sex',
+			placeholder: 'Please enter sex',
+			requiredMessage: 'Sex number required.',
+			component: RadioFormInput,
+			options: PetSex
+		}
+		],
+		[{
+			...DefaultFormConfig,
+			name: 'password',
+			heading: 'Password',
+			placeholder: 'Please enter password',
+			requiredMessage: 'Password required.',
+			component: TextFormInput,
+			type: TextInputType.PASSWORD
+		}
+		]
 	];
 
 	const onSubmit = async data => {
@@ -112,7 +100,7 @@ const RegisterModal = ({ open, closeModal }) => {
 			<ModalBody>
 				<div>
 					<form onSubmit={handleSubmit(onSubmit)}>
-						<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton/>
+						<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton />
 					</form>
 				</div>
 			</ModalBody>
