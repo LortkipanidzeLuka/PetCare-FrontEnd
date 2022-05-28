@@ -2,9 +2,10 @@ import { Col, Row } from 'reactstrap';
 import { useModal } from '../../hooks/UseModal';
 import GenericDataPagination from './GenericDataPagination';
 import useGrid from '../../hooks/UseGrid';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import GenericDataSearch from './GenericDataSearch';
+import ApiLoader from '../styled/loader/ApiLoader';
 
 const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
@@ -19,15 +20,13 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 	}, [error, setMessage]);
 
 	return (<div>
-		{loading ? (
-			<div>
-				loading TODO
-			</div>) : (
-			<Row>
-				<Col xl={'3'}>
-					<GenericDataSearch searchConfig={searchConfig}/>
-				</Col>
-				<Col xl={'9'}>
+
+		<Row>
+			<Col xl={'3'}>
+				<GenericDataSearch searchConfig={searchConfig} />
+			</Col>
+			<Col xl={'9'} className={'d-flex justify-content-center flex-column'}>
+				<ApiLoader loading={loading}>
 					<Row>
 						{data.map((value, index) => (<Col className='pet-card-col' xl='4' lg='6' sm='6' xs='12' key={index}>
 							<Card
@@ -42,11 +41,12 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 						goToPreviousPage={goToPreviousPage}
 						changePage={changePage}
 					/>
-				</Col>
+				</ApiLoader>
+			</Col>
 
-				<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData}
-										 fetchSingleImages={fetchSingleImages} />
-			</Row>)}
+			<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData}
+									 fetchSingleImages={fetchSingleImages} />
+		</Row>
 	</div>);
 };
 
