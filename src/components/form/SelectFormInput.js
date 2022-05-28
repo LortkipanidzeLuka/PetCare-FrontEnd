@@ -20,6 +20,7 @@ export const SelectFormInput = ({ setValue, options, register, errors, placehold
 					className={'no-padding'}
 					placeholder={placeholder}
 					options={options}
+					{...register(name, { required: requiredMessage })}
 					onChange={SelectOnChange}
 					isMulti={false}
 					value={value}
