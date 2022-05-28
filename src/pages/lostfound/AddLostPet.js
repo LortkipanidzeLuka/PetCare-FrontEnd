@@ -203,7 +203,7 @@ const AddLostPet = ({ open, closeModal }) => {
 	};
 
 	return (
-		<Modal isOpen={open} toggle={closeModal} className={'small-modal'}>
+		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
 			<ModalHeader>
 				Create Lost Pet Announcement
 			</ModalHeader>

@@ -10,10 +10,6 @@ import PetCarousel from '../../components/image-carousel/PetCarousel';
 
 
 const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {
-	// latitude: 4321
-	// longitude: 432
-	// type: "LOST"
-
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const [data, setData] = useState({
 		description: '',
@@ -54,7 +50,7 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 			fetchData();
 			fetchImages();
 		}
-	}, [open, closeModal, setError, fetchSingle, params]);
+	}, [open, closeModal, setError, fetchSingle, params, fetchSingleImages]);
 
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
@@ -90,12 +86,8 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 								<TagList data={data.tags} randomizeColor={false} />
 							</Col>
 						</Row>
-
 					</Col>
-
-
 				</Row>
-
 			</ModalBody>
 		</Modal>
 	);
