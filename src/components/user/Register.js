@@ -100,11 +100,7 @@ const RegisterModal = ({ open, closeModal }) => {
 			setSuccessMessage('register-success');
 			closeModal();
 		} catch (error) {
-			if (error && error.errorCode) {
-				setError(error.errorCode);
-			} else {
-				setError('universal');
-			}
+			setError(error);
 		}
 	};
 

@@ -23,11 +23,7 @@ const EmailVerify = ({ isOpen }) => {
 		try {
 			await Api.User.sendVerification();
 		} catch (error) {
-			if (error && error.errorCode) {
-				setError(error.errorCode);
-			} else {
-				setError('universal');
-			}
+			setError(error);
 		}
 		setLoading(false);
 	}, [setError]);
@@ -38,11 +34,7 @@ const EmailVerify = ({ isOpen }) => {
 			await refreshToken();
 			updateUserStore({ dispatch });
 		} catch (error) {
-			if (error && error.errorCode) {
-				setError(error.errorCode);
-			} else {
-				setError('universal');
-			}
+			setError(error);
 		}
 	};
 

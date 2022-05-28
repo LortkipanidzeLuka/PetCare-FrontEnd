@@ -18,11 +18,7 @@ const AuthModal = ({ open, closeModal }) => {
 			await loginUser({ data, dispatch });
 			closeModal();
 		} catch (error) {
-			if (error && error.errorCode) {
-				setError(error.errorCode);
-			} else {
-				setError('universal');
-			}
+			setError(error);
 		}
 	};
 	const DefaultFormConfig = {

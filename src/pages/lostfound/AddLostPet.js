@@ -198,11 +198,7 @@ const AddLostPet = ({ open, closeModal }) => {
 			setSuccessMessage('item-added');
 			closeModal();
 		} catch (error) {
-			if (error && error.errorCode) {
-				setError(error.errorCode);
-			} else {
-				setError('universal');
-			}
+			setError(error)
 		}
 	};
 

@@ -39,14 +39,14 @@ export const setAuthHeader = async (response) => {
 
 export async function refreshToken() {
 	const refreshTokenStr = storage('refreshToken').get();
-	try{
+	try {
 		const res = await getAuthToken(refreshTokenStr);
 		if ([200, 201].includes(res.status)) {
 			await setAuthHeader(res.data);
 		}
-	}catch (error){
+	} catch (error) {
 		deleteAuthHeader();
-		return Promise.reject(error?.response?.data);
+		return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 	}
 }
 
@@ -78,13 +78,13 @@ instance.interceptors.response.use(
 					}
 				} catch (err) {
 					deleteAuthHeader();
-					return Promise.reject(err?.response?.data);
+					return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 				}
 			} else {
-				return Promise.reject(error?.response?.data);
+				return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 			}
 		}
-		return Promise.reject(error?.response?.data);
+		return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 	}
 );
 export const { get, post, put, delete: del } = instance;
