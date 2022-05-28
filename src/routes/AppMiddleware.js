@@ -8,7 +8,7 @@ import { updateUserStore } from '../storage/Actions';
 
 const MiddleWareComponent = ({ children: AppComponent, path }) => {
 	const requiresVerification = useSelector(userSelectors.requiresVerification);
-	const [modalOpen, setModalOpen] = useModal(false);
+	const [,modalOpen, setModalOpen] = useModal(false);
 	const dispatch = useDispatch();
 
 	updateUserStore({ dispatch });

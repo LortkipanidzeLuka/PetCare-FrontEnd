@@ -11,6 +11,10 @@
   border-radius: $app-border-radius;
 }
 
+.colored-block{
+  background: $app-tag-default-color;
+}
+
 .tag {
   background-color: $app-tag-default-color;
   border: $app-border;

@@ -10,8 +10,8 @@ import AuthModal from '../../user/Login';
 
 const Header = () => {
 
-	const [registerOpen, , registerToggle] = useModal()
-	const [authOpen, , authToggle] = useModal()
+	const [,registerOpen, , registerToggle] = useModal()
+	const [,authOpen, , authToggle] = useModal()
 
 	let isLoggedIn = useSelector(userSelectors.isLoggedIn);
 	let userName = useSelector(userSelectors.userInitials);

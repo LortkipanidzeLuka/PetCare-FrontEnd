@@ -1,18 +1,17 @@
-import GenericDataGrid from '../../components/item-grid/GenericDataGrid';
-import LostPetModal from './LostPetModal';
 import AddLostPet from './AddLostPet';
 import { useModal } from '../../hooks/UseModal';
 import { Button } from 'reactstrap';
-import PetCardGeneric from '../../components/item-card/PetCardGeneric';
+import { PAGES } from '../../utils/PageConfig';
 
 const LostPet = () => {
-	const [modalOpen, ,toggleModal] = useModal();
+	const [,modalOpen, , toggleModal] = useModal();
+	const { Grid, pageConfig } = PAGES.LOSTFOUND;
 
 	return (
 		<div>
 			<Button onClick={toggleModal}>Add Pet</Button>
-			<GenericDataGrid DetailModal={LostPetModal} GenericCard={PetCardGeneric}/>
-			<AddLostPet open={modalOpen} closeModal={toggleModal}/>
+			<Grid {...pageConfig} />
+			<AddLostPet open={modalOpen} closeModal={toggleModal} />
 		</div>
 
 	);

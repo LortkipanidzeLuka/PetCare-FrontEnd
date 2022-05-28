@@ -13,18 +13,17 @@ export const City = [
 export const PetColor = [
 	{ label: 'WHITE', value: 'WHITE' },
 	{ label: 'BLACK', value: 'BLACK' }
-]
+];
 
 
 export const PetAdType = [
 	{ label: 'LOST', value: 'LOST' },
 	{ label: 'FOUND', value: 'FOUND' }
-]
+];
 
 export const PetSex = [
 	{ label: 'MALE', value: 'MALE' },
 	{ label: 'FEMALE', value: 'FEMALE' }
-]
+];
 
-
-
+export const ErrorUniversal = 'universal';

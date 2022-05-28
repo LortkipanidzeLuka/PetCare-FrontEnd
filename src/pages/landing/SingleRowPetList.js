@@ -1,4 +1,4 @@
-import PetCardGeneric from '../../components/item-card/PetCardGeneric';
+import GenericCardSquare from '../../components/item-card/GenericCardSquare';
 import { Col, Row } from 'reactstrap';
 import Dog from '../../assets/images/dog.jpg';
 
@@ -30,7 +30,7 @@ const SingleRowPetList = () => {
 			<Row>
 				{data.map((value, index) => (
 					<Col className='pet-card-col' xl='3' lg='4' sm='6' xs='12' key={index}>
-						<PetCardGeneric
+						<GenericCardSquare
 							description={value.description}
 							hashTags={value.hashTags}
 							title={value.title}

@@ -8,7 +8,7 @@ const AppRoutes = [
 	{ path: '/', component: Adoption },
 	{ path: '/adoption', component: Adoption },
 	{ path: '/charity', component: Charity },
-	{ path: '/api', component: LostPet },
+	{ path: '/lost-found', component: LostPet },
 	{ path: '/pet-care', component: Advertisement }
 ];
 

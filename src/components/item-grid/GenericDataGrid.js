@@ -4,16 +4,14 @@ import GenericDataPagination from './GenericDataPagination';
 import useGrid from '../../hooks/UseGrid';
 import { useEffect, useState } from 'react';
 import useToast, { ToastType } from '../../hooks/UseToast';
-import Api from 'src/services/index';
 
-const GenericDataGrid = ({ DetailModal, GenericCard }) => {
-
-	const [petModalOpen, , toggleModal] = useModal();
+const GenericDataGrid = ({ DetailModal, Card, fetchData , fetchSingle}) => {
+	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10,
 		params: params,
-		fetchData: Api.Adv.fetchLostFounds
+		fetchData: fetchData
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
 
@@ -28,7 +26,7 @@ const GenericDataGrid = ({ DetailModal, GenericCard }) => {
 					<Row>
 						{data.map((value, index) => (
 							<Col className='pet-card-col' xl='3' lg='4' sm='6' xs='12' key={index}>
-								<GenericCard
+								<Card
 									openModal={toggleModal}
 									{...value} />
 							</Col>
@@ -41,7 +39,7 @@ const GenericDataGrid = ({ DetailModal, GenericCard }) => {
 						goToPreviousPage={goToPreviousPage}
 						changePage={changePage}
 					/>
-					<DetailModal open={petModalOpen} closeModal={toggleModal} />
+					<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData}/>
 				</div>
 			)}
 		</div>
