@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+.modal-body{
+  max-height: 800px;
+  overflow-y: scroll;
+}
+
 @media screen and (max-width: 575px) {
   .modal-picture {
     height: fit-content;
@@ -15,4 +20,8 @@
 
 .small-modal {
   min-width: 30%;
+}
+
+.big-modal {
+  min-width: 50%;
 }

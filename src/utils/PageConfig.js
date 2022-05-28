@@ -11,6 +11,7 @@ export const PAGES = {
 			Card: GenericCardSquare,
 			fetchData: Api.Adv.fetchLostFounds,
 			fetchSingle: Api.Adv.fetchSingleLostFound,
+			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
 			deleteSingle: Api.Adv.deleteSingleLostFound
 		}
 	},
@@ -21,6 +22,7 @@ export const PAGES = {
 			Card: GenericCardSquare,
 			fetchData: Api.Adv.fetchLostFounds,
 			fetchSingle: Api.Adv.fetchSingleLostFound,
+			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
 			deleteSingle: Api.Adv.deleteSingleLostFound
 		}
 	},
@@ -31,6 +33,7 @@ export const PAGES = {
 			Card: GenericCardSquare,
 			fetchData: Api.Adv.fetchLostFounds,
 			fetchSingle: Api.Adv.fetchSingleLostFound,
+			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
 			deleteSingle: Api.Adv.deleteSingleLostFound
 		}
 	},
@@ -41,6 +44,7 @@ export const PAGES = {
 			Card: GenericCardSquare,
 			fetchData: Api.Adv.fetchLostFounds,
 			fetchSingle: Api.Adv.fetchSingleLostFound,
+			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
 			deleteSingle: Api.Adv.deleteSingleLostFound
 		}
 	}

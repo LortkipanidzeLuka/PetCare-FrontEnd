@@ -5,7 +5,7 @@ import useGrid from '../../hooks/UseGrid';
 import { useEffect, useState } from 'react';
 import useToast, { ToastType } from '../../hooks/UseToast';
 
-const GenericDataGrid = ({ DetailModal, Card, fetchData , fetchSingle}) => {
+const GenericDataGrid = ({ DetailModal, Card, fetchData , fetchSingle, fetchSingleImages}) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
@@ -39,7 +39,7 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData , fetchSingle}) => {
 						goToPreviousPage={goToPreviousPage}
 						changePage={changePage}
 					/>
-					<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData}/>
+					<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData} fetchSingleImages={fetchSingleImages}/>
 				</div>
 			)}
 		</div>
