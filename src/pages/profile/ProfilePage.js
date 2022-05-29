@@ -1,27 +1,62 @@
-import { useEffect, useState } from 'react';
-import Api from '../../services';
-import Text from '../../components/styled/text/Text';
+import React from 'react';
+import TabNavigation from '../../components/navigation/TabNavigation';
+import NavContent from '../../components/navigation/NavContent';
+import Block from '../../components/styled/block/Block';
 
 const ProfilePage = () => {
-	const [userInfo, setUserInfo] = useState({});
 
-	useEffect(() => {
-		const fetchUser = async () => {
-			const { data } = await Api.Prof.info();
-			console.log(data);
-			setUserInfo(data)
-		};
-		fetchUser();
-	}, []);
-
+	const tabs = [
+		{
+			icon: ' mdi mdi-account-circle',
+			name: 'Profile'
+		},
+		{
+			icon: 'mdi mdi-receipt',
+			name: 'Advertisement'
+		},
+		{
+			icon: 'mdi mdi-account-edit',
+			name: 'Edit profile'
+		},
+		{
+			icon: 'mdi mdi-monitor-edit',
+			name: 'Change password'
+		}
+	];
 
 	return (
-		<div>
-			<Text text={userInfo.firstname}/>
-			<Text text={userInfo.lastname}/>
-			<Text text={userInfo.sex}/>
-			<Text text={userInfo.phoneNumber}/>
-		</div>
+
+		<TabNavigation tabs={tabs}>
+
+			<NavContent index={0}>
+				<Block className={'profile-tab'}>
+					dkajsnks
+				</Block>
+
+			</NavContent>
+
+			<NavContent index={1}>
+				<Block className={'profile-tab'}>
+					tato2
+				</Block>
+			</NavContent>
+
+
+			<NavContent index={2}>
+				<Block className={'profile-tab'}>
+					tato3
+				</Block>
+			</NavContent>
+
+
+			<NavContent index={3}>
+				<Block className={'profile-tab'}>
+					tato5
+				</Block>
+			</NavContent>
+
+		</TabNavigation>
+
 	);
 };
 
