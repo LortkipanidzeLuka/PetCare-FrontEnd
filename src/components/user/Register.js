@@ -84,7 +84,7 @@ const RegisterModal = ({ open, closeModal }) => {
 
 	const onSubmit = async data => {
 		try {
-			await Api.User.register(data);
+			await Api.Sec.register(data);
 			setSuccessMessage('register-success');
 			closeModal();
 		} catch (error) {

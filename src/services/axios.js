@@ -81,6 +81,7 @@ instance.interceptors.response.use(
 					return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 				}
 			} else {
+				deleteAuthHeader();
 				return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 			}
 		}

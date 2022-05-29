@@ -14,7 +14,7 @@ const AuthModal = ({ open, closeModal }) => {
 
 	const onSubmit = async params => {
 		try {
-			const { data } = await Api.User.login(params);
+			const { data } = await Api.Sec.login(params);
 			await loginUser({ data, dispatch });
 			closeModal();
 		} catch (error) {

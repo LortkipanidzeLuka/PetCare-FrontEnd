@@ -21,7 +21,7 @@ const EmailVerify = ({ isOpen }) => {
 	const sendVerification = useCallback(async ()=> {
 		setLoading(true);
 		try {
-			await Api.User.sendVerification();
+			await Api.Sec.sendVerification();
 		} catch (error) {
 			setError(error);
 		}
@@ -30,7 +30,7 @@ const EmailVerify = ({ isOpen }) => {
 
 	const onSubmit = async (data) => {
 		try {
-			await Api.User.submitVerification(data);
+			await Api.Sec.submitVerification(data);
 			await refreshToken();
 			updateUserStore({ dispatch });
 		} catch (error) {

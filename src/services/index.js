@@ -1,8 +1,10 @@
-import User from './api/UserApi';
-import Advertisement from './api/LostFoundApi';
+import SecurityApi from './api/SecurityApi';
+import LostFoundApi from './api/LostFoundApi';
+import ProfileApi from './api/ProfileApi';
 
 const Api = {
-	User: User,
-	Adv: Advertisement
+	Sec: SecurityApi,
+	Lost: LostFoundApi,
+	Prof: ProfileApi
 };
 export default Api;

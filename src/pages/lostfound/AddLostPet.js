@@ -202,7 +202,7 @@ const AddLostPet = ({ open, closeModal }) => {
 			images: images
 		};
 		try {
-			await Api.Adv.createLostFound(params);
+			await Api.Lost.createLostFound(params);
 			setSuccessMessage('item-added');
 			closeModal();
 		} catch (error) {

@@ -3,7 +3,7 @@ import { useModal } from '../../hooks/UseModal';
 import { Button } from 'reactstrap';
 import { PAGES } from '../../utils/PageConfig';
 
-const LostPet = () => {
+const LostPetPage = () => {
 	const [,modalOpen, , toggleModal] = useModal();
 	const { Grid, pageConfig } = PAGES.LOSTFOUND;
 
@@ -17,4 +17,4 @@ const LostPet = () => {
 	);
 };
 
-export default LostPet;
+export default LostPetPage;

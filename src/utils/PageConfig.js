@@ -15,10 +15,10 @@ export const PAGES = {
 		pageConfig: {
 			DetailModal: LostPetModal,
 			Card: GenericCardSquare,
-			fetchData: Api.Adv.fetchLostFounds,
-			fetchSingle: Api.Adv.fetchSingleLostFound,
-			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
-			deleteSingle: Api.Adv.deleteSingleLostFound,
+			fetchData: Api.Lost.fetchLostFounds,
+			fetchSingle: Api.Lost.fetchSingleLostFound,
+			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
+			deleteSingle: Api.Lost.deleteSingleLostFound,
 			searchConfig: [
 				[{
 					...DefaultFormConfig,
@@ -69,10 +69,10 @@ export const PAGES = {
 		pageConfig: {
 			DetailModal: LostPetModal,
 			Card: GenericCardSquare,
-			fetchData: Api.Adv.fetchLostFounds,
-			fetchSingle: Api.Adv.fetchSingleLostFound,
-			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
-			deleteSingle: Api.Adv.deleteSingleLostFound,
+			fetchData: Api.Lost.fetchLostFounds,
+			fetchSingle: Api.Lost.fetchSingleLostFound,
+			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
+			deleteSingle: Api.Lost.deleteSingleLostFound,
 			searchConfig: [
 				[{
 					...DefaultFormConfig,
@@ -124,10 +124,10 @@ export const PAGES = {
 		pageConfig: {
 			DetailModal: LostPetModal,
 			Card: GenericCardSquare,
-			fetchData: Api.Adv.fetchLostFounds,
-			fetchSingle: Api.Adv.fetchSingleLostFound,
-			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
-			deleteSingle: Api.Adv.deleteSingleLostFound,
+			fetchData: Api.Lost.fetchLostFounds,
+			fetchSingle: Api.Lost.fetchSingleLostFound,
+			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
+			deleteSingle: Api.Lost.deleteSingleLostFound,
 			searchConfig: [
 				[{
 					...DefaultFormConfig,
@@ -179,10 +179,10 @@ export const PAGES = {
 		pageConfig: {
 			DetailModal: LostPetModal,
 			Card: GenericCardSquare,
-			fetchData: Api.Adv.fetchLostFounds,
-			fetchSingle: Api.Adv.fetchSingleLostFound,
-			fetchSingleImages: Api.Adv.fetchSingleLostFoundImages,
-			deleteSingle: Api.Adv.deleteSingleLostFound,
+			fetchData: Api.Lost.fetchLostFounds,
+			fetchSingle: Api.Lost.fetchSingleLostFound,
+			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
+			deleteSingle: Api.Lost.deleteSingleLostFound,
 			searchConfig: [
 				[{
 					...DefaultFormConfig,
@@ -230,3 +230,5 @@ export const PAGES = {
 		}
 	}
 };
+
+// werilebis damateba
