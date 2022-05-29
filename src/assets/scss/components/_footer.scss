@@ -2,10 +2,10 @@
   padding: 20px 12px;
   position: absolute;
   right: 0;
-  color: #74788d;
+  color: $footer-color;
   left: 0;
-  height: 60px;
-  background-color: #f2f2f5;
+  height: $footer-height;
+  background-color: $footer-background-color;
 
   div {
     display: flex;

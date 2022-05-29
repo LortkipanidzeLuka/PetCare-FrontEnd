@@ -22,7 +22,6 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 		header: 'Announcement',
 		petInfo: {},
 		userInfo: {},
-		params: {},
 		tags: []
 	});
 	const [images, setImages] = useState([]);

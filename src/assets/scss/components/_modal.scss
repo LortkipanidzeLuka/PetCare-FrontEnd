@@ -4,7 +4,7 @@
 }
 
 .modal-body{
-  max-height: 700px;
+  max-height: $modal-max-height;
   overflow-y: scroll;
 }
 
@@ -19,9 +19,9 @@
 }
 
 .small-modal {
-  min-width: 30%;
+  min-width: $small-modal-width;
 }
 
 .big-modal {
-  min-width: 50%;
+  min-width: $medium-modal-width;
 }

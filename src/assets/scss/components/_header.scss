@@ -6,7 +6,7 @@
   left: 0;
   z-index: 1002;
   height: $header-height;
-  background-color: $header-color;
+  background-color: $header-background-color;
 
   > .header-content {
     justify-content: space-between;
@@ -38,18 +38,11 @@
   height: $header-height;
 }
 
-.profile-picture {
-  width: 40px;
-  background-color: hsla(0, 0%, 100%, .25);
-  padding: 4px;
-  height: 40px;
-}
-
 .subheader {
   position: fixed;
   margin-top: $header-height;
   width: 100%;
-  background-color: $subheader-color;
+  background-color: $subheader-background-color;
   z-index: 1000;
 }
 
@@ -63,13 +56,13 @@
 
   li {
 
-    margin-right: 50px;
+    margin-right: $very-big-distance;
     display: inline;
   }
 
   li:hover {
     cursor: pointer;
-    color: #d3dbf9;
+    color: $header-background-color;
   }
 }
 

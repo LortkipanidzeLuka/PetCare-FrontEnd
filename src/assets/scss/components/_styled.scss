@@ -32,7 +32,7 @@
   display: grid;
   gap: 0;
   overflow: hidden;
-  max-height: 120px;
+  max-height: $tag-list-height;
 
   .tag {
     margin-bottom: 5px;

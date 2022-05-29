@@ -1,50 +1,80 @@
-// TODO replace with vars
+// SMALL
 .mrl-small {
-  margin-left: 10px;
+  margin-left: $small-distance;
 }
 
 .mrr-small {
-  margin-right: 10px;
-}
-
-.mr-small-vert {
-  margin: 10px 0;
-}
-
-.mrl-medium {
-  margin-left: 20px;
-}
-
-.mrt-medium {
-  margin-top: 20px;
-}
-
-.mrb-medium {
-  margin-bottom: 20px;
+  margin-right: $small-distance;
 }
 
 .mrb-small {
-  margin-bottom: 10px;
+  margin-bottom: $small-distance;
 }
 
+.mrt-small {
+  margin-top: $small-distance;
+}
+
+// MEDIUM
+.mrl-medium {
+  margin-left: $medium-distance;
+}
+
+.mrr-medium {
+  margin-right: $medium-distance;
+}
+
+.mrt-medium {
+  margin-top: $medium-distance;
+}
+
+.mrb-medium {
+  margin-bottom: $medium-distance;
+}
+
+// BIG
 .mrt-big {
-  margin-top: 30px !important;
+  margin-top: $big-distance !important;
 }
 
 .mrl-big {
-  margin-left: 30px !important;
+  margin-left: $big-distance !important;
 }
 
-.p-small {
-  padding: 0 10px;
+.mrr-big {
+  margin-bottom: $big-distance !important;
+}
+
+.mrb-big {
+  margin-bottom: $big-distance !important;
+}
+
+// PADDING SMALL
+
+.pl-small {
+  padding-left: $small-distance;
+}
+
+.pr-small {
+  padding-right: $small-distance;
 }
 
 .p-all-small {
-  padding: 10px;
+  padding: $small-distance;
 }
 
+.p-all-medium {
+  padding: $medium-distance;
+}
+
+
+// NO MARGIN/PADDING
 .no-padding {
   padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
 }
 
 

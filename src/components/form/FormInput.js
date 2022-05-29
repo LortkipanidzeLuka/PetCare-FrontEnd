@@ -5,7 +5,7 @@ const FormInput = ({ FormConfig, buttonName, fullButton = false }) => {
 		<>
 			{FormConfig.map((value, index) => {
 				return (
-					<Row className={'d-flex p-small'} key={`input-row buttonName ${index}`}>
+					<Row className={'d-flex pl-small pr-small'} key={`input-row buttonName ${index}`}>
 						{value.map((cur, innerIndex) => {
 							const FormInputComponent = cur.component;
 							return (

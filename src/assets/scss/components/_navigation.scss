@@ -1,0 +1,20 @@
+.nav-link {
+  border: $navigation-passive-border !important;
+  color: $navigation-passive-color;
+}
+
+.nav-item {
+  .active {
+    background-color: $info-dark !important;
+  }
+}
+
+.tab-right {
+  border-top-right-radius: $very-big-distance !important;
+  border-bottom-right-radius: $very-big-distance !important;
+}
+
+.tab-left {
+  border-top-left-radius: $very-big-distance !important;
+  border-bottom-left-radius: $very-big-distance !important;
+}

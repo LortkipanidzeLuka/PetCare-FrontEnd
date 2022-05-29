@@ -1,7 +1,7 @@
 .pagination-rounded {
   .page-link {
-    border-radius: 30px !important;
-    margin: 0 10px;
+    border-radius: $big-distance !important;
+    margin: 0 $small-distance;
     width: $app-pagination-size;
     height: $app-pagination-size;
     padding: 0;

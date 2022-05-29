@@ -5,30 +5,56 @@ $app-min-height: 1000px;
 
 // components
 
-// header
+// header-footer
 $header-height: 60px;
 $subheader-height: 60px;
-$header-color: #d3dbf9;
-$subheader-color: #ffffff;
+$footer-height: 60px;
+
+$header-background-color: #d3dbf9;
+$subheader-background-color: #ffffff;
+$footer-background-color: #9f9f9f63;
+$footer-color: #00000061;
+
+// navigation
+$navigation-passive-color: #00000061;
+$navigation-passive-border:  1px solid #e9e9e9;
+
+// block
+$block-background: #ffffff;
+$block-image-size: 130px;
+
+// tags
+$tag-list-height: 120px;
+
+// distances
+$small-distance: 10px;
+$medium-distance: 20px;
+$big-distance: 30px;
+$very-big-distance: 50px;
 
 // action-colors
 $success: #34c38f;
 $danger: #f46a6a;
 $info: #50a5f1;
-$info-dark: #505d93;
+$info-dark: #0434ff8c;
 $info-faint: #989898;
 
 // form
 $text-area-height: 100px;
 
-// styled components
+// styled parameters
 $app-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
-$app-border: 1px solid #edf2f7;
+$app-border: 2px solid #edf2f7;
 $app-border-radius: 20px;
 $card-img-width: 200px;
 $app-tag-default-color: #edf2f7;
 $pet-card-padding: 25px;
 $pet-card-tag-height: 210px;
 
-// grid components
+// grid parameters
 $app-pagination-size: 36px;
+
+// modal parameters
+$modal-max-height: 700px;
+$small-modal-width: 30%;
+$medium-modal-width: 50%;

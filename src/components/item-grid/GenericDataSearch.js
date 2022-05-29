@@ -22,7 +22,7 @@ const GenericDataSearch = ({ searchConfig }) => {
 			<Col className={'pet-card-col'}>
 				<Block noShadow>
 					<div>
-						<form style={{ padding: '10px' }} onSubmit={handleSubmit(onSubmit)}>
+						<form className={'p-all-medium'} onSubmit={handleSubmit(onSubmit)}>
 							<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton />
 						</form>
 					</div>

@@ -1,53 +1,60 @@
-.pet-card-col{
+.pet-card-col {
   margin-top: $content-additional-padding;
 }
 
 .pet-card-content {
   cursor: pointer;
-  //max-width: $card-width;
-  background-color: #ffffff;
+  background-color: $block-background;
   height: 100%;
   background-repeat: repeat;
-  border-radius: 20px;
+  border-radius: $medium-distance;
   padding: $pet-card-padding;
   padding-bottom: 0 !important;
 
   .card-img-wrap {
     width: fit-content;
     margin: 0 auto;
-      > img {
+
+    > img {
       width: #{$card-img-width};
-      height: 130px;
+      height: $block-image-size;
       border-radius: $app-border-radius;
     }
   }
-  .pet-card-data{
-    .card-tags{
+
+  .pet-card-data {
+    margin-top: $medium-distance;
+
+    .card-tags {
       height: $pet-card-tag-height;
     }
   }
-  .pet-card-footer{
+
+  .pet-card-footer {
     display: flex;
     align-items: center;
-    padding:10px 0;
-    .pet-card-footer-left{
+    padding: $small-distance 0;
+
+    .pet-card-footer-left {
       display: flex;
       justify-content: flex-start;
       align-items: center;
     }
-    .pet-card-footer-right{
+
+    .pet-card-footer-right {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin-left: 30px;
-      div{
+      margin-left: $big-distance;
+
+      div {
       }
     }
   }
 }
 
-.card-text{
-  margin-bottom: 10px;
+.card-text {
+  margin-bottom: $small-distance;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
