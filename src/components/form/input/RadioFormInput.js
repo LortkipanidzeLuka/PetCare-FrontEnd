@@ -9,7 +9,7 @@ export const RadioFormInput = ({ register, errors, options, name, heading, xl, l
 				<div className={"d-flex justify-content-evenly"}>
 					{options.map((value, index) => (
 						<div className={'d-flex align-items-baseline'} key={index}>
-							<input value={value.value} {...register(name)} type={'radio'} name={name} defaultChecked={index === 0} />
+							<input value={value.value} {...register(name)} type={'radio'} name={name} />
 							<Text text={value.label} type={TextType.MEDIUM} classNames={['mrl-small']} />
 						</div>
 					))}

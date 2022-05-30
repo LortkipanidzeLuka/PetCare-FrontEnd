@@ -65,7 +65,7 @@ const EmailVerify = () => {
 			<ModalBody>
 				<ApiLoader loading={loading}>
 					<div className={'d-flex flex-column'}>
-						<div className={'d-flex justify-content-between'}>
+						<div className={'d-flex justify-content-between pl-small pr-small'}>
 							<Text text={`Code sent to email: `} type={TextType.MEDIUM} classNames={['faint-text']} />
 							<Text text={`${user.sub}`} type={TextType.MEDIUM} />
 						</div>

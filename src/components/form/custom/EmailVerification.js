@@ -2,17 +2,14 @@ import Text from '../../styled/text/Text';
 import { TextType } from '../../styled/text/TextType';
 import { Button, Col, Row } from 'reactstrap';
 import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
 
 const EmailVerification = ({ onSubmit, sendVerification }) => {
 	const { register: verification, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
-	useEffect(()=>{
-		console.log(errors)
-	},[errors])
+
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<Col>
-				<Row className={'mrb-medium'}>
+				<Row className={'mrb-medium pl-small pr-small'}>
 					<div className={`d-flex no-padding flex-column `}>
 						<Text text={'Code'} type={TextType.MEDIUM} classNames={['mrb-small']} />
 						<div className={'d-flex no-padding flex-row'}>
@@ -21,7 +18,7 @@ const EmailVerification = ({ onSubmit, sendVerification }) => {
 								placeholder={'Please enter code'}
 								type={'text'}
 								name={'code'}
-								onInvalid={()=>{
+								onInvalid={() => {
 									// nothing
 								}}
 								{...verification('code', {
@@ -30,7 +27,7 @@ const EmailVerification = ({ onSubmit, sendVerification }) => {
 										value: /\d{6}/,
 										message: 'Must be 6 digits'
 									}
-								 })}
+								})}
 							/>
 							{errors.code &&
 								<Text text={errors.code.message} type={TextType.SMALL} classNames={['error-text']} />}

@@ -4,19 +4,19 @@ import { Col, Row } from 'reactstrap';
 import ProfileEmailChange from '../components/ProfileEmailChange';
 import ProfileInfoChange from '../components/ProfileInfoChange';
 
-const ProfileInfoChangeTab = () => {
+const ProfileInfoChangeTab = ({ data }) => {
 
 	return (
 
 		<Row>
 			<Col>
 				<Block className={'full-tab'}>
-					<ProfileInfoChange />
+					<ProfileInfoChange data={data} />
 				</Block>
 			</Col>
 			<Col>
 				<Block className={'full-tab'}>
-					<ProfileEmailChange />
+					<ProfileEmailChange data={data}/>
 				</Block>
 			</Col>
 		</Row>

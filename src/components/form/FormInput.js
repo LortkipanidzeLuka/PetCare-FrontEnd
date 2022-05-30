@@ -1,5 +1,6 @@
 import { Button, Col, Row } from 'reactstrap';
-import React from 'react'
+import React from 'react';
+
 const FormInput = ({ FormConfig, buttonName, fullButton = false }) => {
 	return (
 		<>
@@ -9,7 +10,7 @@ const FormInput = ({ FormConfig, buttonName, fullButton = false }) => {
 						{value.map((cur, innerIndex) => {
 							const FormInputComponent = cur.component;
 							return (
-								<React.Fragment  key={(index+9) * 10 + innerIndex}>
+								<React.Fragment key={(index + 9) * 10 + innerIndex}>
 									<FormInputComponent {...cur} />
 									{innerIndex !== value.length - 1 ? <Col xl={'2'} lg={'2'} sm={'2'} xs={'2'} /> : null}
 								</React.Fragment>

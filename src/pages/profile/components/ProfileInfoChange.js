@@ -3,10 +3,21 @@ import { TextFormInput } from '../../../components/form/input/TextFormInput';
 import { RadioFormInput } from '../../../components/form/input/RadioFormInput';
 import { PetSex } from '../../../utils/Constants';
 import FormInput from '../../../components/form/FormInput';
-import React from 'react';
+import React, { useEffect } from 'react';
+import useToast, { ToastType } from '../../../hooks/UseToast';
+import Api from '../../../services';
+import { refreshToken } from '../../../services/axios';
+import { useDispatch } from 'react-redux';
+import { updateUserStore } from '../../../storage/Actions';
 
-const ProfileInfoChange = () => {
-	const { register: infoChange, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
+const ProfileInfoChange = ({ data }) => {
+	const { register: infoChange, handleSubmit, formState: { errors }, reset } = useForm({
+		shouldUseNativeValidation: true
+	});
+	const { setMessage: setError } = useToast(ToastType.ERROR);
+	const { setMessage: setSuccess } = useToast(ToastType.SUCCESS);
+
+	const dispatch = useDispatch();
 
 	const InfoDefaultFormConfig = {
 		lg: '12',
@@ -16,7 +27,6 @@ const ProfileInfoChange = () => {
 		errors: errors,
 		register: infoChange
 	};
-
 	const InfoFormConfig = [
 		[{
 			...InfoDefaultFormConfig,
@@ -58,9 +68,22 @@ const ProfileInfoChange = () => {
 		}
 		]
 	];
+
+	useEffect(() => {
+		reset(data);
+	}, [data, reset]);
+
 	const onSubmit = async (data) => {
-		console.log(data);
+		try {
+			await Api.Prof.updateInfo(data);
+			await refreshToken();
+			updateUserStore({ dispatch });
+			setSuccess('user-updated');
+		} catch (error) {
+			setError(error);
+		}
 	};
+
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>

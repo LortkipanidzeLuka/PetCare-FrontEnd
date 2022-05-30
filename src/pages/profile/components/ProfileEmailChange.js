@@ -2,9 +2,22 @@ import { useForm } from 'react-hook-form';
 import { TextFormInput } from '../../../components/form/input/TextFormInput';
 import EmailVerification from '../../../components/form/custom/EmailVerification';
 import React from 'react';
+import { Row } from 'reactstrap';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { userSelectors } from '../../../storage/user/Selector';
 
 const ProfileEmailChange = () => {
-	const { register: infoChange, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
+	const {
+		register: infoChange,
+		handleSubmit,
+		formState: { errors },
+		reset
+	} = useForm({ shouldUseNativeValidation: true });
+	const { sub } = useSelector(userSelectors.userInfo);
+	useEffect(() => {
+		reset({ 'email': sub });
+	}, [sub, reset]);
 
 	const EmailDefaultFormConfig = {
 		lg: '12',
@@ -35,7 +48,9 @@ const ProfileEmailChange = () => {
 	return (
 		<>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<TextFormInput {...EmailFormConfig} />
+				<Row className={'pl-small pr-small'}>
+					<TextFormInput {...EmailFormConfig} />
+				</Row>
 			</form>
 			<EmailVerification
 				sendVerification={() => {
