@@ -1,5 +1,4 @@
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
-import { useForm } from 'react-hook-form';
 import Api from 'src/services/index';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import FormInput from '../form/FormInput';
@@ -8,16 +7,13 @@ import { TextFormInput, TextInputType } from '../form/input/TextFormInput';
 import { RadioFormInput } from '../form/input/RadioFormInput';
 
 const RegisterModal = ({ open, closeModal }) => {
-	const { register, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const DefaultFormConfig = {
 		lg: '12',
 		xl: '12',
 		sm: '12',
-		xs: '12',
-		errors: errors,
-		register: register
+		xs: '12'
 	};
 	const FormConfig = [
 		[{
@@ -99,9 +95,7 @@ const RegisterModal = ({ open, closeModal }) => {
 			</ModalHeader>
 			<ModalBody>
 				<div>
-					<form onSubmit={handleSubmit(onSubmit)}>
-						<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton />
-					</form>
+					<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton onSubmit={onSubmit} />
 				</div>
 			</ModalBody>
 		</Modal>

@@ -1,5 +1,4 @@
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
-import { useForm } from 'react-hook-form';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import { City, PetAdType, PetColor, PetSex, PetTypes } from '../../utils/Constants';
 import { TextFormInput } from '../../components/form/input/TextFormInput';
@@ -14,17 +13,13 @@ import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useState } from 'react';
 
 const AddLostPet = ({ open, closeModal }) => {
-	const { register: createAdv, handleSubmit, formState: { errors }, setValue } = useForm({ shouldUseNativeValidation: true });
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const DefaultFormConfig = {
 		lg: '5',
 		xl: '5',
 		sm: '5',
-		xs: '12',
-		errors: errors,
-		register: createAdv,
-		setValue: setValue
+		xs: '12'
 	};
 	const [tags, setTags] = useState([]);
 
@@ -138,9 +133,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				name: 'breed',
 				heading: 'Pet Breed',
 				placeholder: 'Please enter breed information',
-				errors: errors,
 				type: 'text',
-				register: createAdv,
 				requiredMessage: 'Breed information is required',
 				component: TextFormInput
 			}
@@ -154,7 +147,6 @@ const AddLostPet = ({ open, closeModal }) => {
 				name: 'tags',
 				heading: 'Tags',
 				placeholder: 'Please enter tag and press enter',
-				errors: errors,
 				type: 'select',
 				component: ChipsFormInput,
 				setChips: setTags
@@ -169,9 +161,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				name: 'description',
 				heading: 'Description',
 				placeholder: 'Please enter description',
-				errors: errors,
 				type: 'textarea',
-				register: createAdv,
 				requiredMessage: 'Description is required',
 				component: TextAreaFormInput
 			}
@@ -185,8 +175,6 @@ const AddLostPet = ({ open, closeModal }) => {
 				name: 'picture',
 				heading: 'Pictures',
 				placeholder: 'Please upload picture',
-				errors: errors,
-				register: createAdv,
 				requiredMessage: 'Pictures are required',
 				component: FileFormInput
 			}
@@ -216,9 +204,7 @@ const AddLostPet = ({ open, closeModal }) => {
 				Create Lost Pet Announcement
 			</ModalHeader>
 			<ModalBody>
-				<form onSubmit={handleSubmit(onSubmit)}>
-					<FormInput FormConfig={FormConfig} buttonName={'Create Announcement'} fullButton />
-				</form>
+				<FormInput FormConfig={FormConfig} buttonName={'Create Announcement'} fullButton onSubmit={onSubmit} />
 			</ModalBody>
 		</Modal>
 

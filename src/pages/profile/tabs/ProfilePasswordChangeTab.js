@@ -1,20 +1,16 @@
 import Block from '../../../components/styled/block/Block';
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import { TextFormInput, TextInputType } from '../../../components/form/input/TextFormInput';
 import FormInput from '../../../components/form/FormInput';
 
-const ProfilePasswordChangeTab=()=>{
+const ProfilePasswordChangeTab = () => {
 
-	const { register: passwordChange, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
 
 	const DefaultFormConfig = {
 		lg: '12',
 		xl: '12',
 		sm: '12',
-		xs: '12',
-		errors: errors,
-		register: passwordChange
+		xs: '12'
 	};
 	const FormConfig = [
 		[{
@@ -46,22 +42,17 @@ const ProfilePasswordChangeTab=()=>{
 			component: TextFormInput,
 			type: TextInputType.PASSWORD
 		}
-		],
-
-
-
+		]
 	];
 	const onSubmit = async (data) => {
 		console.log(data);
 	};
 
-	return(
+	return (
 		<Block className={'full-tab'}>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<FormInput FormConfig={FormConfig} buttonName={'Change password'} fullButton />
-			</form>
+			<FormInput FormConfig={FormConfig} buttonName={'Change password'} fullButton onSubmit={onSubmit} />
 		</Block>
-	)
-}
+	);
+};
 
-export default ProfilePasswordChangeTab
+export default ProfilePasswordChangeTab;

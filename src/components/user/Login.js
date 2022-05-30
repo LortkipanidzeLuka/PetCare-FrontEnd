@@ -1,5 +1,4 @@
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
-import { useForm } from 'react-hook-form';
 import Api from 'src/services/index';
 import { useDispatch } from 'react-redux';
 import useToast, { ToastType } from '../../hooks/UseToast';
@@ -8,7 +7,6 @@ import { TextFormInput, TextInputType } from '../form/input/TextFormInput';
 import FormInput from '../form/FormInput';
 
 const AuthModal = ({ open, closeModal }) => {
-	const { register: auth, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const dispatch = useDispatch();
 
@@ -25,9 +23,7 @@ const AuthModal = ({ open, closeModal }) => {
 		lg: '12',
 		xl: '12',
 		sm: '12',
-		xs: '12',
-		errors: errors,
-		register: auth
+		xs: '12'
 	};
 	const FormConfig = [
 		[{
@@ -58,9 +54,7 @@ const AuthModal = ({ open, closeModal }) => {
 			</ModalHeader>
 			<ModalBody>
 				<div>
-					<form onSubmit={handleSubmit(onSubmit)}>
-						<FormInput FormConfig={FormConfig} buttonName={'Log In'} fullButton />
-					</form>
+					<FormInput FormConfig={FormConfig} buttonName={'Log In'} fullButton onSubmit={onSubmit}/>
 				</div>
 			</ModalBody>
 		</Modal>

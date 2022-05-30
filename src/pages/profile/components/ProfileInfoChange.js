@@ -1,9 +1,8 @@
-import { useForm } from 'react-hook-form';
 import { TextFormInput } from '../../../components/form/input/TextFormInput';
 import { RadioFormInput } from '../../../components/form/input/RadioFormInput';
 import { PetSex } from '../../../utils/Constants';
 import FormInput from '../../../components/form/FormInput';
-import React, { useEffect } from 'react';
+import React from 'react';
 import useToast, { ToastType } from '../../../hooks/UseToast';
 import Api from '../../../services';
 import { refreshToken } from '../../../services/axios';
@@ -11,9 +10,7 @@ import { useDispatch } from 'react-redux';
 import { updateUserStore } from '../../../storage/Actions';
 
 const ProfileInfoChange = ({ data }) => {
-	const { register: infoChange, handleSubmit, formState: { errors }, reset } = useForm({
-		shouldUseNativeValidation: true
-	});
+
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const { setMessage: setSuccess } = useToast(ToastType.SUCCESS);
 
@@ -23,9 +20,7 @@ const ProfileInfoChange = ({ data }) => {
 		lg: '12',
 		xl: '12',
 		sm: '12',
-		xs: '12',
-		errors: errors,
-		register: infoChange
+		xs: '12'
 	};
 	const InfoFormConfig = [
 		[{
@@ -69,10 +64,6 @@ const ProfileInfoChange = ({ data }) => {
 		]
 	];
 
-	useEffect(() => {
-		reset(data);
-	}, [data, reset]);
-
 	const onSubmit = async (data) => {
 		try {
 			await Api.Prof.updateInfo(data);
@@ -86,9 +77,7 @@ const ProfileInfoChange = ({ data }) => {
 
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<FormInput FormConfig={InfoFormConfig} buttonName={'Change Info'} fullButton />
-		</form>
+		<FormInput FormConfig={InfoFormConfig} buttonName={'Change Info'} fullButton data={data} onSubmit={onSubmit} />
 	);
 };
 
