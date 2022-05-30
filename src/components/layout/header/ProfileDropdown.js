@@ -15,10 +15,10 @@ const ProfileDropdown = ({ user }) => {
 
 				</DropdownToggle>
 				<DropdownMenu end>
-					<DropdownItem tag='a' href='/profile'> Profile</DropdownItem>
-					<DropdownItem tag='a' href='/my-uploads'>My Uploads</DropdownItem>
-					<DropdownItem tag='a' href='/charity'>My Charity</DropdownItem>
-					<DropdownItem tag='a' href='/adoption'>My adoptions</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=0'>Profile</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=1'>My Advertisements</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=2'>Edit Profile</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=3'>Change Password</DropdownItem>
 					<DropdownItem onClick={() => logout({ dispatch })}>Logout</DropdownItem>
 				</DropdownMenu>
 			</Dropdown>

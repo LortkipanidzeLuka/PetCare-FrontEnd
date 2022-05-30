@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TabNavigation from '../../components/navigation/TabNavigation';
 import NavContent from '../../components/navigation/NavContent';
-import Block from '../../components/styled/block/Block';
+import useQueryParams from '../../hooks/UseQueryParams';
+import ProfileInfo from './ProfileInfo';
+import { Col, Row, TabContent } from 'reactstrap';
+import ProfileAdvertisementTab from './ProfileAdvertisementTab';
+import ProfileInfoChangeTab from './ProfileInfoChangeTab';
+import ProfilePasswordChangeTab from './ProfilePasswordChangeTab';
 
 const ProfilePage = () => {
 
+	const { param } = useQueryParams('tab');
+	const [activeTab, setActiveTab] = useState('0');
+
 	const tabs = [
-		{
-			icon: ' mdi mdi-account-circle',
-			name: 'Profile'
-		},
 		{
 			icon: 'mdi mdi-receipt',
 			name: 'Advertisement'
@@ -26,37 +30,26 @@ const ProfilePage = () => {
 
 	return (
 
-		<TabNavigation tabs={tabs}>
-
-			<NavContent index={0}>
-				<Block className={'profile-tab'}>
-					dkajsnks
-				</Block>
-
-			</NavContent>
-
-			<NavContent index={1}>
-				<Block className={'profile-tab'}>
-					tato2
-				</Block>
-			</NavContent>
-
-
-			<NavContent index={2}>
-				<Block className={'profile-tab'}>
-					tato3
-				</Block>
-			</NavContent>
-
-
-			<NavContent index={3}>
-				<Block className={'profile-tab'}>
-					tato5
-				</Block>
-			</NavContent>
-
+		<TabNavigation tabs={tabs} defaultTab={param} activeTab={activeTab} setActiveTab={setActiveTab}>
+			<Row className='pt-4'>
+				<Col xxl={3} xl={3} lg={4} md={6} sm={12} xs={12}>
+					<ProfileInfo />
+				</Col>
+				<Col xxl={9} xl={9} lg={8} md={6} sm={12} xs={12}>
+					<TabContent activeTab={activeTab}>
+						<NavContent index={0}>
+							<ProfileAdvertisementTab />
+						</NavContent>
+						<NavContent index={1}>
+							<ProfileInfoChangeTab />
+						</NavContent>
+						<NavContent index={2}>
+							<ProfilePasswordChangeTab />
+						</NavContent>
+					</TabContent>
+				</Col>
+			</Row>
 		</TabNavigation>
-
 	);
 };
 

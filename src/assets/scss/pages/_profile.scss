@@ -1,5 +1,11 @@
-.profile-tab{
+.full-tab{
   width: 100%;
-  min-height: 300px;
+  min-height: 700px;
   background: #ffffff;
+}
+
+@media screen  and (max-width: 768px) {
+  .full-tab{
+    margin-top: $big-distance;
+  }
 }

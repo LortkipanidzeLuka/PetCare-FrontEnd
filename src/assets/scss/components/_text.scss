@@ -1,7 +1,10 @@
 .dotted-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  .inner-text-overridable {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: $dotted-text-width;
+  }
 }
 
 .error-text {
@@ -12,6 +15,6 @@
   color: $info-faint;
 }
 
-.center-text{
+.center-text {
   text-align: center !important;
 }

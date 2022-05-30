@@ -1,9 +1,8 @@
 import { Col, Row, TabPane } from 'reactstrap';
 
 const NavContent=(params)=>{
-	console.log(params)
 	return(
-		<TabPane tabId={`'${params.index}'`} className='p-3'>
+		<TabPane tabId={`'${params.index}'`}>
 			<Row>
 				<Col sm='12'>
 					{params.children}

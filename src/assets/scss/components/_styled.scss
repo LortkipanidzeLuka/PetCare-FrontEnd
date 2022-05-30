@@ -11,7 +11,7 @@
   border-radius: $app-border-radius;
 }
 
-.colored-block{
+.colored-block {
   background: $app-tag-default-color;
 }
 
@@ -36,5 +36,27 @@
 
   .tag {
     margin-bottom: 5px;
+  }
+}
+
+.profile-block {
+  width: 100%;
+  min-height: $tab-min-height;
+  background: $block-background;
+  margin: 0 auto;
+
+  .profile-image-overlay {
+    width: 100%;
+    height: calc(#{$block-circle-big} - #{$medium-distance} / 2);
+    background-color: $success;
+    border-radius: $medium-distance;
+    margin-bottom: $big-distance;
+  }
+
+  .profile-name-image {
+    width: $block-circle-big;
+    height: $block-circle-big;
+    border-radius: 50%;
+    background-color: $header-background-color;
   }
 }

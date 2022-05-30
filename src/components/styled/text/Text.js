@@ -15,7 +15,7 @@ const Text = ({ type, text, styles, classNames, stretched, icon }) => {
 		<div className={classNames && typeof classNames == 'object' ? classNames.join(' ') : ''}
 				 style={styles ? { ...textStyle, ...styles } : { ...textStyle }}>
 			{icon && <div className={`${icon} mrr-small`} style={{ fontSize: 'unset' }} />}
-			{text}
+			<div className={'inner-text-overridable'}>{text}</div>
 		</div>
 	);
 };
