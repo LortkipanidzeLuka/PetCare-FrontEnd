@@ -1,6 +1,6 @@
 import { Col, Row } from 'reactstrap';
-import Text from '../styled/text/Text';
-import { TextType } from '../styled/text/TextType';
+import Text from '../../styled/text/Text';
+import { TextType } from '../../styled/text/TextType';
 import Select from 'react-select';
 import { useState } from 'react';
 

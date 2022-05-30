@@ -1,12 +1,12 @@
 import { TextTypeParams } from './TextType';
 
-const Text = ({ type, text, styles, classNames, stretched, icon }) => {
+const Text = ({ type, text, styles, classNames, align, icon }) => {
 	const textParams = TextTypeParams[`${type}`];
 	const textStyle = textParams && {
 		fontFamily: `${textParams.fontFamily}`,
 		fontSize: textParams.fontSize,
 		fontWeight: textParams.fontWeight,
-		textAlign: stretched ? 'justify' : 'initial',
+		textAlign: align || 'initial',
 		display: icon ? 'flex' : '',
 		alignItems: icon ? 'center' : ''
 	};

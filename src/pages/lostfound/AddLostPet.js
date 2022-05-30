@@ -2,15 +2,15 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { useForm } from 'react-hook-form';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import { City, PetAdType, PetColor, PetSex, PetTypes } from '../../utils/Constants';
-import { TextFormInput } from '../../components/form/TextFormInput';
-import { SelectFormInput } from '../../components/form/SelectFormInput';
-import { NumberFormInput } from '../../components/form/NumberFormInput';
-import { FileFormInput } from '../../components/form/FileFormInput';
-import { TextAreaFormInput } from '../../components/form/TextAreaFormInput';
+import { TextFormInput } from '../../components/form/input/TextFormInput';
+import { SelectFormInput } from '../../components/form/input/SelectFormInput';
+import { NumberFormInput } from '../../components/form/input/NumberFormInput';
+import { FileFormInput } from '../../components/form/input/FileFormInput';
+import { TextAreaFormInput } from '../../components/form/input/TextAreaFormInput';
 import Api from '../../services';
 import { TransformImageArrToBase64 } from '../../utils/UtilActions';
 import FormInput from '../../components/form/FormInput';
-import ChipsFormInput from '../../components/form/ChipsFormInput';
+import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useState } from 'react';
 
 const AddLostPet = ({ open, closeModal }) => {

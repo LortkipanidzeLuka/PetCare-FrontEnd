@@ -20,8 +20,8 @@ export const deleteAuthHeader = () => {
 	storage('accessToken').unset();
 	storage('refreshToken').unset();
 	delete instance.defaults.headers.common[authToken];
-	window.location.reload()
-	window.location.href = '/'
+	window.location.reload();
+	window.location.href = '/';
 };
 
 export const checkAuthHeader = () => {
@@ -86,6 +86,9 @@ instance.interceptors.response.use(
 				deleteAuthHeader();
 				return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 			}
+		}
+		if (error?.response?.data?.errorCode === 'otp_retries_exceeded') {
+			deleteAuthHeader();
 		}
 		return Promise.reject(error?.response?.data?.errorCode ? error?.response?.data?.errorCode : 'univerisal');
 	}

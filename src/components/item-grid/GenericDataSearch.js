@@ -23,7 +23,7 @@ const GenericDataSearch = ({ searchConfig }) => {
 				<Block noShadow>
 					<div>
 						<form className={'p-all-medium'} onSubmit={handleSubmit(onSubmit)}>
-							<FormInput FormConfig={FormConfig} buttonName={'Register'} fullButton />
+							<FormInput FormConfig={FormConfig} buttonName={'Search'} fullButton />
 						</form>
 					</div>
 				</Block>

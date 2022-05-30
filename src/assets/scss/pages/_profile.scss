@@ -2,10 +2,15 @@
   width: 100%;
   min-height: 700px;
   background: #ffffff;
+  padding: $card-padding;
 }
 
 @media screen  and (max-width: 768px) {
   .full-tab{
     margin-top: $big-distance;
   }
+}
+
+.email-code-form{
+  margin-top: 20px;
 }

@@ -2,9 +2,9 @@ import LostPetModal from '../pages/lostfound/LostPetModal';
 import GenericCardSquare from '../components/item-card/GenericCardSquare';
 import Api from '../services';
 import GenericDataGrid from '../components/item-grid/GenericDataGrid';
-import { SelectFormInput } from '../components/form/SelectFormInput';
+import { SelectFormInput } from '../components/form/input/SelectFormInput';
 import { City, PetColor, PetSex, PetTypes } from './Constants';
-import { TextFormInput } from '../components/form/TextFormInput';
+import { TextFormInput } from '../components/form/input/TextFormInput';
 
 const DefaultFormConfig = {
 	lg: '12', xl: '12', sm: '12', xs: '12'

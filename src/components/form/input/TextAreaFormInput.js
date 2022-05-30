@@ -1,6 +1,6 @@
 import { Col, Row } from 'reactstrap';
-import Text from '../styled/text/Text';
-import { TextType } from '../styled/text/TextType';
+import Text from '../../styled/text/Text';
+import { TextType } from '../../styled/text/TextType';
 
 export const TextAreaFormInput = ({ register, errors, requiredMessage, placeholder, name, heading, xl, lg, sm, xs }) => {
 	return (

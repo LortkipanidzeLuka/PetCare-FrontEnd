@@ -86,7 +86,7 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 														icon={'mdi mdi-calendar mdi-dark mdi-18px'} />
 										</div>
 									</div>
-									<div><Text text={data.description} type={TextType.REGULAR} stretched /></div>
+									<div><Text text={data.description} type={TextType.REGULAR} align={'justify'} /></div>
 								</Col>
 								<Col xl='12' lg='12' sm='12' xs='12' className={'mrb-medium'}>
 									<PetBlock data={data.petInfo} />

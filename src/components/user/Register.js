@@ -4,8 +4,8 @@ import Api from 'src/services/index';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import FormInput from '../form/FormInput';
 import { PetSex } from '../../utils/Constants';
-import { TextFormInput, TextInputType } from '../form/TextFormInput';
-import { RadioFormInput } from '../form/RadioFormInput';
+import { TextFormInput, TextInputType } from '../form/input/TextFormInput';
+import { RadioFormInput } from '../form/input/RadioFormInput';
 
 const RegisterModal = ({ open, closeModal }) => {
 	const { register, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });

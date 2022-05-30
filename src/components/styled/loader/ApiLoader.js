@@ -12,7 +12,7 @@ const ApiLoader = (params) => {
 					<div className={'full-width d-flex justify-content-center'}>
 						<ReactLoader type={'spin'} color={'#6c757d'} />
 					</div>
-					<div><Text text={'Loading...'} classNames={['d-flex', ' justify-content-center']} stretched
+					<div><Text text={'Loading...'} classNames={['d-flex', ' justify-content-center']} align={'justify'}
 										 type={TextType.MEDIUM} /></div>
 				</div>
 			) : (

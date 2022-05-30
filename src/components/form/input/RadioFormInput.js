@@ -1,6 +1,6 @@
 import { Col, Row } from 'reactstrap';
-import Text from '../styled/text/Text';
-import { TextType } from '../styled/text/TextType';
+import Text from '../../styled/text/Text';
+import { TextType } from '../../styled/text/TextType';
 
 export const RadioFormInput = ({ register, errors, options, name, heading, xl, lg, sm, xs }) => {
 	return (<Col xl={xl} lg={lg} sm={sm} xs={xs}>
@@ -8,7 +8,7 @@ export const RadioFormInput = ({ register, errors, options, name, heading, xl, l
 				<Text text={heading} type={TextType.MEDIUM} classNames={['mrb-small']} />
 				<div className={"d-flex justify-content-evenly"}>
 					{options.map((value, index) => (
-						<div className={'d-flex align-items-baseline'}>
+						<div className={'d-flex align-items-baseline'} key={index}>
 							<input value={value.value} {...register(name)} type={'radio'} name={name} defaultChecked={index === 0} />
 							<Text text={value.label} type={TextType.MEDIUM} classNames={['mrl-small']} />
 						</div>

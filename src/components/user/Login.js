@@ -4,7 +4,7 @@ import Api from 'src/services/index';
 import { useDispatch } from 'react-redux';
 import useToast, { ToastType } from '../../hooks/UseToast';
 import { loginUser } from '../../storage/Actions';
-import { TextFormInput, TextInputType } from '../form/TextFormInput';
+import { TextFormInput, TextInputType } from '../form/input/TextFormInput';
 import FormInput from '../form/FormInput';
 
 const AuthModal = ({ open, closeModal }) => {
