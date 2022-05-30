@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { TextFormInput } from '../../components/form/input/TextFormInput';
-import { RadioFormInput } from '../../components/form/input/RadioFormInput';
-import { PetSex } from '../../utils/Constants';
-import FormInput from '../../components/form/FormInput';
+import { TextFormInput } from '../../../components/form/input/TextFormInput';
+import { RadioFormInput } from '../../../components/form/input/RadioFormInput';
+import { PetSex } from '../../../utils/Constants';
+import FormInput from '../../../components/form/FormInput';
 import React from 'react';
 
 const ProfileInfoChange = () => {

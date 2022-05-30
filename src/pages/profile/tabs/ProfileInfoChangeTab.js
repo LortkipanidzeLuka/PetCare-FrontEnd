@@ -1,8 +1,8 @@
-import Block from '../../components/styled/block/Block';
+import Block from '../../../components/styled/block/Block';
 import React from 'react';
 import { Col, Row } from 'reactstrap';
-import ProfileEmailChange from './ProfileEmailChange';
-import ProfileInfoChange from './ProfileInfoChange';
+import ProfileEmailChange from '../components/ProfileEmailChange';
+import ProfileInfoChange from '../components/ProfileInfoChange';
 
 const ProfileInfoChangeTab = () => {
 

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import TabNavigation from '../../components/navigation/TabNavigation';
 import NavContent from '../../components/navigation/NavContent';
 import useQueryParams from '../../hooks/UseQueryParams';
-import ProfileInfo from './ProfileInfo';
+import ProfileInfo from './components/ProfileInfo';
 import { Col, Row, TabContent } from 'reactstrap';
-import ProfileAdvertisementTab from './ProfileAdvertisementTab';
-import ProfileInfoChangeTab from './ProfileInfoChangeTab';
-import ProfilePasswordChangeTab from './ProfilePasswordChangeTab';
+import ProfileAdvertisementTab from './tabs/ProfileAdvertisementTab';
+import ProfileInfoChangeTab from './tabs/ProfileInfoChangeTab';
+import ProfilePasswordChangeTab from './tabs/ProfilePasswordChangeTab';
 
 const ProfilePage = () => {
 

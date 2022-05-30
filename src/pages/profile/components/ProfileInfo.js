@@ -1,7 +1,7 @@
-import ProfileBlock from '../../components/styled/block/ProfileBlock';
+import ProfileBlock from '../../../components/styled/block/ProfileBlock';
 import React, { useEffect, useState } from 'react';
-import useToast, { ToastType } from '../../hooks/UseToast';
-import Api from '../../services';
+import useToast, { ToastType } from '../../../hooks/UseToast';
+import Api from '../../../services';
 
 const ProfileInfo = () => {
 	const [info, setInfo] = useState({});

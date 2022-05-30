@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
-import { TextFormInput } from '../../components/form/input/TextFormInput';
-import EmailVerification from '../../components/form/custom/EmailVerification';
+import { TextFormInput } from '../../../components/form/input/TextFormInput';
+import EmailVerification from '../../../components/form/custom/EmailVerification';
 import React from 'react';
 
 const ProfileEmailChange = () => {

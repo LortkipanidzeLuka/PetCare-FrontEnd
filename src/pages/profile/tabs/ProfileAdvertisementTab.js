@@ -1,5 +1,5 @@
 import React from 'react';
-import Block from '../../components/styled/block/Block';
+import Block from '../../../components/styled/block/Block';
 
 const ProfileAdvertisementTab = () => {
 	return (

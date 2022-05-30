@@ -1,8 +1,8 @@
-import Block from '../../components/styled/block/Block';
+import Block from '../../../components/styled/block/Block';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { TextFormInput, TextInputType } from '../../components/form/input/TextFormInput';
-import FormInput from '../../components/form/FormInput';
+import { TextFormInput, TextInputType } from '../../../components/form/input/TextFormInput';
+import FormInput from '../../../components/form/FormInput';
 
 const ProfilePasswordChangeTab=()=>{
 
