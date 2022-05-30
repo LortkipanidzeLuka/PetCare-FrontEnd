@@ -15,10 +15,9 @@ const ProfileDropdown = ({ user }) => {
 
 				</DropdownToggle>
 				<DropdownMenu end>
-					<DropdownItem tag='a' href='/profile?tab=0'>Profile</DropdownItem>
-					<DropdownItem tag='a' href='/profile?tab=1'>My Advertisements</DropdownItem>
-					<DropdownItem tag='a' href='/profile?tab=2'>Edit Profile</DropdownItem>
-					<DropdownItem tag='a' href='/profile?tab=3'>Change Password</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=0'>My Advertisements</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=1'>Change Information</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=2'>Change Password</DropdownItem>
 					<DropdownItem onClick={() => logout({ dispatch })}>Logout</DropdownItem>
 				</DropdownMenu>
 			</Dropdown>
