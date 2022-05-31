@@ -14,7 +14,7 @@ export const TextAreaFormInput = ({ register, errors, requiredMessage, placehold
 					name={name}
 					placeholder={placeholder}
 					required={false} />
-				{errors[name] &&
+				{errors[name] && errors[name].message &&
 					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}
 			</Row>
 		</Col>

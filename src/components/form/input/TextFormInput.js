@@ -23,8 +23,8 @@ export const TextFormInput = ({ register, errors, regex, type=TextInputType.TEXT
 					type={type}
 					required={false}
 				/>
-				{errors[name] &&
-					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}
+				{errors[name] && errors[name].message && errors[name].message &&
+					 <Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}
 			</Row>
 		</Col>
 	);

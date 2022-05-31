@@ -4,10 +4,24 @@ import { Button, Col, Row } from 'reactstrap';
 import { useForm } from 'react-hook-form';
 
 const EmailVerification = ({ onSubmit, sendVerification }) => {
-	const { register: verification, handleSubmit, formState: { errors } } = useForm({ shouldUseNativeValidation: true });
+	const {
+		register: verification,
+		handleSubmit,
+		formState: { errors },
+		reset
+	} = useForm({ shouldUseNativeValidation: false });
+
+	const onSubmitForm = async (params) => {
+		try {
+			const res = await onSubmit(params);
+			reset();
+			return res;
+		} catch (error) {
+		}
+	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmitForm)}>
 			<Col>
 				<Row className={'mrb-medium pl-small pr-small'}>
 					<div className={`d-flex no-padding flex-column `}>
@@ -31,8 +45,8 @@ const EmailVerification = ({ onSubmit, sendVerification }) => {
 							/>
 							{errors.code &&
 								<Text text={errors.code.message} type={TextType.SMALL} classNames={['error-text']} />}
-							<Button onClick={sendVerification} className={'mrl-medium'}>
-								<Text text={'Resend'} type={TextType.MEDIUM} />
+							<Button onClick={sendVerification} className={'mrl-medium code-button'}>
+								<Text text={'Send code'} type={TextType.MEDIUM} align={'center'} />
 							</Button>
 						</div>
 						<Button type={'submit'} className={'mrt-medium'}>

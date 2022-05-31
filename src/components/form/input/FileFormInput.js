@@ -17,7 +17,7 @@ export const FileFormInput = ({ register, errors, requiredMessage, placeholder, 
 				multiple
 				className='form-control custom-file-input'
 				required={false} />
-			{errors[name] &&
+			{errors[name] && errors[name].message &&
 				<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}
 		</Row>
 	</Col>);
