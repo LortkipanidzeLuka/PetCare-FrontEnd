@@ -43,7 +43,7 @@ const EmailVerification = ({ onSubmit, sendVerification }) => {
 									}
 								})}
 							/>
-							{errors.code &&
+							{errors.code && errors.code.message &&
 								<Text text={errors.code.message} type={TextType.SMALL} classNames={['error-text']} />}
 							<Button onClick={sendVerification} className={'mrl-medium code-button'}>
 								<Text text={'Send code'} type={TextType.MEDIUM} align={'center'} />
