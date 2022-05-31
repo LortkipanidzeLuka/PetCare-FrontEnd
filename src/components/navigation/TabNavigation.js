@@ -8,7 +8,7 @@ const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) =>
 
 	useEffect(() => {
 		if (defaultTab) {
-			setActiveTab(`'${defaultTab}'`);
+			setActiveTab(defaultTab);
 		}
 	}, [defaultTab, setActiveTab]);
 
@@ -21,10 +21,10 @@ const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) =>
 							<NavLink
 								style={{ cursor: 'pointer' }}
 								className={classnames({
-									active: activeTab === `'${index}'`
+									active: activeTab === `${index}`
 								}) + (index === 0 ? ' tab-left' : index === tabs.length - 1 ? ' tab-right' : '')}
 								onClick={() => {
-									setActiveTab(`'${index}'`);
+									setActiveTab(`${index}`);
 								}}>
 								<Text text={val.name} type={TextType.MEDIUM} icon={val.icon}
 											classNames={['justify-content-center tab-text']} />
