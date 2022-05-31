@@ -14,7 +14,7 @@ export const RadioFormInput = ({ register, errors, options, name, heading, xl, l
 						</div>
 					))}
 				</div>
-				{errors[name] &&
+				{errors[name] && errors[name].message &&
 					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}
 			</Row>
 		</Col>

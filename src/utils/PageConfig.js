@@ -231,11 +231,11 @@ export const PAGES = {
 	}
 };
 
-// axiosshi ro ar anaxles deleteAuth is mere (window reload vcado)
+// axiosshi ro ar anaxles deleteAuth is mere (window reload vcado) +
 // profiles cxrili + editebi
 // modalebshi edit mode
 // parametrebis gayoleba dzebnis dros
 // map is damateba
-// emailverified ს ბევრჯერ აგზავნის
+// emailverified ს ბევრჯერ აგზავნის +
 
 // werilebis damateba

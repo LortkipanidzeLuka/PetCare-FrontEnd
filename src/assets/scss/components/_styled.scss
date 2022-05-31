@@ -49,7 +49,7 @@
     width: 100%;
     height: calc(#{$block-circle-big} - #{$medium-distance} / 2);
     background-color: $success;
-    border-radius: $medium-distance;
+    border-radius: $medium-distance $medium-distance 0 0;
     margin-bottom: $big-distance;
   }
 

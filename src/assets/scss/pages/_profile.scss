@@ -10,6 +10,15 @@
     margin-top: $big-distance;
   }
 }
+@media screen  and (max-width: 1200px) and (min-width: 768px){
+  .md-margin-top{
+    margin-top: $big-distance;
+  }
+}
+
+.code-button{
+  width: 190px;
+}
 
 .email-code-form{
   margin-top: 20px;

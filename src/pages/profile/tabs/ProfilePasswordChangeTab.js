@@ -2,9 +2,13 @@ import Block from '../../../components/styled/block/Block';
 import React from 'react';
 import { TextFormInput, TextInputType } from '../../../components/form/input/TextFormInput';
 import FormInput from '../../../components/form/FormInput';
+import useToast, { ToastType } from '../../../hooks/UseToast';
+import Api from '../../../services';
 
 const ProfilePasswordChangeTab = () => {
 
+	const { setMessage: setError } = useToast(ToastType.ERROR);
+	const { setMessage: setSuccess } = useToast(ToastType.SUCCESS);
 
 	const DefaultFormConfig = {
 		lg: '12',
@@ -45,12 +49,17 @@ const ProfilePasswordChangeTab = () => {
 		]
 	];
 	const onSubmit = async (data) => {
-		console.log(data);
+		try {
+			await Api.Prof.changePassword(data)
+			setSuccess('password-changed');
+		} catch (error) {
+			setError(error);
+		}
 	};
 
 	return (
 		<Block className={'full-tab'}>
-			<FormInput FormConfig={FormConfig} buttonName={'Change password'} fullButton onSubmit={onSubmit} />
+			<FormInput FormConfig={FormConfig} buttonName={'Change password'} fullButton onSubmit={onSubmit} resetAfterSubmit/>
 		</Block>
 	);
 };
