@@ -26,4 +26,14 @@ export const PetSex = [
 	{ label: 'FEMALE', value: 'FEMALE' }
 ];
 
+export const TagListColorPool = [
+	'tag-success',
+	'tag-danger',
+	'tag-warning',
+	'tag-info',
+	'tag-info-dark',
+	'tag-info-faint',
+	'tag-text-purple',
+	'tag-text-grey'
+];
 export const ErrorUniversal = 'universal';

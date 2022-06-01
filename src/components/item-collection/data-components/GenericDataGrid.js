@@ -1,17 +1,17 @@
 import { Col, Row } from 'reactstrap';
-import { useModal } from '../../hooks/UseModal';
-import GenericDataPagination from './GenericDataPagination';
-import useGrid from '../../hooks/UseGrid';
+import { useModal } from '../../../hooks/UseModal';
+import GenericDataPagination from '../item-pagination/GenericDataPagination';
+import useGrid from '../../../hooks/UseGrid';
 import React, { useEffect, useState } from 'react';
-import useToast, { ToastType } from '../../hooks/UseToast';
-import GenericDataSearch from './GenericDataSearch';
-import ApiLoader from '../styled/loader/ApiLoader';
+import useToast, { ToastType } from '../../../hooks/UseToast';
+import GenericDataSearchBar from '../item-search/GenericDataSearchBar';
+import ApiLoader from '../../styled/loader/ApiLoader';
 
-const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig }) => {
+const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, paging }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
-		itemsPerPage: 10, params: params, fetchData: fetchData
+		itemsPerPage: 10, params: params, fetchData: fetchData, paging
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
 
@@ -23,7 +23,7 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 
 		<Row>
 			<Col xl={'3'}>
-				<GenericDataSearch searchConfig={searchConfig} />
+				<GenericDataSearchBar searchConfig={searchConfig} />
 			</Col>
 			<Col xl={'9'} className={'d-flex justify-content-center flex-column'}>
 				<ApiLoader loading={loading}>
@@ -34,13 +34,13 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 								{...value} />
 						</Col>))}
 					</Row>
-					<GenericDataPagination
+					{paging?<GenericDataPagination
 						pages={pages}
 						page={currentPage}
 						goToNextPage={goToNextPage}
 						goToPreviousPage={goToPreviousPage}
 						changePage={changePage}
-					/>
+					/>:null}
 				</ApiLoader>
 			</Col>
 

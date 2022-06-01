@@ -1,8 +1,8 @@
 import { Col, Row } from 'reactstrap';
-import Block from '../styled/block/Block';
-import FormInput from '../form/FormInput';
+import Block from '../../styled/block/Block';
+import FormInput from '../../form/FormInput';
 
-const GenericDataSearch = ({ searchConfig }) => {
+const GenericDataSearchList = ({ searchConfig }) => {
 
 	const FormConfig = searchConfig.map(val => (val.map(innerVal => ({ ...innerVal }))));
 
@@ -23,4 +23,4 @@ const GenericDataSearch = ({ searchConfig }) => {
 	);
 };
 
-export default GenericDataSearch;
+export default GenericDataSearchList;
