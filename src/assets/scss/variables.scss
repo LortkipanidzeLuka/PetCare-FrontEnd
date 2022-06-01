@@ -28,6 +28,7 @@ $block-circle-big:80px;
 $tag-list-height: 120px;
 
 // distances
+$extra-small-distance: 5px;
 $small-distance: 10px;
 $medium-distance: 20px;
 $big-distance: 30px;
@@ -36,9 +37,13 @@ $very-big-distance: 50px;
 // action-colors
 $success: #34c38f;
 $danger: #f46a6a;
+$warning: #f1b44c;
 $info: #50a5f1;
 $info-dark: #0434ff8c;
 $info-faint: #989898;
+$text-purple: #6f42c1;
+$text-grey: #343a40;
+
 
 // form
 $text-area-height: 100px;

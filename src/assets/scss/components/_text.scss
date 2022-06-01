@@ -18,3 +18,26 @@
 .center-text {
   text-align: center !important;
 }
+
+.one-line-text {
+  .inner-text-overridable {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+}
+
+.five-line-text {
+  .inner-text-overridable {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}

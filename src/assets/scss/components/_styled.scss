@@ -24,7 +24,7 @@
   height: fit-content;
 }
 
-.tag-list {
+.tag-grid {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(auto-fill, 40px);
   grid-row-gap: 3px;
@@ -35,7 +35,16 @@
   max-height: $tag-list-height;
 
   .tag {
-    margin-bottom: 5px;
+    margin-bottom: $extra-small-distance;
+  }
+}
+
+.tag-list{
+  display: flex;
+  flex-direction: row;
+  .tag{
+    margin-left: $extra-small-distance;
+    //margin-left: $extra-small-distance;
   }
 }
 

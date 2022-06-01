@@ -10,7 +10,7 @@ const LostPetPage = () => {
 	return (
 		<div>
 			<Button onClick={toggleModal}>Add Pet</Button>
-			<Grid {...pageConfig} />
+			<Grid {...pageConfig} paging={true}/>
 			<AddLostPet open={modalOpen} closeModal={toggleModal} />
 		</div>
 

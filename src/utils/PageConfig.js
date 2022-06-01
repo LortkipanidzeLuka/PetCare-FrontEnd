@@ -1,7 +1,7 @@
 import LostPetModal from '../pages/lostfound/LostPetModal';
 import GenericCardSquare from '../components/item-card/GenericCardSquare';
 import Api from '../services';
-import GenericDataGrid from '../components/item-grid/GenericDataGrid';
+import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
 import { SelectFormInput } from '../components/form/input/SelectFormInput';
 import { City, PetColor, PetSex, PetTypes } from './Constants';
 import { TextFormInput } from '../components/form/input/TextFormInput';

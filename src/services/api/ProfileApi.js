@@ -6,7 +6,7 @@ const api = {
 	updateInfo: (params, _loading) =>
 		put('user/info', params).then((data) => data),
 	advertisements: (params, _loading) =>
-		get('user/advertisements', params).then((data) => data),
+		get(`user/advertisements?page=${params.page}&size=${params.size}&type=LOST_FOUND&search=`, {}).then((data) => data),
 	emailChangeCode: (params, _loading) =>
 		post('user/email/change/code', params).then((data) => data),
 	emailChangeVerify: (params, _loading) =>

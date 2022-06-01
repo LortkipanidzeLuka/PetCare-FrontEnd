@@ -7,14 +7,14 @@ const Text = ({ type, text, styles, classNames, align, icon }) => {
 		fontSize: textParams.fontSize,
 		fontWeight: textParams.fontWeight,
 		textAlign: align || 'initial',
-		display: icon ? 'flex' : '',
-		alignItems: icon ? 'center' : ''
+		display: 'flex',
+		alignItems: 'center'
 	};
 
 	return (
 		<div className={classNames && typeof classNames == 'object' ? classNames.join(' ') : ''}
 				 style={styles ? { ...textStyle, ...styles } : { ...textStyle }}>
-			{icon && <div className={`${icon} mrr-small`} style={{ fontSize: 'unset' }} />}
+			{icon && <div className={`${icon} mrr-extra-small`} style={{ fontSize: 'unset' }} />}
 			<div className={'inner-text-overridable'}>{text}</div>
 		</div>
 	);

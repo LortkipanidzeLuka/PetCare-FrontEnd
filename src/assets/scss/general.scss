@@ -7,6 +7,10 @@
   margin-right: $small-distance;
 }
 
+.mrr-extra-small {
+  margin-right: $extra-small-distance;
+}
+
 .mrb-small {
   margin-bottom: $small-distance;
 }
@@ -25,7 +29,7 @@
 }
 
 .mrt-medium {
-  margin-top: $medium-distance;
+  margin-top: $medium-distance !important;
 }
 
 .mrb-medium {
