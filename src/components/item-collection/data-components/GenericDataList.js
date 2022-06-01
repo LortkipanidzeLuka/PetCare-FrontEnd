@@ -7,11 +7,11 @@ import ApiLoader from '../../styled/loader/ApiLoader';
 import GenericDataPagination from '../item-pagination/GenericDataPagination';
 import GenericDataSearchList from '../item-search/GenericDataSearchList';
 
-const GenericDataList = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal }) => {
+const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal, updateData }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
-		itemsPerPage: 10, params: params, fetchData: fetchData
+		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
 
@@ -36,6 +36,7 @@ const GenericDataList = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 											advertisementType: advertisementType
 										}})
 									}}
+									deleteItem={deleteItem}
 									openModal={toggleModal}
 									{...value} />
 							</Col>))}

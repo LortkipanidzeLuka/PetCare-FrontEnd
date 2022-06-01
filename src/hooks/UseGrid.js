@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useGrid = ({ itemsPerPage, fetchData, params }) => {
+const useGrid = ({ itemsPerPage, fetchData, params, updateData}) => {
 
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -42,7 +42,7 @@ const useGrid = ({ itemsPerPage, fetchData, params }) => {
 		}
 
 		fetchDataFn();
-	}, [currentPage, params, itemsPerPage,  fetchData]);
+	}, [currentPage, params, itemsPerPage,  fetchData, updateData]);
 
 	return [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage];
 };

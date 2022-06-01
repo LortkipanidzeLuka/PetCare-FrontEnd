@@ -1,15 +1,15 @@
 import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
-import { PetTypeGrids, PetTypeModals } from './PageTypes';
+import { PetTypeGrids, PetTypeConfig } from './PageTypes';
 
 
 export const PAGES = {
 	LOST_FOUND: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeModals.LOST_FOUND.DetailModal,
-			fetchSingle: PetTypeModals.LOST_FOUND.fetchSingle,
-			fetchSingleImages: PetTypeModals.LOST_FOUND.fetchSingleImages,
-			deleteSingle: PetTypeModals.LOST_FOUND.deleteSingle,
+			DetailModal: PetTypeConfig.LOST_FOUND.DetailModal,
+			fetchSingle: PetTypeConfig.LOST_FOUND.fetchSingle,
+			fetchSingleImages: PetTypeConfig.LOST_FOUND.fetchSingleImages,
+			deleteSingle: PetTypeConfig.LOST_FOUND.deleteSingle,
 
 			Card: PetTypeGrids.LOST_FOUND.Card,
 			searchConfig: PetTypeGrids.LOST_FOUND.searchConfig,
@@ -19,10 +19,10 @@ export const PAGES = {
 	PET_CARE: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeModals.PET_CARE.DetailModal,
-			fetchSingle: PetTypeModals.PET_CARE.fetchSingle,
-			fetchSingleImages: PetTypeModals.PET_CARE.fetchSingleImages,
-			deleteSingle: PetTypeModals.PET_CARE.deleteSingle,
+			DetailModal: PetTypeConfig.PET_CARE.DetailModal,
+			fetchSingle: PetTypeConfig.PET_CARE.fetchSingle,
+			fetchSingleImages: PetTypeConfig.PET_CARE.fetchSingleImages,
+			deleteSingle: PetTypeConfig.PET_CARE.deleteSingle,
 
 			Card: PetTypeGrids.PET_CARE.Card,
 			searchConfig: PetTypeGrids.PET_CARE.searchConfig,
@@ -32,10 +32,10 @@ export const PAGES = {
 	ADOPTION: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeModals.ADOPTION.DetailModal,
-			fetchSingle: PetTypeModals.ADOPTION.fetchSingle,
-			fetchSingleImages: PetTypeModals.ADOPTION.fetchSingleImages,
-			deleteSingle: PetTypeModals.ADOPTION.deleteSingle,
+			DetailModal: PetTypeConfig.ADOPTION.DetailModal,
+			fetchSingle: PetTypeConfig.ADOPTION.fetchSingle,
+			fetchSingleImages: PetTypeConfig.ADOPTION.fetchSingleImages,
+			deleteSingle: PetTypeConfig.ADOPTION.deleteSingle,
 
 			Card: PetTypeGrids.ADOPTION.Card,
 			searchConfig: PetTypeGrids.ADOPTION.searchConfig,
@@ -45,10 +45,10 @@ export const PAGES = {
 	CHARITY: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeModals.CHARITY.DetailModal,
-			fetchSingle: PetTypeModals.CHARITY.fetchSingle,
-			fetchSingleImages: PetTypeModals.CHARITY.fetchSingleImages,
-			deleteSingle: PetTypeModals.CHARITY.deleteSingle,
+			DetailModal: PetTypeConfig.CHARITY.DetailModal,
+			fetchSingle: PetTypeConfig.CHARITY.fetchSingle,
+			fetchSingleImages: PetTypeConfig.CHARITY.fetchSingleImages,
+			deleteSingle: PetTypeConfig.CHARITY.deleteSingle,
 
 			Card: PetTypeGrids.CHARITY.Card,
 			searchConfig: PetTypeGrids.CHARITY.searchConfig,

@@ -1,7 +1,7 @@
-import { PetTypeModals } from '../../../utils/PageTypes';
+import { PetTypeConfig } from '../../../utils/PageTypes';
 import { useEffect, useState } from 'react';
 
-const ProfileAdvertisementModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {
+const ProfileAdvertisementModal = ({ open, closeModal, params }) => {
 	const [modalsOpened, setModalsOpened] = useState({});
 	useEffect(() => {
 		if (params && params.data && params.data.advertisementType && open) {
@@ -16,8 +16,8 @@ const ProfileAdvertisementModal = ({ open, closeModal, fetchSingle, fetchSingleI
 
 	return (
 		<>
-			{Object.keys(PetTypeModals).map((key, index) => {
-				const DetailModal = PetTypeModals[key].DetailModal;
+			{Object.keys(PetTypeConfig).map((key, index) => {
+				const DetailModal = PetTypeConfig[key].DetailModal;
 				return (
 					<DetailModal
 						key={index}
@@ -27,8 +27,8 @@ const ProfileAdvertisementModal = ({ open, closeModal, fetchSingle, fetchSingleI
 								closeModal();
 							}
 						}}
-						fetchSingle={PetTypeModals[key].fetchSingle}
-						fetchSingleImages={PetTypeModals[key].fetchSingleImages}
+						fetchSingle={PetTypeConfig[key].fetchSingle}
+						fetchSingleImages={PetTypeConfig[key].fetchSingleImages}
 						params={params} />
 				);
 			})}

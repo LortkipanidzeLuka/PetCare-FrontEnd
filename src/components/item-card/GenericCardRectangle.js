@@ -16,14 +16,16 @@ const GenericCardRectangle = (params) => {
 		id,
 		advertisementType,
 		userInfo,
-		openEditModal
+		openEditModal,
+		deleteItem
 	} = params;
 
 	return (
-		<Block noShadow>
+		<Block bigBorder noShadow>
 			<div className='pet-card-rectangle'>
 				<div className={'pet-card-rectangle-main d-flex'}>
-					<div className='card-img-wrap'  onClick={() => openModal({ data: { id: id, advertisementType: advertisementType } })}>
+					<div className='card-img-wrap'
+							 onClick={() => openModal({ data: { id: id, advertisementType: advertisementType } })}>
 						<img src={primaryImage && primaryImage.content} alt={'this is card '} />
 					</div>
 					<div className={'pet-card-content-wrap'}>
@@ -43,7 +45,9 @@ const GenericCardRectangle = (params) => {
 										}}>
 											<i className={'mdi mdi-dark mdi-pencil mdi-24px edit-action'} />
 										</div>
-										<div className={'card-action-icon delete-action'}>
+										<div className={'card-action-icon delete-action'} onClick={() => {
+											deleteItem({ data: { id: id, advertisementType: advertisementType } });
+										}}>
 											<i className={'mdi mdi-dark mdi-delete mdi-24px delete-action'} />
 										</div>
 									</div>

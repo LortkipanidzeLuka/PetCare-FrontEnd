@@ -6,6 +6,11 @@
   box-shadow: $app-shadow;
 }
 
+.big-block {
+  border: $app-border-big;
+  border-radius: $app-border-radius;
+}
+
 .border-block {
   border: $app-border;
   border-radius: $app-border-radius;
@@ -30,7 +35,6 @@
   grid-row-gap: 3px;
   grid-column-gap: 1em;
   display: grid;
-  gap: 0;
   overflow: hidden;
   max-height: $tag-list-height;
 

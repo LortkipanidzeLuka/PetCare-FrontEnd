@@ -7,11 +7,11 @@ import useToast, { ToastType } from '../../../hooks/UseToast';
 import GenericDataSearchBar from '../item-search/GenericDataSearchBar';
 import ApiLoader from '../../styled/loader/ApiLoader';
 
-const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, paging }) => {
+const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, updateData}) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
-		itemsPerPage: 10, params: params, fetchData: fetchData, paging
+		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
 
@@ -34,13 +34,13 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 								{...value} />
 						</Col>))}
 					</Row>
-					{paging?<GenericDataPagination
+					<GenericDataPagination
 						pages={pages}
 						page={currentPage}
 						goToNextPage={goToNextPage}
 						goToPreviousPage={goToPreviousPage}
 						changePage={changePage}
-					/>:null}
+					/>
 				</ApiLoader>
 			</Col>
 

@@ -21,7 +21,7 @@ const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) =>
 							<NavLink
 								className={classnames({
 									active: activeTab === `${index}`
-								}) + (index === 0 ? ' tab-left' : index === tabs.length - 1 ? ' tab-right' : '') + 'pointer'}
+								}) + (index === 0 ? ' tab-left' : index === tabs.length - 1 ? ' tab-right' : '') + ' pointer'}
 								onClick={() => {
 									setActiveTab(`${index}`);
 								}}>

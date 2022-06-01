@@ -16,7 +16,7 @@ import { LOST_AND_FOUND_SEARCH } from './PageSearch';
 // 	{ value: ADOPTION, label: 'Pet Adoption' },
 // ];
 
-export const PetTypeModals={
+export const PetTypeConfig={
 	LOST_FOUND: {
 		DetailModal: LostPetModal,
 		fetchSingle: Api.Lost.fetchSingleLostFound,

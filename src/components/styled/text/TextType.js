@@ -39,7 +39,7 @@ export const TextTypeParams = {
 	REGULAR: {
 		fontFamily: `"Poppins",sans-serif`,
 		fontWeight: 300,
-		fontSize: '13px'
+		fontSize: '14px'
 	},
 	SMALL: {
 		fontFamily: `"Poppins",sans-serif`,

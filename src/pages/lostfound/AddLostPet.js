@@ -10,9 +10,9 @@ import Api from '../../services';
 import FormInput from '../../components/form/FormInput';
 import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useEffect, useState } from 'react';
-import { PetTypeModals } from '../../utils/PageTypes';
+import { PetTypeConfig } from '../../utils/PageTypes';
 
-const AddLostPet = ({ data, open, closeModal }) => {
+const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const [tags, setTags] = useState([]);
@@ -27,13 +27,13 @@ const AddLostPet = ({ data, open, closeModal }) => {
 	useEffect(() => {
 		const fetchSingleData = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await PetTypeModals.LOST_FOUND.fetchSingle({ id: data.data.id }, false);
+				const res = await PetTypeConfig.LOST_FOUND.fetchSingle({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, ...res.data }));
 			}
 		};
 		const fetchSingleImages = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await PetTypeModals.LOST_FOUND.fetchSingleImages({ id: data.data.id }, false);
+				const res = await PetTypeConfig.LOST_FOUND.fetchSingleImages({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, images: res.data }));
 			}
 		};
@@ -216,6 +216,7 @@ const AddLostPet = ({ data, open, closeModal }) => {
 				await Api.Lost.createLostFound(params);
 				setSuccessMessage('item-added');
 			}
+			fetchData();
 			closeModal();
 		} catch (error) {
 			setError(error);
