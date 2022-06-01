@@ -10,18 +10,37 @@ import Api from '../../services';
 import { TransformImageArrToBase64 } from '../../utils/UtilActions';
 import FormInput from '../../components/form/FormInput';
 import ChipsFormInput from '../../components/form/input/ChipsFormInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { PetTypeModals } from '../../utils/PageTypes';
 
-const AddLostPet = ({ open, closeModal }) => {
+const AddLostPet = ({ data, open, closeModal }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
+	const [tags, setTags] = useState([]);
+	const [petInfo, setPetInfo] = useState(null);
 	const DefaultFormConfig = {
 		lg: '5',
 		xl: '5',
 		sm: '5',
 		xs: '12'
 	};
-	const [tags, setTags] = useState([]);
+
+	useEffect(() => {
+		const fetchSingleData = async () => {
+			if (data && data.data && data.data.id) {
+				const res = await PetTypeModals.LOST_FOUND.fetchSingle({ id: data.data.id }, false);
+				setPetInfo(prev => ({ ...prev, ...res.data }));
+			}
+		};
+		const fetchSingleImages = async () => {
+			if (data && data.data && data.data.id) {
+				const res = await PetTypeModals.LOST_FOUND.fetchSingleImages({ id: data.data.id }, false);
+				setPetInfo(prev => ({ ...prev, picture: res.data }));
+			}
+		};
+		fetchSingleData();
+		fetchSingleImages();
+	}, [data]);
 
 	const FormConfig = [
 		// city-header
@@ -182,29 +201,39 @@ const AddLostPet = ({ open, closeModal }) => {
 	];
 
 	const onSubmit = async data => {
-		const images = await TransformImageArrToBase64(data.picture);
-		const params = {
-			...data,
-			advertisementType: 'LOST_FOUND',
-			tags: tags,
-			images: images
-		};
-		try {
-			await Api.Lost.createLostFound(params);
-			setSuccessMessage('item-added');
-			closeModal();
-		} catch (error) {
-			setError(error);
+		if (isEditMode()) {
+
+		} else {
+			const images = await TransformImageArrToBase64(data.picture);
+			const params = {
+				...data,
+				advertisementType: 'LOST_FOUND',
+				tags: tags,
+				images: images
+			};
+			try {
+				await Api.Lost.createLostFound(params);
+				setSuccessMessage('item-added');
+				closeModal();
+			} catch (error) {
+				setError(error);
+			}
 		}
+	};
+
+	const isEditMode = () => {
+		return petInfo;
 	};
 
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
 			<ModalHeader>
-				Create Lost Pet Announcement
+				{isEditMode ? 'Update' : 'Create'} Lost Pet Announcement
 			</ModalHeader>
 			<ModalBody>
-				<FormInput FormConfig={FormConfig} buttonName={'Create Announcement'} fullButton onSubmit={onSubmit} />
+				<FormInput data={petInfo} FormConfig={FormConfig}
+									 buttonName={`${!isEditMode() ? 'Create' : 'Update'} Announcement`} fullButton
+									 onSubmit={onSubmit} />
 			</ModalBody>
 		</Modal>
 

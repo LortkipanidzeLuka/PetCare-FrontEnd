@@ -5,15 +5,14 @@ import { PAGES } from '../../utils/PageConfig';
 
 const LostPetPage = () => {
 	const [,modalOpen, , toggleModal] = useModal();
-	const { Grid, pageConfig } = PAGES.LOSTFOUND;
+	const { Grid, pageConfig } = PAGES.LOST_FOUND;
 
 	return (
 		<div>
 			<Button onClick={toggleModal}>Add Pet</Button>
 			<Grid {...pageConfig} paging={true}/>
-			<AddLostPet open={modalOpen} closeModal={toggleModal} />
+			<AddLostPet  open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}/>
 		</div>
-
 	);
 };
 

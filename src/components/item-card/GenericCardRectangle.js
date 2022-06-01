@@ -15,14 +15,15 @@ const GenericCardRectangle = (params) => {
 		openModal,
 		id,
 		advertisementType,
-		userInfo
+		userInfo,
+		openEditModal
 	} = params;
 
 	return (
 		<Block noShadow>
-			<div className='pet-card-rectangle' onClick={() => openModal({ data: { id: id } })}>
+			<div className='pet-card-rectangle'>
 				<div className={'pet-card-rectangle-main d-flex'}>
-					<div className='card-img-wrap'>
+					<div className='card-img-wrap'  onClick={() => openModal({ data: { id: id, advertisementType: advertisementType } })}>
 						<img src={primaryImage && primaryImage.content} alt={'this is card '} />
 					</div>
 					<div className={'pet-card-content-wrap'}>
@@ -30,12 +31,16 @@ const GenericCardRectangle = (params) => {
 							<Row>
 								<div className={'d-flex justify-content-between '}>
 									<div className={'d-flex flex-column'}>
-										<Text text={header} align={'left'} type={TextType.EXTRA_LARGE} classNames={['mrr-medium one-line-text']} />
+										<Text text={header} align={'left'} type={TextType.EXTRA_LARGE}
+													classNames={['mrr-medium one-line-text']} />
 										<Text text={createDate} type={TextType.REGULAR} icon={'mdi mdi-calendar mdi-18px'}
 													classNames={['faint-text']} />
 									</div>
 									<div className={'d-flex flex-row'}>
-										<div className={'card-action-icon edit-action mrr-small'}>
+										<div className={'card-action-icon edit-action mrr-small'} onClick={(event) => {
+											event.preventDefault();
+											openEditModal(advertisementType);
+										}}>
 											<i className={'mdi mdi-dark mdi-pencil mdi-24px edit-action'} />
 										</div>
 										<div className={'card-action-icon delete-action'}>
@@ -46,7 +51,7 @@ const GenericCardRectangle = (params) => {
 							</Row>
 
 							<Row className={'mrt-medium d-flex flex-row'}>
-								<Text text={description} type={TextType.MEDIUM} classNames={['five-line-text']}/>
+								<Text text={description} type={TextType.MEDIUM} classNames={['five-line-text']} />
 							</Row>
 						</Row>
 						<Row className={'mrt-medium'}>

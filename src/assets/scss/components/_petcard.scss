@@ -66,10 +66,13 @@
 .pet-card-rectangle{
   .pet-card-rectangle-main{
     padding: $medium-distance;
-    .card-img-wrap > img{
-      width: 200px;
-      height: 200px;
-      border-radius: $app-border-radius;
+    .card-img-wrap {
+      cursor: pointer;
+      > img {
+        width: 200px;
+        height: 200px;
+        border-radius: $app-border-radius;
+      }
     }
     .pet-card-content-wrap{
       padding: 0 $medium-distance;
@@ -77,6 +80,7 @@
       justify-content: space-between;
       flex-direction: column;
       .card-action-icon{
+        cursor: pointer;
         display: flex;
         border: $app-border;
         justify-content: center;

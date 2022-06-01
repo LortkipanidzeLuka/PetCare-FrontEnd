@@ -7,20 +7,18 @@ import ApiLoader from '../../styled/loader/ApiLoader';
 import GenericDataPagination from '../item-pagination/GenericDataPagination';
 import GenericDataSearchList from '../item-search/GenericDataSearchList';
 
-const GenericDataList = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig }) => {
+const GenericDataList = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10, params: params, fetchData: fetchData
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
-	const toggleModalWrapper=(type)=>{
-		// const PetTypeModals[type]
-	}
 
 	useEffect(() => {
 		setMessage(error);
 	}, [error, setMessage]);
+
 	return (
 		<Row className={'advertisement-list'}>
 			<Col xl={'12'}>
@@ -32,6 +30,12 @@ const GenericDataList = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 						{data.map((value, index) => (
 							<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
 								<Card
+									openEditModal={(advertisementType) => {
+										toggleEditModal({data:{
+											id: value.id,
+											advertisementType: advertisementType
+										}})
+									}}
 									openModal={toggleModal}
 									{...value} />
 							</Col>))}

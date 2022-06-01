@@ -1,232 +1,58 @@
-import LostPetModal from '../pages/lostfound/LostPetModal';
-import GenericCardSquare from '../components/item-card/GenericCardSquare';
-import Api from '../services';
 import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
-import { SelectFormInput } from '../components/form/input/SelectFormInput';
-import { City, PetColor, PetSex, PetTypes } from './Constants';
-import { TextFormInput } from '../components/form/input/TextFormInput';
+import { PetTypeGrids, PetTypeModals } from './PageTypes';
 
-const DefaultFormConfig = {
-	lg: '12', xl: '12', sm: '12', xs: '12'
-};
+
 export const PAGES = {
-	LOSTFOUND: {
+	LOST_FOUND: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: LostPetModal,
-			Card: GenericCardSquare,
-			fetchData: Api.Lost.fetchLostFounds,
-			fetchSingle: Api.Lost.fetchSingleLostFound,
-			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
-			deleteSingle: Api.Lost.deleteSingleLostFound,
-			searchConfig: [
-				[{
-					...DefaultFormConfig,
-					name: 'city',
-					heading: 'City',
-					placeholder: 'Please enter city',
-					component: SelectFormInput,
-					options: City
-				}, {
-					...DefaultFormConfig,
-					name: 'header',
-					heading: 'Header',
-					placeholder: 'Please enter header',
-					component: TextFormInput
-				}, {
-					...DefaultFormConfig,
-					name: 'petType',
-					heading: 'Pet Type',
-					placeholder: 'Please pet type',
-					component: SelectFormInput,
-					options: PetTypes
-				}, {
-					...DefaultFormConfig,
-					name: 'sex',
-					heading: 'Gender',
-					placeholder: 'Please enter genrder',
-					component: SelectFormInput,
-					options: PetSex
-				}, {
-					...DefaultFormConfig,
-					name: 'color',
-					heading: 'Pet Color',
-					placeholder: 'Please enter pet color',
-					component: SelectFormInput,
-					options: PetColor
-				}, {
-					...DefaultFormConfig,
-					name: 'breed',
-					heading: 'Breed',
-					placeholder: 'Please enter breed',
-					component: TextFormInput
-				}]
-			]
+			DetailModal: PetTypeModals.LOST_FOUND.DetailModal,
+			fetchSingle: PetTypeModals.LOST_FOUND.fetchSingle,
+			fetchSingleImages: PetTypeModals.LOST_FOUND.fetchSingleImages,
+			deleteSingle: PetTypeModals.LOST_FOUND.deleteSingle,
+
+			Card: PetTypeGrids.LOST_FOUND.Card,
+			searchConfig: PetTypeGrids.LOST_FOUND.searchConfig,
+			fetchData: PetTypeGrids.LOST_FOUND.fetchData
 		}
 	},
-	DONATION: {
+	PET_CARE: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: LostPetModal,
-			Card: GenericCardSquare,
-			fetchData: Api.Lost.fetchLostFounds,
-			fetchSingle: Api.Lost.fetchSingleLostFound,
-			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
-			deleteSingle: Api.Lost.deleteSingleLostFound,
-			searchConfig: [
-				[{
-					...DefaultFormConfig,
-					name: 'city',
-					heading: 'City',
-					placeholder: 'Please enter city',
-					component: SelectFormInput,
-					options: City
-				}, {
-					...DefaultFormConfig,
-					name: 'header',
-					heading: 'Header',
-					placeholder: 'Please enter header',
-					requiredMessage: 'Header is required',
-					component: TextFormInput
-				}, {
-					...DefaultFormConfig,
-					name: 'petType',
-					heading: 'Pet Type',
-					placeholder: 'Please pet type',
-					component: SelectFormInput,
-					options: PetTypes
-				}, {
-					...DefaultFormConfig,
-					name: 'sex',
-					heading: 'Gender',
-					placeholder: 'Please enter genrder',
-					component: SelectFormInput,
-					options: PetSex
-				}, {
-					...DefaultFormConfig,
-					name: 'color',
-					heading: 'Pet Color',
-					placeholder: 'Please enter pet color',
-					component: SelectFormInput,
-					options: PetColor
-				}, {
-					...DefaultFormConfig,
-					name: 'breed',
-					heading: 'Breed',
-					placeholder: 'Please enter breed',
-					component: TextFormInput
-				}]
-			]
+			DetailModal: PetTypeModals.PET_CARE.DetailModal,
+			fetchSingle: PetTypeModals.PET_CARE.fetchSingle,
+			fetchSingleImages: PetTypeModals.PET_CARE.fetchSingleImages,
+			deleteSingle: PetTypeModals.PET_CARE.deleteSingle,
+
+			Card: PetTypeGrids.PET_CARE.Card,
+			searchConfig: PetTypeGrids.PET_CARE.searchConfig,
+			fetchData: PetTypeGrids.PET_CARE.fetchData
 		}
 	},
 	ADOPTION: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: LostPetModal,
-			Card: GenericCardSquare,
-			fetchData: Api.Lost.fetchLostFounds,
-			fetchSingle: Api.Lost.fetchSingleLostFound,
-			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
-			deleteSingle: Api.Lost.deleteSingleLostFound,
-			searchConfig: [
-				[{
-					...DefaultFormConfig,
-					name: 'city',
-					heading: 'City',
-					placeholder: 'Please enter city',
-					component: SelectFormInput,
-					options: City
-				}, {
-					...DefaultFormConfig,
-					name: 'header',
-					heading: 'Header',
-					placeholder: 'Please enter header',
-					requiredMessage: 'Header is required',
-					component: TextFormInput
-				}, {
-					...DefaultFormConfig,
-					name: 'petType',
-					heading: 'Pet Type',
-					placeholder: 'Please pet type',
-					component: SelectFormInput,
-					options: PetTypes
-				}, {
-					...DefaultFormConfig,
-					name: 'sex',
-					heading: 'Gender',
-					placeholder: 'Please enter genrder',
-					component: SelectFormInput,
-					options: PetSex
-				}, {
-					...DefaultFormConfig,
-					name: 'color',
-					heading: 'Pet Color',
-					placeholder: 'Please enter pet color',
-					component: SelectFormInput,
-					options: PetColor
-				}, {
-					...DefaultFormConfig,
-					name: 'breed',
-					heading: 'Breed',
-					placeholder: 'Please enter breed',
-					component: TextFormInput
-				}]
-			]
+			DetailModal: PetTypeModals.ADOPTION.DetailModal,
+			fetchSingle: PetTypeModals.ADOPTION.fetchSingle,
+			fetchSingleImages: PetTypeModals.ADOPTION.fetchSingleImages,
+			deleteSingle: PetTypeModals.ADOPTION.deleteSingle,
+
+			Card: PetTypeGrids.ADOPTION.Card,
+			searchConfig: PetTypeGrids.ADOPTION.searchConfig,
+			fetchData: PetTypeGrids.ADOPTION.fetchData
 		}
 	},
 	CHARITY: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: LostPetModal,
-			Card: GenericCardSquare,
-			fetchData: Api.Lost.fetchLostFounds,
-			fetchSingle: Api.Lost.fetchSingleLostFound,
-			fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
-			deleteSingle: Api.Lost.deleteSingleLostFound,
-			searchConfig: [
-				[{
-					...DefaultFormConfig,
-					name: 'city',
-					heading: 'City',
-					placeholder: 'Please enter city',
-					component: SelectFormInput,
-					options: City
-				}, {
-					...DefaultFormConfig,
-					name: 'header',
-					heading: 'Header',
-					placeholder: 'Please enter header',
-					requiredMessage: 'Header is required',
-					component: TextFormInput
-				}, {
-					...DefaultFormConfig,
-					name: 'petType',
-					heading: 'Pet Type',
-					placeholder: 'Please pet type',
-					component: SelectFormInput,
-					options: PetTypes
-				}, {
-					...DefaultFormConfig,
-					name: 'sex',
-					heading: 'Gender',
-					placeholder: 'Please enter genrder',
-					component: SelectFormInput,
-					options: PetSex
-				}, {
-					...DefaultFormConfig,
-					name: 'color',
-					heading: 'Pet Color',
-					placeholder: 'Please enter pet color',
-					component: SelectFormInput,
-					options: PetColor
-				}, {
-					...DefaultFormConfig,
-					name: 'breed',
-					heading: 'Breed',
-					placeholder: 'Please enter breed',
-					component: TextFormInput
-				}]
-			]
+			DetailModal: PetTypeModals.CHARITY.DetailModal,
+			fetchSingle: PetTypeModals.CHARITY.fetchSingle,
+			fetchSingleImages: PetTypeModals.CHARITY.fetchSingleImages,
+			deleteSingle: PetTypeModals.CHARITY.deleteSingle,
+
+			Card: PetTypeGrids.CHARITY.Card,
+			searchConfig: PetTypeGrids.CHARITY.searchConfig,
+			fetchData: PetTypeGrids.CHARITY.fetchData
 		}
 	}
 };
