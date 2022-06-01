@@ -2,15 +2,42 @@ import { Col, Row } from 'reactstrap';
 import Text from '../../styled/text/Text';
 import { TextType } from '../../styled/text/TextType';
 import Select from 'react-select';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-export const SelectFormInput = ({ setValue, options, register, errors, placeholder, requiredMessage, name, heading, xl, lg, sm, xs }) => {
+export const SelectFormInput = ({
+																	getValue,
+																	setValue,
+																	options,
+																	register,
+																	errors,
+																	placeholder,
+																	requiredMessage,
+																	name,
+																	heading,
+																	xl,
+																	lg,
+																	sm,
+																	xs
+																}) => {
 	const [value, setInnerValue] = useState(null);
-	const SelectOnChange = (newValue) => {
-		setValue(name, newValue.value)
-		setInnerValue(newValue)
-	}
+	const SelectOnChange = useCallback((newValue) => {
+		setValue(name, newValue.value);
+		setInnerValue(newValue);
+	}, [setInnerValue, setValue, name]);
+	const outerValue = getValue(name);
+
 	register(name, { required: requiredMessage });
+	useEffect(() => {
+		const data = getValue(name);
+		if (data) {
+			for (let i = 0; i < options.length; i++) {
+				if (options[i].label.toLowerCase() === data.toLowerCase() || options[i].value.toLowerCase() === data.toLowerCase()) {
+					SelectOnChange(options[i]);
+					break;
+				}
+			}
+		}
+	}, [name, options, getValue, outerValue, SelectOnChange]);
 
 	return (
 		<Col xl={xl} lg={lg} sm={sm} xs={xs}>

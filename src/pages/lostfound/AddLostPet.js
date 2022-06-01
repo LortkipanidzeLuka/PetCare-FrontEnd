@@ -201,16 +201,17 @@ const AddLostPet = ({ data, open, closeModal }) => {
 	];
 
 	const onSubmit = async data => {
-		if (isEditMode()) {
+		const images = await TransformImageArrToBase64(data.picture);
+		const params = {
+			...data,
+			advertisementType: 'LOST_FOUND',
+			tags: tags,
+			images: images
+		};
 
+		if (isEditMode()) {
+			console.log(params)
 		} else {
-			const images = await TransformImageArrToBase64(data.picture);
-			const params = {
-				...data,
-				advertisementType: 'LOST_FOUND',
-				tags: tags,
-				images: images
-			};
 			try {
 				await Api.Lost.createLostFound(params);
 				setSuccessMessage('item-added');
