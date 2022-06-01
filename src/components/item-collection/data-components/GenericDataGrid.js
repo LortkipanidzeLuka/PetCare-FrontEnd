@@ -9,7 +9,7 @@ import ApiLoader from '../../styled/loader/ApiLoader';
 
 const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, updateData}) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
-	const [params, setParams] = useState({});
+	const [params, setParams] = useState(searchConfig.initialData);
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});

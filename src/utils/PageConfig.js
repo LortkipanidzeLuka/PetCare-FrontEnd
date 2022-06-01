@@ -57,11 +57,15 @@ export const PAGES = {
 	}
 };
 
-// axiosshi ro ar anaxles deleteAuth is mere (window reload vcado) +
-// profiles cxrili + editebi
-// modalebshi edit mode
 // parametrebis gayoleba dzebnis dros
 // map is damateba
-// emailverified ს ბევრჯერ აგზავნის +
+
+
+// bugebi:
+// 1. petType bagavs dzebnis dros
+// 2. search tu nullia lowercasze agdebs exceptions back
+
+
 
 // werilebis damateba
+// ruka

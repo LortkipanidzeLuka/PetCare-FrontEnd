@@ -9,7 +9,7 @@ import GenericDataSearchList from '../item-search/GenericDataSearchList';
 
 const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal, updateData }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
-	const [params, setParams] = useState({});
+	const [params, setParams] = useState(searchConfig.initialData);
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});
