@@ -1,0 +1,37 @@
+.tag-success {
+  background-color: #34c38f;
+}
+
+.tag-danger {
+  background-color: #f46a6a;
+}
+
+.tag-warning {
+  background-color: #f1b44c;
+}
+
+.tag-info {
+  background-color: #50a5f1;
+}
+
+.tag-info-dark {
+  background-color: #0434ff8c;
+}
+
+.tag-info-faint {
+  background-color: #989898;
+}
+
+.tag-text-purple {
+  background-color: #6f42c1;
+}
+
+.tag-text-grey {
+  background-color: #343a40;
+}
+
+.big-tags {
+  .inner-text-overridable {
+    font-size: 18px !important;
+  }
+}
