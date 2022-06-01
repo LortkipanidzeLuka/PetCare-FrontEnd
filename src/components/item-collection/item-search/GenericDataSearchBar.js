@@ -2,12 +2,12 @@ import { Col, Row } from 'reactstrap';
 import Block from '../../styled/block/Block';
 import FormInput from '../../form/FormInput';
 
-const GenericDataSearchBar = ({ searchConfig }) => {
+const GenericDataSearchBar = ({ searchConfig, setParams }) => {
 
 	const FormConfig = searchConfig.map(val => (val.map(innerVal => ({ ...innerVal }))));
-
+	console.log(searchConfig)
 	const onSubmit = async (data) => {
-		console.log(data);
+		setParams(data);
 	};
 
 	return (

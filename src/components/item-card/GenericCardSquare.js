@@ -18,10 +18,10 @@ const GenericCardSquare = ({ createDate, city, header, description, primaryImage
 						</div>
 						<div className='pet-card-footer'>
 							<div className='pet-card-footer-left'>
-								<Text text={createDate} type={TextType.SMALL} icon={'mdi mdi-calendar mdi-dark mdi-18px'}/>
+								<Text text={createDate} type={TextType.REGULAR} icon={'mdi mdi-calendar mdi-dark mdi-18px'}/>
 							</div>
 							<div className='pet-card-footer-right'>
-								<Text text={city} type={TextType.SMALL} classNames={['dotted-text']} icon={'mdi mdi-map-marker-radius mdi-dark mdi-18px'}/>
+								<Text text={city} type={TextType.REGULAR} classNames={['dotted-text']} icon={'mdi mdi-map-marker-radius mdi-dark mdi-18px'}/>
 							</div>
 						</div>
 					</div>

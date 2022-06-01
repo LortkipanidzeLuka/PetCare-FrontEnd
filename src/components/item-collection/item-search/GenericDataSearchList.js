@@ -13,9 +13,9 @@ const GenericDataSearchList = ({ searchConfig }) => {
 	return (
 		<Row>
 			<Col className={'pet-card-col'}>
-				<Block noShadow>
+				<Block noShadow noBorder className={'full-width'}>
 					<div className={'p-all-medium'}>
-						<FormInput FormConfig={FormConfig} buttonName={'Search'} fullButton onSubmit={onSubmit} />
+						<FormInput horizontal FormConfig={FormConfig} buttonName={'Search'} fullButton onSubmit={onSubmit} />
 					</div>
 				</Block>
 			</Col>

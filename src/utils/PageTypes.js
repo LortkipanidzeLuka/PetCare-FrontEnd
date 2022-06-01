@@ -3,19 +3,6 @@ import Api from '../services';
 import GenericCardSquare from '../components/item-card/GenericCardSquare';
 import { LOST_AND_FOUND_SEARCH } from './PageSearch';
 
-// const LOST_FOUND = "LOST_FOUND";
-// const PET_CARE = "PET_CARE";
-// const CHARITY = "CHARITY";
-// const ADOPTION = "ADOPTION";
-//
-//
-// const PageTypesOptions = [
-// 	{ value: LOST_FOUND, label: 'Lost And Found' },
-// 	{ value: PET_CARE, label: 'Pet Care' },
-// 	{ value: CHARITY, label: 'Charity' },
-// 	{ value: ADOPTION, label: 'Pet Adoption' },
-// ];
-
 export const PetTypeConfig={
 	LOST_FOUND: {
 		DetailModal: LostPetModal,

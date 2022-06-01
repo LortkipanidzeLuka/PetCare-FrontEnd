@@ -16,7 +16,7 @@
 }
 
 .mrt-small {
-  margin-top: $small-distance;
+  margin-top: $small-distance !important;
 }
 
 // MEDIUM
@@ -90,7 +90,7 @@ textarea {
 }
 
 .full-width{
-  width: 100%;
+  width: 100% !important;
 }
 
 .pointer{

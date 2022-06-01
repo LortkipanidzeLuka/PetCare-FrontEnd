@@ -9,6 +9,7 @@ import ProfileAdvertisementModal from './ProfileAdvertisementModal';
 import useFetchTrigger from '../../../hooks/UseFetchTrigger';
 import { PetTypeConfig } from '../../../utils/PageTypes';
 import useToast, { ToastType } from '../../../hooks/UseToast';
+import { PROFILE_SEARCH } from '../../../utils/PageSearch';
 
 const ProfileAdvertisementTab = () => {
 	const [modalData, modalOpen, , toggleModal] = useModal();
@@ -19,7 +20,6 @@ const ProfileAdvertisementTab = () => {
 	const deleteItem = async ({ data }) => {
 		try {
 			if (data.advertisementType && data.id && PetTypeConfig[data.advertisementType]) {
-				console.log(data)
 				await PetTypeConfig[data.advertisementType].deleteSingle(data);
 				setSuccess('advertisement-deleted');
 				fetchData();
@@ -33,7 +33,7 @@ const ProfileAdvertisementTab = () => {
 	return (
 		<Block className={'full-tab'}>
 			<GenericDataList
-				searchConfig={[]}
+				searchConfig={PROFILE_SEARCH}
 				DetailModal={ProfileAdvertisementModal}
 				Card={GenericCardRectangle}
 				fetchData={Api.Prof.advertisements}

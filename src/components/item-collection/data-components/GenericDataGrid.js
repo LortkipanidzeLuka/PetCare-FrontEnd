@@ -9,7 +9,7 @@ import ApiLoader from '../../styled/loader/ApiLoader';
 
 const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, updateData}) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
-	const [params] = useState({});
+	const [params, setParams] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});
@@ -23,7 +23,7 @@ const GenericDataGrid = ({ DetailModal, Card, fetchData, fetchSingle, fetchSingl
 
 		<Row>
 			<Col xl={'3'}>
-				<GenericDataSearchBar searchConfig={searchConfig} />
+				<GenericDataSearchBar searchConfig={searchConfig} setParams={setParams}/>
 			</Col>
 			<Col xl={'9'} className={'d-flex justify-content-center flex-column'}>
 				<ApiLoader loading={loading}>

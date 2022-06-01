@@ -2,8 +2,8 @@ import { Button, Col, Row } from 'reactstrap';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const FormInput = ({ FormConfig, buttonName, fullButton = false, data, onSubmit, resetAfterSubmit }) => {
-	const { register, handleSubmit, formState: { errors }, reset, setValue, getValues, clearErrors , setError} = useForm({
+const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, data, onSubmit, resetAfterSubmit }) => {
+	const { register, handleSubmit, formState: { errors }, reset, setValue, getValues, clearErrors, setError } = useForm({
 		shouldUseNativeValidation: true,
 		mode: 'onChange'
 	});
@@ -26,10 +26,11 @@ const FormInput = ({ FormConfig, buttonName, fullButton = false, data, onSubmit,
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmitForm)}>
+		<form onSubmit={handleSubmit(onSubmitForm)} className={horizontal ? 'd-flex horizontal-form' : ''}>
 			{FormConfig.map((value, index) => {
+
 				return (
-					<Row className={'d-flex pl-small pr-small'} key={`input-row buttonName ${index}`}>
+					<div className={`d-flex pl-small pr-small row`} key={`input-row buttonName ${index}`}>
 						{value.map((cur, innerIndex) => {
 							const FormInputComponent = cur.component;
 							return (
@@ -40,11 +41,11 @@ const FormInput = ({ FormConfig, buttonName, fullButton = false, data, onSubmit,
 								</React.Fragment>
 							);
 						})}
-					</Row>
+					</div>
 				);
 			})}
 			{fullButton ? <Row>
-				<Col>
+				<Col className={`${horizontal ? 'd-flex justify-content-center align-items-center mrt-small' : ''}`}>
 					<Button type='submit' className={fullButton ? 'full-width' : ''}>{buttonName}</Button>
 				</Col>
 			</Row> : <></>}

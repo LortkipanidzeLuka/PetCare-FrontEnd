@@ -1,13 +1,24 @@
 import { SelectFormInput } from '../components/form/input/SelectFormInput';
-import { City, PetColor, PetSex, PetTypes } from './Constants';
+import { AdvTypesForLostFound, City, PageTypesOptions, PetColor, PetSex, PetTypesForSearch } from './Constants';
 import { TextFormInput } from '../components/form/input/TextFormInput';
 
 const DefaultFormConfig = {
 	lg: '12', xl: '12', sm: '12', xs: '12'
 };
 
+const HorizontalFormConfig = {
+	lg: '10', xl: '10', sm: '12', xs: '12'
+};
+
 export const LOST_AND_FOUND_SEARCH = [
 	[{
+		...DefaultFormConfig,
+		name: 'type',
+		heading: 'Type',
+		placeholder: 'Please enter type',
+		component: SelectFormInput,
+		options: AdvTypesForLostFound
+	},{
 		...DefaultFormConfig,
 		name: 'city',
 		heading: 'City',
@@ -16,7 +27,7 @@ export const LOST_AND_FOUND_SEARCH = [
 		options: City
 	}, {
 		...DefaultFormConfig,
-		name: 'header',
+		name: 'search',
 		heading: 'Header',
 		placeholder: 'Please enter header',
 		component: TextFormInput
@@ -26,7 +37,7 @@ export const LOST_AND_FOUND_SEARCH = [
 		heading: 'Pet Type',
 		placeholder: 'Please pet type',
 		component: SelectFormInput,
-		options: PetTypes
+		options: PetTypesForSearch
 	}, {
 		...DefaultFormConfig,
 		name: 'sex',
@@ -46,6 +57,26 @@ export const LOST_AND_FOUND_SEARCH = [
 		name: 'breed',
 		heading: 'Breed',
 		placeholder: 'Please enter breed',
+		component: TextFormInput
+	}]
+]
+
+
+
+export const PROFILE_SEARCH = [
+	[{
+		...HorizontalFormConfig,
+		name: 'type',
+		heading: 'Advertisement Type',
+		placeholder: 'Select Advertisement Type',
+		component: SelectFormInput,
+		options: PageTypesOptions
+	}],
+	[{
+		...HorizontalFormConfig,
+		name: 'search',
+		heading: 'Title or Description',
+		placeholder: 'Enter Title or Description',
 		component: TextFormInput
 	}]
 ]

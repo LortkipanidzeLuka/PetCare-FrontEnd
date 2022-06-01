@@ -9,7 +9,7 @@ import GenericDataSearchList from '../item-search/GenericDataSearchList';
 
 const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal, updateData }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
-	const [params] = useState({});
+	const [params, setParams] = useState({});
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
 		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
 	});
@@ -22,7 +22,7 @@ const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle
 	return (
 		<Row className={'advertisement-list'}>
 			<Col xl={'12'}>
-				<GenericDataSearchList searchConfig={searchConfig} />
+				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams}/>
 			</Col>
 			<Col xl={'12'} className={'d-flex justify-content-center flex-column'}>
 				<ApiLoader loading={loading}>
@@ -36,8 +36,8 @@ const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle
 											advertisementType: advertisementType
 										}})
 									}}
-									deleteItem={deleteItem}
 									openModal={toggleModal}
+									deleteItem={deleteItem}
 									{...value} />
 							</Col>))}
 					</Row>

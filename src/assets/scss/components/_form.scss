@@ -17,3 +17,13 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.horizontal-form{
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1000px){
+  .horizontal-form{
+    flex-direction: column;
+  }
+}

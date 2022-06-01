@@ -3,6 +3,18 @@ export const PetTypes = [
 	{ label: 'CAT', value: 1 }
 ];
 
+export const PetTypesForSearch = [
+	{ label: 'DOG', value: 'DOG' },
+	{ label: 'CAT', value: 'CAT' }
+];
+
+
+export const AdvTypesForLostFound = [
+	{ label: 'LOST', value: 'LOST' },
+	{ label: 'FOUND', value: 'FOUND' }
+];
+
+
 export const City = [
 	{ label: 'TBILISI', value: 'TBILISI' },
 	{ label: 'BATUMI', value: 'BATUMI' },
@@ -25,6 +37,20 @@ export const PetSex = [
 	{ label: 'MALE', value: 'MALE' },
 	{ label: 'FEMALE', value: 'FEMALE' }
 ];
+
+const LOST_FOUND = "LOST_FOUND";
+const PET_CARE = "PET_CARE";
+const CHARITY = "CHARITY";
+const ADOPTION = "ADOPTION";
+
+
+export const PageTypesOptions = [
+	{ value: LOST_FOUND, label: 'Lost And Found' },
+	{ value: PET_CARE, label: 'Pet Care' },
+	{ value: CHARITY, label: 'Charity' },
+	{ value: ADOPTION, label: 'Pet Adoption' },
+];
+
 
 export const TagListColorPool = [
 	'tag-success',
