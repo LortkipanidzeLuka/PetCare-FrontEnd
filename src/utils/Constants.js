@@ -1,6 +1,6 @@
 export const PetTypes = [
-	{ label: 'Dog', value: 0 },
-	{ label: 'Cat', value: 1 }
+	{ label: 'DOG', value: 0 },
+	{ label: 'CAT', value: 1 }
 ];
 
 export const City = [

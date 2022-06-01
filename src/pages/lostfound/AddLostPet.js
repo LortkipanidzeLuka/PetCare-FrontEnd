@@ -7,7 +7,6 @@ import { NumberFormInput } from '../../components/form/input/NumberFormInput';
 import { FileFormInput } from '../../components/form/input/FileFormInput';
 import { TextAreaFormInput } from '../../components/form/input/TextAreaFormInput';
 import Api from '../../services';
-import { TransformImageArrToBase64 } from '../../utils/UtilActions';
 import FormInput from '../../components/form/FormInput';
 import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useEffect, useState } from 'react';
@@ -35,7 +34,7 @@ const AddLostPet = ({ data, open, closeModal }) => {
 		const fetchSingleImages = async () => {
 			if (data && data.data && data.data.id) {
 				const res = await PetTypeModals.LOST_FOUND.fetchSingleImages({ id: data.data.id }, false);
-				setPetInfo(prev => ({ ...prev, picture: res.data }));
+				setPetInfo(prev => ({ ...prev, images: res.data }));
 			}
 		};
 		fetchSingleData();
@@ -191,34 +190,35 @@ const AddLostPet = ({ data, open, closeModal }) => {
 				xl: '12',
 				sm: '12',
 				xs: '12',
-				name: 'picture',
-				heading: 'Pictures',
-				placeholder: 'Please upload picture',
-				requiredMessage: 'Pictures are required',
+				name: 'images',
+				heading: 'Images',
+				placeholder: 'Please upload images',
+				requiredMessage: 'Images are required',
 				component: FileFormInput
 			}
 		]
 	];
 
 	const onSubmit = async data => {
-		const images = await TransformImageArrToBase64(data.picture);
+		for (let i = 0; i < data.images.length; i++) {
+			data.images[i]['isPrimary'] = (i === 0);
+		}
 		const params = {
 			...data,
 			advertisementType: 'LOST_FOUND',
-			tags: tags,
-			images: images
+			tags: tags
 		};
-
-		if (isEditMode()) {
-			console.log(params)
-		} else {
-			try {
+		try {
+			if (isEditMode()) {
+				await Api.Lost.updateLostFound(params);
+				setSuccessMessage('item-updated');
+			} else {
 				await Api.Lost.createLostFound(params);
 				setSuccessMessage('item-added');
-				closeModal();
-			} catch (error) {
-				setError(error);
 			}
+			closeModal();
+		} catch (error) {
+			setError(error);
 		}
 	};
 

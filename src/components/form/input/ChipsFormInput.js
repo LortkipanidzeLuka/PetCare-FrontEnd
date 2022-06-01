@@ -10,6 +10,7 @@ export const ChipsFormInput = ({ getValue, placeholder, setChips, errors, name, 
 	const outerValue = getValue(name);
 	useEffect(() => {
 		if (outerValue){
+			setChips(outerValue);
 			setValue(outerValue.map((cur)=>({value:cur, label:cur})));
 		}
 	}, [outerValue, setChips]);

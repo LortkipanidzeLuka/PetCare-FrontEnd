@@ -1,0 +1,19 @@
+.drop-wrapper{
+  border-style: dashed !important;
+  padding: $small-distance;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input{
+    visibility: hidden;
+  }
+}
+
+.file-description{
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -31,7 +31,8 @@ export const SelectFormInput = ({
 		const data = getValue(name);
 		if (data) {
 			for (let i = 0; i < options.length; i++) {
-				if (options[i].label.toLowerCase() === data.toLowerCase() || options[i].value.toLowerCase() === data.toLowerCase()) {
+				if (String(options[i].label).toLowerCase() === String(data).toLowerCase()
+					|| String(options[i].value).toLowerCase() === String(data).toLowerCase()){
 					SelectOnChange(options[i]);
 					break;
 				}

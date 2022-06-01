@@ -23,6 +23,7 @@
   .inner-text-overridable {
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-all;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     line-clamp: 2;
@@ -35,6 +36,7 @@
   .inner-text-overridable {
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-all;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     line-clamp: 2;

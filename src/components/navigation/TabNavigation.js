@@ -14,15 +14,14 @@ const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) =>
 
 	return (
 		<Col lg={12}>
-			<Nav pills className='navtab-bg nav-justified'>
+			<Nav pills className='nav-justified'>
 				{tabs.map((val, index) => {
 					return (
 						<NavItem key={index}>
 							<NavLink
-								style={{ cursor: 'pointer' }}
 								className={classnames({
 									active: activeTab === `${index}`
-								}) + (index === 0 ? ' tab-left' : index === tabs.length - 1 ? ' tab-right' : '')}
+								}) + (index === 0 ? ' tab-left' : index === tabs.length - 1 ? ' tab-right' : '') + 'pointer'}
 								onClick={() => {
 									setActiveTab(`${index}`);
 								}}>

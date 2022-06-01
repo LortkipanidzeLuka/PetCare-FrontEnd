@@ -11,9 +11,9 @@ const GenericCardSquare = ({ createDate, city, header, description, primaryImage
 						<img src={primaryImage && primaryImage.content} alt={'this is card '} />
 					</div>
 					<div className='pet-card-data'>
-						<Text text={header} type={TextType.HEADING} classNames={['mr-small-vert']} />
+						<Text text={header} type={TextType.HEADING} classNames={['mr-small-vert one-line-text']} />
 						<div className={'card-tags'}>
-							<Text text={description} type={TextType.REGULAR} classNames={['card-text']} />
+							<Text text={description} type={TextType.REGULAR} classNames={['card-text five-line-text']} />
 							<TagList data={tags} randomizeColor={false} />
 						</div>
 						<div className='pet-card-footer'>
