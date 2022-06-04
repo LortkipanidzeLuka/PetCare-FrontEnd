@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/images/test.png';
+import logo from '../../../../assets/images/test.png';
 import ProfileDropdown from './ProfileDropdown';
 import { useSelector } from 'react-redux';
-import { userSelectors } from '../../../storage/user/Selector';
-import { useModal } from '../../../hooks/UseModal';
-import RegisterModal from '../../user/Register';
-import AuthModal from '../../user/Login';
+import { userSelectors } from '../../../../storage/user/Selector';
+import { useModal } from '../../../../hooks/UseModal';
+import RegisterModal from '../../../user/Register';
+import AuthModal from '../../../user/Login';
 
-const Header = () => {
+const AppHeader = () => {
 
 	const [,registerOpen, , registerToggle] = useModal()
 	const [,authOpen, , authToggle] = useModal()
@@ -45,4 +45,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default AppHeader;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
-import { logout } from '../../../storage/Actions';
+import { logout } from '../../../../storage/Actions';
 import { useDispatch } from 'react-redux';
 
 const ProfileDropdown = ({ user }) => {
