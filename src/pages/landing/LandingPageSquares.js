@@ -26,8 +26,8 @@ const LandingPageSquares = () => {
 					{squares.map((value, index) => {
 						return (
 							<Col key={index} xl={3} xxl={3} sm={12} xs={12} lg={6} md={6} className={'landing-square'}>
-								<Block className={'full-width about-us-block'}>
-									<div className='full-width about-us-block pet-card-content d-flex flex-column  align-items-center  home-page-square'>
+								<Block className={'full-width'}>
+									<div className='full-width pet-card-content d-flex flex-column  align-items-center  home-page-square'>
 										<img width={'100px'} src={value.imgUrl} alt={value.text} />
 										<Link className={'unset-list-style'} to={value.url}>
 											<Text text={value.text} type={TextType.EXTRA_LARGE} />
