@@ -86,7 +86,6 @@ export const PROFILE_SEARCH = {
 		}]
 	],
 	initialData: {
-		type: 'LOST_FOUND',
-		search: 'I'
+		type: 'LOST_FOUND'
 	}
 };

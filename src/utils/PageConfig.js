@@ -57,12 +57,6 @@ export const PAGES = {
 	}
 };
 
-// 5. are you sure modal
-
-// bugebi:
-// 1. petType bagavs dzebnis dros
-// 2. advertisement shi search tu nullia lowercasze agdebs exceptions back
-//
 
 // werilebis damateba
 // ruka

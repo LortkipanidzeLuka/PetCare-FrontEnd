@@ -1,6 +1,6 @@
 export const PetTypes = [
-	{ label: 'DOG', value: 0 },
-	{ label: 'CAT', value: 1 }
+	{ label: 'DOG', value: 'DOG' },
+	{ label: 'CAT', value: 'CAT' }
 ];
 
 export const PetTypesForSearch = [
