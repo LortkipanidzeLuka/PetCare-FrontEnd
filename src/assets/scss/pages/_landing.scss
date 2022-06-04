@@ -1,11 +1,12 @@
 // LAYOUT
 
-.content-landing{
+.content-landing {
   min-height: calc(100vh - #{$header-height});
   background-color: $content-background;
   padding-top: calc(#{$header-height});
 }
-.landing-page-content-width{
+
+.landing-page-content-width {
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -22,36 +23,41 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .home-wrapper{
-    .home-img-wrapper, .home-main-text-wrapper{
+  .home-wrapper {
+    .home-img-wrapper, .home-main-text-wrapper {
       flex-direction: column !important;
-      .home-img-wrapper{
+
+      .home-img-wrapper {
         display: flex;
         justify-content: center;
         margin: 0 auto;
-        img{
+
+        img {
           width: 80%;
           margin: 0 auto;
         }
       }
     }
-    .home-main-text{
-      .white-text{
+
+    .home-main-text {
+      .white-text {
         text-align: center !important;
       }
+
       width: 60%;
       text-align: center !important;
       margin-top: $very-big-distance;
     }
+
     height: calc(#{$landing-home-height} * 2);
   }
-  .footer{
+  .footer {
     height: 600px;
   }
-  .landing-page-content-width{
+  .landing-page-content-width {
     max-width: 100%;
   }
-  .landing-square{
+  .landing-square {
     margin-bottom: $big-distance;
     padding-left: $medium-distance;
   }
@@ -63,10 +69,68 @@
   }
 
 }
+
 .home-main-text {
   width: $landing-text-width;
 }
 
-.home-page-square{
+.home-page-square {
   padding-bottom: $card-padding !important;
 }
+
+
+// LANDNING
+
+.landing-about-us {
+  height: $landing-about-us-height-xl;
+  background-color: $landing-about-us-background;
+  position: relative;
+  padding-top: $landing-about-us-padding-xl;
+}
+
+.about-us-left {
+  width: 40%;
+  height: 100%;
+  padding: $big-distance;
+}
+
+.about-us-right {
+  width: 60%;
+  height: 100%;
+  border-radius: inherit;
+  padding: $big-distance;
+  background-color: $landing-about-us-background;
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-about-us {
+    padding-top: $very-big-distance;
+
+    .landing-about-us-wrapper {
+      flex-direction: column !important;
+    }
+  }
+  .about-us-right {
+    width: 100%;
+  }
+  .about-us-left {
+    width: 100%;
+  }
+}
+
+.about-us-line {
+  width: 0;
+  position: relative;
+  height: 60px;
+  border: 1px solid;
+  margin-left: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .landing-about-us {
+    height: fit-content;
+    margin-bottom: $big-distance;
+  }
+}
+
+//
