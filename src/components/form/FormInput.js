@@ -1,6 +1,8 @@
 import { Button, Col, Row } from 'reactstrap';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import Text from '../styled/text/Text';
+import { TextType } from '../styled/text/TextType';
 
 const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, data, onSubmit, resetAfterSubmit }) => {
 	const { register, handleSubmit, formState: { errors }, reset, setValue, getValues, clearErrors, setError } = useForm({
@@ -46,7 +48,9 @@ const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, dat
 			})}
 			{fullButton ? <Row>
 				<Col className={`${horizontal ? 'd-flex justify-content-center align-items-center mrt-small' : ''}`}>
-					<Button type='submit' className={fullButton ? 'full-width' : ''}>{buttonName}</Button>
+					<Button type='submit' className={fullButton ? 'full-width' : ''}>
+						<Text text={buttonName} type={TextType.MEDIUM}/>
+					</Button>
 				</Col>
 			</Row> : <></>}
 		</form>);

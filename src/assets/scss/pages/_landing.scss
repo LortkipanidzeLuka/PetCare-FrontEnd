@@ -75,6 +75,9 @@
 }
 
 .home-page-square {
+  img{
+    width: $landing-square-image;
+  }
   padding-bottom: $card-padding !important;
 }
 

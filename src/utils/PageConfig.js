@@ -56,21 +56,16 @@ export const PAGES = {
 		}
 	}
 };
-// patara
-// 1. no-data message
+
 // 2. edit is moadalebis component
 // 3. damatebis gilakis galamazeba
 // 4. profilidan damateba
 // 5. are you sure modal
-// 6. loadingis heightebi
 
 // bugebi:
 // 1. petType bagavs dzebnis dros
 // 2. advertisement shi search tu nullia lowercasze agdebs exceptions back
 //
-
-// landing page +
-
 
 // werilebis damateba
 // ruka

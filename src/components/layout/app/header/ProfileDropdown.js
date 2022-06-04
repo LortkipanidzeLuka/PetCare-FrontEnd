@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { logout } from '../../../../storage/Actions';
 import { useDispatch } from 'react-redux';
+import Text from '../../../styled/text/Text';
+import { TextType } from '../../../styled/text/TextType';
 
 const ProfileDropdown = ({ user }) => {
 	const [menu, setMenu] = useState(false);
@@ -15,10 +17,18 @@ const ProfileDropdown = ({ user }) => {
 
 				</DropdownToggle>
 				<DropdownMenu end>
-					<DropdownItem tag='a' href='/profile?tab=0'>My Advertisements</DropdownItem>
-					<DropdownItem tag='a' href='/profile?tab=1'>Change Information</DropdownItem>
-					<DropdownItem tag='a' href='/profile?tab=2'>Change Password</DropdownItem>
-					<DropdownItem onClick={() => logout({ dispatch })}>Logout</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=0'>
+						<Text text={'My Advertisements'} type={TextType.MEDIUM}/>
+					</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=1'>
+						<Text text={'Change Information'} type={TextType.MEDIUM}/>
+					</DropdownItem>
+					<DropdownItem tag='a' href='/profile?tab=2'>
+						<Text text={'Change Password'} type={TextType.MEDIUM}/>
+					</DropdownItem>
+					<DropdownItem onClick={() => logout({ dispatch })}>
+						<Text text={'Logout'} type={TextType.MEDIUM}/>
+					</DropdownItem>
 				</DropdownMenu>
 			</Dropdown>
 		</React.Fragment>
