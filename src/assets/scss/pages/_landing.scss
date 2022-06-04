@@ -133,4 +133,48 @@
   }
 }
 
-//
+// ACHIEVEMENT
+
+.landing-achievement{
+  position: relative;
+  padding-bottom: $very-big-distance;
+}
+
+.achievement-row{
+  div{
+    img{
+      width: $landing-achievement-image-width;
+    }
+  }
+}
+
+.achievement-row-rev{
+  div{
+    img{
+      width: $landing-achievement-image-width;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .achievement-row{
+    flex-direction: column !important;
+  }
+  .achievement-row-rev{
+    flex-direction: column-reverse !important;
+  }
+  .achievement-data{
+    padding: $big-distance;
+  }
+}
+
+.landing-faqs{
+  background-color: $landing-about-us-background;
+  position: relative;
+  margin-bottom: $very-big-distance;
+}
+
+.about-us-block{
+  height: 100% !important;
+  display: flex;
+}

@@ -11,8 +11,8 @@ const LandingPage = () => {
 					 tabIndex='0'>
 				<LandingHomeSection id='home' />
 				<LandingAboutUs id='aboutUs' />
-				{/*<LandingAchievement id='achievements' />*/}
-				{/*<LandingFAQS id={'faqs'}/>*/}
+				<LandingAchievement id='achievements' />
+				<LandingFAQS id={'faqs'}/>
 			</div>
 		</>
 	);
