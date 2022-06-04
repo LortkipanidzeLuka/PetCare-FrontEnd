@@ -1,6 +1,6 @@
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
-import LandingDog from '../../assets/images/landing-dog_preview_rev_1.png';
+import LandingDog from '../../assets/images/home-dogs.png';
 import LandingPageSquares from './LandingPageSquares';
 
 const LandingHomeSection = ({ id }) => {

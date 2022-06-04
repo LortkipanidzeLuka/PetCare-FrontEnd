@@ -1,5 +1,5 @@
-import PetCharity from '../../assets/images/pet-charity-ach_preview_rev_1.png';
-import PetHug from '../../assets/images/pet-adoption-ach.png';
+import PetCharity from '../../assets/images/ach-donation.png';
+import PetHug from '../../assets/images/ach-adoption-ach.png';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
 

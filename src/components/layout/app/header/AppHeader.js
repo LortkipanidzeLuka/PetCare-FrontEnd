@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../../assets/images/test.png';
+import logo from '../../../../assets/images/logo.png';
 import ProfileDropdown from './ProfileDropdown';
 import { useSelector } from 'react-redux';
 import { userSelectors } from '../../../../storage/user/Selector';

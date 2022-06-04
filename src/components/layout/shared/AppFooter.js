@@ -1,7 +1,7 @@
 import { TextType } from '../../styled/text/TextType';
 import Text from '../../styled/text/Text';
 import { Col, Row } from 'reactstrap';
-import logo from '../../../assets/images/test.png';
+import logo from '../../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
 const AppFooter = () => {

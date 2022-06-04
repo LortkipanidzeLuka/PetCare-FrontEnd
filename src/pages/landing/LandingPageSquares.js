@@ -1,7 +1,7 @@
-import PetFound from '../../assets/images/found_icon.7d6654b.svg';
-import PetCare from '../../assets/images/petco_love_care_black.51923ac.svg';
-import Adoption from '../../assets/images/adoption.png';
-import Charity from '../../assets/images/animal-charity-svgrepo-com.svg';
+import PetFound from '../../assets/images/square-found.svg';
+import PetCare from '../../assets/images/square-petcare.svg';
+import Adoption from '../../assets/images/square-adoption.png';
+import Charity from '../../assets/images/square-charity.svg';
 import { Link } from 'react-router-dom';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
