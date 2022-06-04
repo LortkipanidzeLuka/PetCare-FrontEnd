@@ -1,13 +1,10 @@
-import SingleRowPetList from "../landing/SingleRowPetList";
+const Adoption = () => {
+	return (
+		<div>
+			adoptionnn
+		</div>
+	);
+};
 
 
-const Adoption = ()=> {
-    return(
-        <div>
-            <SingleRowPetList/>
-        </div>
-    )
-}
-
-
-export default Adoption
+export default Adoption;

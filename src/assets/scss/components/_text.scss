@@ -15,6 +15,10 @@
   color: $info-faint;
 }
 
+.white-text{
+  color: $blank;
+}
+
 .center-text {
   text-align: center !important;
 }
@@ -43,3 +47,9 @@
     -webkit-box-orient: vertical;
   }
 }
+
+.unset-list-style{
+  color: unset !important;
+  text-decoration: auto;
+}
+
