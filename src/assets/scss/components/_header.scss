@@ -70,3 +70,17 @@
   color: $info-dark;
   cursor: pointer;
 }
+
+.landing-subheader{
+  li{
+    margin-left: $very-big-distance;
+    margin-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .landing-header{
+    padding: 0 $big-distance;
+  }
+}
+

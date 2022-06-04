@@ -29,7 +29,7 @@ const LandingHeader = () => {
 	];
 	return (
 		<React.Fragment>
-			<header className='header'>
+			<header className='header landing-header'>
 				<div className='d-flex header-content landing-page-content-width'>
 					<div className='header-left '>
 						<Link to='/' className='logo logo-dark'>
@@ -41,7 +41,7 @@ const LandingHeader = () => {
 					<div className='header-right'>
 						<nav id="navbar-example2" className="navbar">
 
-						<ul className='subheader-list m-auto nav'>
+						<ul className='subheader-list m-auto nav landing-subheader'>
 							{tabs.map((value, index) => (
 									<li key={index}>
 										<a href={value.path} style={style}>
