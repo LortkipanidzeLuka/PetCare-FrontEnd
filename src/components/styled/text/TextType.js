@@ -44,6 +44,6 @@ export const TextTypeParams = {
 	SMALL: {
 		fontFamily: `"Poppins",sans-serif`,
 		fontWeight: 100,
-		fontSize: '10px'
+		fontSize: '12px'
 	}
 };

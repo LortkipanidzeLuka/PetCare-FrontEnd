@@ -62,7 +62,7 @@ export const LOST_AND_FOUND_SEARCH = {
 		}]
 	],
 	initialData: {
-		type: 'FOUND'
+		type: 'LOST'
 	}
 };
 
