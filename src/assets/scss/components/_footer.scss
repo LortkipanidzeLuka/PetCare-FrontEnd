@@ -24,3 +24,17 @@
     }
   }
 }
+@media screen and (max-width: 1000px) {
+  .empty-footer-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer-logo-wrapper{
+    flex-direction: column !important;
+    div{
+      margin-bottom: $small-distance;
+    }
+  }
+}

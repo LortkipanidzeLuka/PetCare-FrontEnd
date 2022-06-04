@@ -9,9 +9,9 @@ const AppFooter = () => {
 		<footer className={'footer'}>
 			<div className={'landing-page-content-width'}>
 				<Row>
-					<Col xs={1} md={1} lg={1} sm={1} xxl={1} xl={1} />
-					<Col className={'d-flex flex-column justify-content-center p-all-very-big'}>
-						<div className={'d-flex flex-row align-items-center'}>
+					<Col xs={4} md={2} lg={2} sm={6} xxl={2} xl={2}
+							 className={'d-flex flex-column justify-content-center p-all-very-big'}>
+						<div className={'footer-logo-wrapper d-flex flex-row align-items-center'}>
 							<div>
 								<img src={logo} height={'50'} alt={'petcare'} />
 							</div>
@@ -20,7 +20,7 @@ const AppFooter = () => {
 							</div>
 						</div>
 					</Col>
-					<Col className={' p-all-very-big'}>
+					<Col xs={8} md={4} lg={4} sm={6} xxl={4} xl={4} className={' p-all-very-big'}>
 						<Text text={'Menu'} type={TextType.LARGE} />
 						<div className={'d-flex flex-column '}>
 							<div className={'d-flex flex-row justify-content-between'}>
@@ -50,9 +50,7 @@ const AppFooter = () => {
 							</div>
 						</div>
 					</Col>
-					<Col xs={1} md={1} lg={1} sm={1} xxl={1} xl={1} />
-					<Col xs={1} md={1} lg={1} sm={1} xxl={1} xl={1} />
-
+					<Col xs={1} md={1} lg={1} sm={1} xxl={1} xl={1} className={'empty-footer-div'} />
 					<Col className={' p-all-very-big'}>
 						<div className={'d-flex flex-column divided-info'}>
 							<div className={'d-flex flex-row'}>
@@ -73,7 +71,6 @@ const AppFooter = () => {
 							</div>
 						</div>
 					</Col>
-					<Col xs={1} md={1} lg={1} sm={1} xxl={1} xl={1} />
 				</Row>
 				<Row>
 					<div className={'d-flex justify-content-between'}>
