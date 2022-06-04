@@ -6,10 +6,21 @@
   left: 0;
   height: $footer-height;
   background-color: $footer-background-color;
+}
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer-key {
+  width: 100px;
+}
+
+.divided-info {
+  div{
+    margin: 2px 0;
+  }
+  a{
+    margin: 5px 0;
+    :hover{
+      cursor: pointer;
+      color: $info-dark;
+    }
   }
 }
