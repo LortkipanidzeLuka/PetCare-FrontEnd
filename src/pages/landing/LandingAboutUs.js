@@ -10,7 +10,7 @@ const LandingAboutUs = ({ id }) => {
 				<div className={'mrb-big'}>
 					<Text text={'About us'} type={TextType.EXTRA_LARGE} />
 				</div>
-				<Block className={'full-width full-height landing-about-us-wrapper'}>
+				<Block className={'full-width about-us-block landing-about-us-wrapper'}>
 					<div className={'about-us-left'}>
 						<Text text={'Help us help animal lovers reunite with lost pets.'} type={TextType.EXTRA_LARGE}
 									classNames={['white-text']} />

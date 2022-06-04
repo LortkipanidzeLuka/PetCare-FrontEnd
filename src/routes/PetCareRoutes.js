@@ -3,10 +3,11 @@ import Charity from '../pages/charity/Charity';
 import LostPetPage from '../pages/lostfound/LostPetPage';
 import Advertisement from '../pages/advertisment/Advertisement';
 import ProfilePage from '../pages/profile/ProfilePage';
+import LandingPage from '../pages/landing/LandingPage';
 
 
 const AppRoutes = [
-	{ path: '/', component: Adoption },
+	{ path: '/', component: LandingPage },
 	{ path: '/adoption', component: Adoption },
 	{ path: '/charity', component: Charity },
 	{ path: '/lost-found', component: LostPetPage },
