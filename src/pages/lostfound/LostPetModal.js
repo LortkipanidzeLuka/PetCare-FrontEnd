@@ -7,7 +7,7 @@ import useToast, { ToastType } from '../../hooks/UseToast';
 import UserBlock from '../../components/styled/block/UserBlock';
 import PetBlock from '../../components/styled/block/PetBlock';
 import PetCarousel from '../../components/image-carousel/PetCarousel';
-import ApiLoader from '../../components/styled/loader/ApiLoader';
+import ApiLoader from '../../components/styled/data/ApiLoader';
 
 
 const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {

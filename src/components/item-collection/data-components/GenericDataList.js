@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import useGrid from '../../../hooks/UseGrid';
 import useToast, { ToastType } from '../../../hooks/UseToast';
 import { Col, Row } from 'reactstrap';
-import ApiLoader from '../../styled/loader/ApiLoader';
+import ApiLoader from '../../styled/data/ApiLoader';
 import GenericDataPagination from '../item-pagination/GenericDataPagination';
 import GenericDataSearchList from '../item-search/GenericDataSearchList';
+import NoData from '../../styled/data/NoData';
 
 const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, searchConfig, toggleEditModal, updateData }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
@@ -22,35 +23,39 @@ const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle
 	return (
 		<Row className={'advertisement-list'}>
 			<Col xl={'12'}>
-				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams}/>
+				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} />
 			</Col>
-			<Col xl={'12'} className={'d-flex justify-content-center flex-column'}>
-				<ApiLoader loading={loading}>
-					<Row>
-						{data.map((value, index) => (
-							<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
-								<Card
-									openEditModal={(advertisementType) => {
-										toggleEditModal({data:{
-											id: value.id,
-											advertisementType: advertisementType
-										}})
-									}}
-									openModal={toggleModal}
-									deleteItem={deleteItem}
-									{...value} />
-							</Col>))}
-					</Row>
-					<GenericDataPagination
-						pages={pages}
-						page={currentPage}
-						goToNextPage={goToNextPage}
-						goToPreviousPage={goToPreviousPage}
-						changePage={changePage}
-					/>
-				</ApiLoader>
-			</Col>
+			<Col xl={'12'} className={'d-flex justify-content-center flex-column min-height-list'}>
+				<NoData noData={(!data || !data.length) && !loading}>
+					<ApiLoader loading={loading}>
+						<Row>
+							{data.map((value, index) => (
+								<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
+									<Card
+										openEditModal={(advertisementType) => {
+											toggleEditModal({
+												data: {
+													id: value.id,
+													advertisementType: advertisementType
+												}
+											});
+										}}
+										openModal={toggleModal}
+										deleteItem={deleteItem}
+										{...value} />
+								</Col>))}
+						</Row>
+						<GenericDataPagination
+							pages={pages}
+							page={currentPage}
+							goToNextPage={goToNextPage}
+							goToPreviousPage={goToPreviousPage}
+							changePage={changePage}
+						/>
+					</ApiLoader>
+				</NoData>
 
+			</Col>
 			<DetailModal open={petModalOpen} closeModal={toggleModal} fetchSingle={fetchSingle} params={modalData}
 									 fetchSingleImages={fetchSingleImages} />
 		</Row>

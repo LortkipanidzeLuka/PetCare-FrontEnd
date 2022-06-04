@@ -10,7 +10,7 @@ import { refreshToken } from '../../services/axios';
 import { updateUserStore } from '../../storage/Actions';
 import { useModal } from '../../hooks/UseModal';
 import EmailVerification from '../form/custom/EmailVerification';
-import ApiLoader from '../styled/loader/ApiLoader';
+import ApiLoader from '../styled/data/ApiLoader';
 
 const EmailVerify = () => {
 	const user = useSelector(userSelectors.userInfo);
