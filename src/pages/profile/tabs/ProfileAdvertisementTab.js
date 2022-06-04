@@ -13,9 +13,11 @@ import Text from '../../../components/styled/text/Text';
 import { TextType } from '../../../components/styled/text/TextType';
 import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
 import ProfileCreateModal from './ProfileCreateModal';
+import ConfirmationModal from '../../../components/confirmation/ConfirmationModal';
 
 const ProfileAdvertisementTab = () => {
 	const [modalData, modalOpen, , toggleModal] = useModal();
+	const [deleteModalData, deleteModalOpen, , toggleDeleteModal] = useModal();
 	const [updateData, fetchData] = useFetchTrigger();
 	const [createMenu, setCreateMenu] = useState(false);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
@@ -40,7 +42,11 @@ const ProfileAdvertisementTab = () => {
 
 	];
 
-	const deleteItem = async ({ data }) => {
+	const deleteItem = (data) => {
+		toggleDeleteModal(data);
+	};
+
+	const deleteItemCallBack = async ({ data }) => {
 		try {
 			if (data.advertisementType && data.id && PetTypeConfig[data.advertisementType]) {
 				await PetTypeConfig[data.advertisementType].deleteSingle(data);
@@ -61,8 +67,9 @@ const ProfileAdvertisementTab = () => {
 					</Col>
 					<Col md={6} lg={6} xxl={6} xl={6} xs={12} sm={6} className={'d-flex justify-content-end'}>
 						<Dropdown isOpen={createMenu} toggle={() => setCreateMenu(!createMenu)} className='d-inline-block'>
-							<DropdownToggle className='btn header-item waves-effect add-button responsive-button' id='page-header-user-dropdown' tag='button'>
-									<Text text={'Add advertisement'} type={TextType.MEDIUM} align={'center'} />
+							<DropdownToggle className='btn header-item waves-effect add-button responsive-button'
+															id='page-header-user-dropdown' tag='button'>
+								<Text text={'Add advertisement'} type={TextType.MEDIUM} align={'center'} />
 							</DropdownToggle>
 							<DropdownMenu end>
 								{createMenuData.map((value, index) => {
@@ -70,7 +77,7 @@ const ProfileAdvertisementTab = () => {
 										<DropdownItem tag='a' key={index} onClick={() => {
 											toggleModal({ data: { id: null, advertisementType: value.keyWord } });
 										}}>
-											<Text text={value.text} type={TextType.MEDIUM} classNames={['pointer']}/>
+											<Text text={value.text} type={TextType.MEDIUM} classNames={['pointer']} />
 										</DropdownItem>
 									);
 								})}
@@ -89,6 +96,14 @@ const ProfileAdvertisementTab = () => {
 				deleteItem={deleteItem}
 			/>
 			<ProfileCreateModal data={modalData} open={modalOpen} closeModal={toggleModal} fetchData={fetchData} />
+			<ConfirmationModal
+				text={'Are you sure you want to delete this advertisement '}
+				open={deleteModalOpen}
+				toggle={toggleDeleteModal}
+				callback={(params) => {
+					deleteItemCallBack(params);
+				}}
+				params={deleteModalData} />
 		</Block>
 	);
 };

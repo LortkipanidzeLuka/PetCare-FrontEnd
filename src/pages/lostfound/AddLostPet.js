@@ -31,7 +31,7 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				const res = await Api.Lost.fetchSingleLostFound({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, ...res.data }));
 			}else {
-				setPetInfo({})
+				setPetInfo(null)
 			}
 		};
 		const fetchSingleImages = async () => {
@@ -39,7 +39,7 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				const res = await Api.Lost.fetchSingleLostFoundImages({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, images: res.data }));
 			}else {
-				setPetInfo({})
+				setPetInfo(null)
 			}
 		};
 		fetchSingleData();
