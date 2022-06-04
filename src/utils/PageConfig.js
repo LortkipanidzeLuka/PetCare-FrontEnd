@@ -56,7 +56,10 @@ export const PAGES = {
 		}
 	}
 };
-
+// TODO
+// textebi
+// errorebi
+// age number format
 
 // werilebis damateba
 // ruka
