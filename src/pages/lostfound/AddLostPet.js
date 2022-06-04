@@ -10,7 +10,6 @@ import Api from '../../services';
 import FormInput from '../../components/form/FormInput';
 import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useEffect, useState } from 'react';
-import { PetTypeConfig } from '../../utils/PageTypes';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
 
@@ -29,14 +28,18 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	useEffect(() => {
 		const fetchSingleData = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await PetTypeConfig.LOST_FOUND.fetchSingle({ id: data.data.id }, false);
+				const res = await Api.Lost.fetchSingleLostFound({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, ...res.data }));
+			}else {
+				setPetInfo({})
 			}
 		};
 		const fetchSingleImages = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await PetTypeConfig.LOST_FOUND.fetchSingleImages({ id: data.data.id }, false);
+				const res = await Api.Lost.fetchSingleLostFoundImages({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, images: res.data }));
+			}else {
+				setPetInfo({})
 			}
 		};
 		fetchSingleData();

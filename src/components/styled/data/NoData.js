@@ -3,7 +3,6 @@ import Text from '../text/Text';
 import { TextType } from '../text/TextType';
 
 const NoData = (params) => {
-	console.log(params)
 	return (
 		<>
 			{params.noData ? (

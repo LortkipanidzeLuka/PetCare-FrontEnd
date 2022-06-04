@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Block from '../../../components/styled/block/Block';
 import Api from '../../../services';
-import AddLostPet from '../../lostfound/AddLostPet';
 import { useModal } from '../../../hooks/UseModal';
 import GenericDataList from '../../../components/item-collection/data-components/GenericDataList';
 import GenericCardRectangle from '../../../components/item-card/GenericCardRectangle';
@@ -12,13 +11,34 @@ import useToast, { ToastType } from '../../../hooks/UseToast';
 import { PROFILE_SEARCH } from '../../../utils/PageSearch';
 import Text from '../../../components/styled/text/Text';
 import { TextType } from '../../../components/styled/text/TextType';
-import { Button, Col, Row } from 'reactstrap';
+import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
+import ProfileCreateModal from './ProfileCreateModal';
 
 const ProfileAdvertisementTab = () => {
 	const [modalData, modalOpen, , toggleModal] = useModal();
 	const [updateData, fetchData] = useFetchTrigger();
+	const [createMenu, setCreateMenu] = useState(false);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const { setMessage: setSuccess } = useToast(ToastType.SUCCESS);
+	const createMenuData = [
+		{
+			keyWord: 'LOST_FOUND',
+			text: 'Add Lost And Found'
+		},
+		{
+			keyWord: 'PET_CARE',
+			text: 'Add Pet Care'
+		},
+		{
+			keyWord: 'ADOPTION',
+			text: 'Add Adoption'
+		},
+		{
+			keyWord: 'CHARITY',
+			text: 'Add Charity'
+		}
+
+	];
 
 	const deleteItem = async ({ data }) => {
 		try {
@@ -30,7 +50,6 @@ const ProfileAdvertisementTab = () => {
 		} catch (error) {
 			setError(error);
 		}
-
 	};
 
 	return (
@@ -41,9 +60,22 @@ const ProfileAdvertisementTab = () => {
 						<Text text={'My Advertisements'} type={TextType.LARGE} />
 					</Col>
 					<Col md={6} lg={6} xxl={6} xl={6} xs={12} sm={6} className={'d-flex justify-content-end'}>
-						<Button onClick={toggleModal} className={'add-button responsive-button'}>
-							<Text text={'Add advertisement'} type={TextType.MEDIUM} align={'center'}/>
-						</Button>
+						<Dropdown isOpen={createMenu} toggle={() => setCreateMenu(!createMenu)} className='d-inline-block'>
+							<DropdownToggle className='btn header-item waves-effect add-button responsive-button' id='page-header-user-dropdown' tag='button'>
+									<Text text={'Add advertisement'} type={TextType.MEDIUM} align={'center'} />
+							</DropdownToggle>
+							<DropdownMenu end>
+								{createMenuData.map((value, index) => {
+									return (
+										<DropdownItem tag='a' key={index} onClick={() => {
+											toggleModal({ data: { id: null, advertisementType: value.keyWord } });
+										}}>
+											<Text text={value.text} type={TextType.MEDIUM} classNames={['pointer']}/>
+										</DropdownItem>
+									);
+								})}
+							</DropdownMenu>
+						</Dropdown>
 					</Col>
 				</Row>
 			</div>
@@ -56,7 +88,7 @@ const ProfileAdvertisementTab = () => {
 				updateData={updateData}
 				deleteItem={deleteItem}
 			/>
-			<AddLostPet data={modalData} open={modalOpen} closeModal={toggleModal} fetchData={fetchData} />
+			<ProfileCreateModal data={modalData} open={modalOpen} closeModal={toggleModal} fetchData={fetchData} />
 		</Block>
 	);
 };
