@@ -58,7 +58,6 @@ export const PAGES = {
 };
 
 // 2. edit is moadalebis component
-// 3. damatebis gilakis galamazeba
 // 4. profilidan damateba
 // 5. are you sure modal
 

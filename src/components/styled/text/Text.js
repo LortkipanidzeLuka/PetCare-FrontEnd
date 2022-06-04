@@ -8,7 +8,8 @@ const Text = ({ type, text, styles, classNames, align, icon }) => {
 		fontWeight: textParams.fontWeight,
 		textAlign: align || 'initial',
 		display: 'flex',
-		alignItems: 'center'
+		alignItems: 'center',
+		justifyContent: align
 	};
 
 	return (

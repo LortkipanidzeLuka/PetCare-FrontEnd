@@ -10,6 +10,9 @@ import useFetchTrigger from '../../../hooks/UseFetchTrigger';
 import { PetTypeConfig } from '../../../utils/PageTypes';
 import useToast, { ToastType } from '../../../hooks/UseToast';
 import { PROFILE_SEARCH } from '../../../utils/PageSearch';
+import Text from '../../../components/styled/text/Text';
+import { TextType } from '../../../components/styled/text/TextType';
+import { Button, Col, Row } from 'reactstrap';
 
 const ProfileAdvertisementTab = () => {
 	const [modalData, modalOpen, , toggleModal] = useModal();
@@ -32,6 +35,18 @@ const ProfileAdvertisementTab = () => {
 
 	return (
 		<Block className={'full-tab'}>
+			<div className={'d-flex justify-content-between align-items-center pl-medium'}>
+				<Row className={'full-width'}>
+					<Col md={6} lg={6} xxl={6} xl={6} xs={12} sm={6}>
+						<Text text={'My Advertisements'} type={TextType.LARGE} />
+					</Col>
+					<Col md={6} lg={6} xxl={6} xl={6} xs={12} sm={6} className={'d-flex justify-content-end'}>
+						<Button onClick={toggleModal} className={'add-button responsive-button'}>
+							<Text text={'Add advertisement'} type={TextType.MEDIUM} align={'center'}/>
+						</Button>
+					</Col>
+				</Row>
+			</div>
 			<GenericDataList
 				searchConfig={PROFILE_SEARCH}
 				DetailModal={ProfileAdvertisementModal}

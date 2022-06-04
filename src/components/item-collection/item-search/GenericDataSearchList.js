@@ -20,7 +20,7 @@ const GenericDataSearchList = ({ searchConfig, setParams }) => {
 		<Row>
 			<Col className={'pet-card-col'}>
 				<Block noShadow noBorder className={'full-width'}>
-					<div className={'p-all-medium'}>
+					<div className={'p-all-medium pl-very-small'}>
 						<FormInput data={initialData} horizontal FormConfig={FormConfig} buttonName={'Search'} fullButton onSubmit={onSubmit} />
 					</div>
 				</Block>

@@ -49,7 +49,7 @@ const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, dat
 			{fullButton ? <Row>
 				<Col className={`${horizontal ? 'd-flex justify-content-center align-items-center mrt-small' : ''}`}>
 					<Button type='submit' className={fullButton ? 'full-width' : ''}>
-						<Text text={buttonName} type={TextType.MEDIUM}/>
+						<Text text={buttonName} type={TextType.MEDIUM} align={'center'}/>
 					</Button>
 				</Col>
 			</Row> : <></>}

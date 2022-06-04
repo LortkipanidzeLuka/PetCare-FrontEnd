@@ -13,9 +13,12 @@ const LostPetPage = () => {
 
 	return (
 		<div>
-			<Button onClick={toggleModal}>
-				<Text text={'Add Pet'} type={TextType.MEDIUM} />
-			</Button>
+			<div className={'d-flex justify-content-between'}>
+				<Text text={'Lost And Found Pets'} type={TextType.LARGE}/>
+				<Button onClick={toggleModal} className={'add-button'}>
+					<Text text={'Add announcement'} type={TextType.MEDIUM} />
+				</Button>
+			</div>
 			<Grid {...pageConfig} updateData={updateData} />
 			<AddLostPet open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}
 									fetchData={fetchData} />

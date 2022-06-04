@@ -19,7 +19,7 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 		description: '',
 		city: '',
 		createDate: '',
-		header: 'Announcement',
+		header: 'Advertisement',
 		petInfo: {},
 		userInfo: {},
 		tags: []

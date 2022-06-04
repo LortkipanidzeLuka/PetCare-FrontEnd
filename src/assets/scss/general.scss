@@ -55,8 +55,16 @@
 
 // PADDING SMALL
 
+.pl-very-small{
+  padding-left: $extra-small-distance !important;
+}
+
 .pl-small {
   padding-left: $small-distance;
+}
+
+.pl-medium {
+  padding-left: $medium-distance;
 }
 
 .pr-small {
@@ -102,5 +110,16 @@ textarea {
 }
 
 .add-button{
+  background-color: unset !important;
+  border: 1px solid $success !important;
+  div{
+    color: $success !important;
+  }
+}
 
+@media screen and (max-width: 575px){
+  .responsive-button{
+    margin-top: $medium-distance;
+    width: 100%;
+  }
 }

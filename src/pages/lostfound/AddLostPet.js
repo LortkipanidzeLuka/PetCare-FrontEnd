@@ -11,6 +11,8 @@ import FormInput from '../../components/form/FormInput';
 import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useEffect, useState } from 'react';
 import { PetTypeConfig } from '../../utils/PageTypes';
+import Text from '../../components/styled/text/Text';
+import { TextType } from '../../components/styled/text/TextType';
 
 const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
@@ -230,11 +232,11 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
 			<ModalHeader>
-				{isEditMode ? 'Update' : 'Create'} Lost Pet Announcement
+				<Text text={`${isEditMode() ? 'Update' : 'Create'} Lost Pet Advertisement`} type={TextType.LARGE}/>
 			</ModalHeader>
 			<ModalBody>
 				<FormInput data={petInfo} FormConfig={FormConfig}
-									 buttonName={`${!isEditMode() ? 'Create' : 'Update'} Announcement`} fullButton
+									 buttonName={`${!isEditMode() ? 'Create' : 'Update'} Advertisement`} fullButton
 									 onSubmit={onSubmit} />
 			</ModalBody>
 		</Modal>
