@@ -5,7 +5,8 @@ export const TextType = {
 	HEADING: 'HEADING',
 	REGULAR: 'REGULAR',
 	SMALL: 'SMALL',
-	MEDIUM: 'MEDIUM'
+	MEDIUM: 'MEDIUM',
+	LOGO: 'LOGO'
 
 //    MORE TYPES
 };
@@ -45,5 +46,10 @@ export const TextTypeParams = {
 		fontFamily: `"Poppins",sans-serif`,
 		fontWeight: 100,
 		fontSize: '12px'
+	},
+	LOGO:{
+		fontFamily: `"Poppins",sans-serif`,
+		fontWeight: 400,
+		fontSize: '28px'
 	}
 };

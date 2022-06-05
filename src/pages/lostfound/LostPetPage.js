@@ -16,7 +16,7 @@ const LostPetPage = () => {
 			<div className={'d-flex justify-content-between'}>
 				<Text text={'Lost And Found Pets'} type={TextType.LARGE}/>
 				<Button onClick={toggleModal} className={'add-button'}>
-					<Text text={'Add announcement'} type={TextType.MEDIUM} />
+					<Text text={'Add Advertisement'} type={TextType.MEDIUM} />
 				</Button>
 			</div>
 			<Grid {...pageConfig} updateData={updateData} />
