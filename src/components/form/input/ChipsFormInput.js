@@ -4,16 +4,17 @@ import { TextType } from '../../styled/text/TextType';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
 
-export const ChipsFormInput = ({ getValue, placeholder, setChips, errors, name, heading, xl, lg, sm, xs }) => {
-	const [value, setValue] = useState(null);
+export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, heading, xl, lg, sm, xs }) => {
+	const [innerValue, setInnerValue] = useState(null);
 	const [newOption, setNewOption] = useState('');
 	const outerValue = getValue(name);
 	useEffect(() => {
+		console.log(outerValue)
 		if (outerValue){
-			setChips(outerValue);
-			setValue(outerValue.map((cur)=>({value:cur, label:cur})));
+			// setValue(outerValue);
+			setInnerValue(outerValue.map((cur)=>({value:cur, label:cur})));
 		}
-	}, [outerValue, setChips]);
+	}, [outerValue]);
 
 	return (<Col xl={xl} lg={lg} sm={sm} xs={xs}>
 			<Row className={'mrb-medium'}>
@@ -22,15 +23,15 @@ export const ChipsFormInput = ({ getValue, placeholder, setChips, errors, name, 
 					className={'no-padding'}
 					placeholder={placeholder}
 					onChange={(newValue) => {
-						setValue(newValue);
-						setChips(newValue.map(value => value.value));
+						setInnerValue(newValue);
+						setValue(name, newValue.map(value => value.value));
 					}}
 					onInputChange={(newValue) => {
 						setNewOption(newValue);
 					}}
 					options={newOption ? [{ value: newOption, label: newOption }] : []}
 					isMulti={true}
-					value={value}
+					value={innerValue}
 				/>
 				{errors[name] && errors[name].message &&
 					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}

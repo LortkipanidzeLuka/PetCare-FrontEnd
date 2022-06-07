@@ -18,7 +18,6 @@ import { latLonTranslate } from '../../utils/UtilActions';
 const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
-	const [tags, setTags] = useState([]);
 	const [petInfo, setPetInfo] = useState(null);
 	const DefaultFormConfig = {
 		lg: '5',
@@ -67,21 +66,6 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				placeholder: 'Please enter header',
 				requiredMessage: 'Header is required',
 				component: TextFormInput
-			}
-		],
-		// latitude-longitude
-		[
-			{
-				lg: '12',
-				xl: '12',
-				sm: '12',
-				xs: '12',
-				name: 'lat-lon',
-				heading: 'Select Location',
-				type: 'text',
-				component: MapFormInput,
-				encrypt: latLonTranslate.encrypt,
-				decrypt: latLonTranslate.decrypt
 			}
 		],
 		// petType-petColor
@@ -181,8 +165,22 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				heading: 'Tags',
 				placeholder: 'Please enter tag and press enter',
 				type: 'select',
-				component: ChipsFormInput,
-				setChips: setTags
+				component: ChipsFormInput
+			}
+		],
+		// latitude-longitude
+		[
+			{
+				lg: '12',
+				xl: '12',
+				sm: '12',
+				xs: '12',
+				name: 'lat-lon',
+				heading: 'Select Location',
+				type: 'text',
+				component: MapFormInput,
+				encrypt: latLonTranslate.encrypt,
+				decrypt: latLonTranslate.decrypt
 			}
 		],
 		[
@@ -218,10 +216,10 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		for (let i = 0; i < data.images.length; i++) {
 			data.images[i]['isPrimary'] = (i === 0);
 		}
+		console.log(data)
 		const params = {
 			...data,
 			advertisementType: 'LOST_FOUND',
-			tags: tags,
 			...latLonTranslate.decrypt(data['lat-lon'])
 		};
 

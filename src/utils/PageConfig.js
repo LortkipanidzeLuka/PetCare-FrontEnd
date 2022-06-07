@@ -60,10 +60,8 @@ export const PAGES = {
 // TODO
 // textebi
 // errorebi
-// age number format
 // charity (detail-modal, create)
 // adoption (detail-modal, create)
 // petcare (detail-modal, create, card)
 
 // werilebis damateba
-// ruka
