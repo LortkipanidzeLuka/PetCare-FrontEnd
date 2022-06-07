@@ -3,22 +3,23 @@ import Text from '../../styled/text/Text';
 import { TextType } from '../../styled/text/TextType';
 
 export const NumberInputType = {
-	TEL:'tel',
-	NUMBER:'number',
-	FLOAT:'float'
-}
+	TEL: 'tel',
+	NUMBER: 'number',
+	FLOAT: 'float'
+};
 
-export const NumberFormInput = ({ register, errors, type=NumberInputType.NUMBER, requiredMessage, placeholder, name, heading, xl, lg, sm, xs }) => {
+export const NumberFormInput = ({ minMax, register, errors, type=NumberInputType.NUMBER, requiredMessage, placeholder, name, heading, xl, lg, sm, xs }) => {
 	return (
 		<Col xl={xl} lg={lg} sm={sm} xs={xs}>
 			<Row className={'mrb-medium'}>
 				<Text text={heading} type={TextType.MEDIUM} classNames={['mrb-small']} />
 				<input
-					className={'form-control'} {...register(name, {
-					required: requiredMessage
-				})}
+					className={'form-control'}
+					{...register(name, {
+						required: requiredMessage,
+						...minMax
+					})}
 					name={name}
-					step={0.000001}
 					placeholder={placeholder}
 					type={type}
 					required={false} />

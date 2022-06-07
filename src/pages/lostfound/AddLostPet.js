@@ -113,7 +113,13 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				heading: 'Age from',
 				placeholder: 'Please enter age from',
 				requiredMessage: 'Age from is required',
-				component: NumberFormInput
+				component: NumberFormInput,
+				minMax: {
+					min: {
+						value: 0,
+						message: 'Value must be more than 0'
+					}
+				}
 			},
 			{
 				...DefaultFormConfig,
@@ -121,7 +127,13 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				heading: 'Age until',
 				placeholder: 'Please enter age until',
 				requiredMessage: 'Age until is required',
-				component: NumberFormInput
+				component: NumberFormInput,
+				minMax: {
+					min: {
+						value: 30,
+						message: 'Value must be more than 30'
+					}
+				}
 			}
 		],
 		// addType-petSex
@@ -212,7 +224,6 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 			tags: tags,
 			...latLonTranslate.decrypt(data['lat-lon'])
 		};
-		console.log(params);
 
 		try {
 			if (isEditMode()) {
