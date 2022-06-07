@@ -1,3 +1,7 @@
 {
-  "register-success": "User was registered successfully. You must log in and verify your email."
+  "register-success": "User was registered successfully. You must log in and verify your email.",
+  "email-changed": "",
+  "item-updated": "",
+  "item-added": ""
+
 }
