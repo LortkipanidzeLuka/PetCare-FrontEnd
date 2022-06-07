@@ -9,7 +9,7 @@ const toBase64 = file => new Promise((resolve, reject) => {
 export const TransformImageArrToBase64 = async (data) => {
 	let res = [];
 	for (var i = 0; i < data.length; i++) {
-		const cont = await toBase64(data[i])
+		const cont = await toBase64(data[i]);
 		res = [...res, {
 			title: data[i].name,
 			isPrimary: i === 0,
@@ -17,4 +17,14 @@ export const TransformImageArrToBase64 = async (data) => {
 		}];
 	}
 	return res;
+};
+
+export const latLonTranslate = {
+	decrypt: (data) => {
+		return { latitude: data.split("-")[0], longitude: data.split("-")[1] };
+
+	},
+	encrypt: ({latitude, longitude}) => {
+		return `${latitude}-${longitude}`;
+	}
 };

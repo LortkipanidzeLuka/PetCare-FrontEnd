@@ -12,6 +12,8 @@ import ChipsFormInput from '../../components/form/input/ChipsFormInput';
 import { useEffect, useState } from 'react';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
+import MapFormInput from '../../components/form/input/MapFormInput';
+import { latLonTranslate } from '../../utils/UtilActions';
 
 const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
@@ -29,17 +31,17 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		const fetchSingleData = async () => {
 			if (data && data.data && data.data.id) {
 				const res = await Api.Lost.fetchSingleLostFound({ id: data.data.id }, false);
-				setPetInfo(prev => ({ ...prev, ...res.data }));
-			}else {
-				setPetInfo(null)
+				setPetInfo(prev => ({ ...prev, ...res.data, 'lat-lon': latLonTranslate.encrypt(res.data) }));
+			} else {
+				setPetInfo(null);
 			}
 		};
 		const fetchSingleImages = async () => {
 			if (data && data.data && data.data.id) {
 				const res = await Api.Lost.fetchSingleLostFoundImages({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, images: res.data }));
-			}else {
-				setPetInfo(null)
+			} else {
+				setPetInfo(null);
 			}
 		};
 		fetchSingleData();
@@ -70,20 +72,16 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		// latitude-longitude
 		[
 			{
-				...DefaultFormConfig,
-				name: 'latitude',
-				heading: 'Latitude',
-				placeholder: 'Please enter latitude',
-				requiredMessage: 'Latitude is required',
-				component: NumberFormInput
-			},
-			{
-				...DefaultFormConfig,
-				name: 'longitude',
-				heading: 'Longitude',
-				placeholder: 'Please enter longitude',
-				requiredMessage: 'Longitude is required',
-				component: NumberFormInput
+				lg: '12',
+				xl: '12',
+				sm: '12',
+				xs: '12',
+				name: 'lat-lon',
+				heading: 'Select Location',
+				type: 'text',
+				component: MapFormInput,
+				encrypt: latLonTranslate.encrypt,
+				decrypt: latLonTranslate.decrypt
 			}
 		],
 		// petType-petColor
@@ -211,8 +209,11 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		const params = {
 			...data,
 			advertisementType: 'LOST_FOUND',
-			tags: tags
+			tags: tags,
+			...latLonTranslate.decrypt(data['lat-lon'])
 		};
+		console.log(params);
+
 		try {
 			if (isEditMode()) {
 				await Api.Lost.updateLostFound(params);
@@ -235,7 +236,7 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	return (
 		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
 			<ModalHeader>
-				<Text text={`${isEditMode() ? 'Update' : 'Create'} Lost Pet Advertisement`} type={TextType.LARGE}/>
+				<Text text={`${isEditMode() ? 'Update' : 'Create'} Lost Pet Advertisement`} type={TextType.LARGE} />
 			</ModalHeader>
 			<ModalBody>
 				<FormInput data={petInfo} FormConfig={FormConfig}
