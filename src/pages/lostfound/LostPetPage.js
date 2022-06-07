@@ -13,7 +13,6 @@ const LostPetPage = () => {
 	const { Grid, pageConfig } = PAGES.LOST_FOUND;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
-	console.log(isLoggedIn);
 
 	return (
 		<div>

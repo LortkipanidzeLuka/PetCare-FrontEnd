@@ -216,7 +216,6 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		for (let i = 0; i < data.images.length; i++) {
 			data.images[i]['isPrimary'] = (i === 0);
 		}
-		console.log(data)
 		const params = {
 			...data,
 			advertisementType: 'LOST_FOUND',

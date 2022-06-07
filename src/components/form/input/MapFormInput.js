@@ -1,4 +1,3 @@
-import Leaflet from 'leaflet';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useEffect, useState } from 'react';
 import { Col, Row } from 'reactstrap';
@@ -9,15 +8,6 @@ const initCoordinates = [41.69207829061234, 44.82142925262452];
 
 const MapFormInput = ({ heading, setValue, register, name, xl, lg, sm, xs, encrypt, decrypt, getValue }) => {
 	const [position, setPosition] = useState(initCoordinates);
-
-	Leaflet.Icon.Default.imagePath =
-		'../node_modules/leaflet';
-	delete Leaflet.Icon.Default.prototype._getIconUrl;
-	Leaflet.Icon.Default.mergeOptions({
-		iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-		iconUrl: require('leaflet/dist/images/marker-icon.png'),
-		shadowUrl: require('leaflet/dist/images/marker-shadow.png')
-	});
 	const outerValue = getValue(name);
 
 	useEffect(() => {

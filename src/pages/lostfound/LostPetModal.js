@@ -8,6 +8,7 @@ import UserBlock from '../../components/styled/block/UserBlock';
 import PetBlock from '../../components/styled/block/PetBlock';
 import PetCarousel from '../../components/image-carousel/PetCarousel';
 import ApiLoader from '../../components/styled/data/ApiLoader';
+import ItemMap from '../../components/item-map/ItemMap';
 
 
 const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {
@@ -30,9 +31,9 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 			try {
 				const res = await fetchSingle(params.data);
 				const { description, tags, city, header, createDate, userInfo } = res.data;
-				const { breed, color, petType, ageFrom, ageUntil, sex } = res.data;
+				const { breed, color, petType, ageFrom, ageUntil, sex, latitude, longitude } = res.data;
 				const petInfo = { breed, color, petType, ageFrom, ageUntil, sex };
-				setData({ description, tags, city, header, createDate, userInfo, petInfo });
+				setData({ latitude, longitude, description, tags, city, header, createDate, userInfo, petInfo });
 			} catch (error) {
 				setError(error);
 				closeModal();
@@ -92,10 +93,14 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 									<PetBlock data={data.petInfo} />
 								</Col>
 								<Col xl='12' lg='12' sm='12' xs='12' className='d-flex mrb-medium'>
-									<TagList data={data.tags} randomizeColor={false} />
+									<TagList data={data.tags} randomizeColor={false} list/>
 								</Col>
 							</Row>
 						</Col>
+					</Row>
+					<Row>
+						<Text text={'Pet Location'} type={TextType.LARGE} />
+						<ItemMap height={'300px'} latitude={data.latitude} longitude={data.longitude} />
 					</Row>
 				</ApiLoader>
 			</ModalBody>
