@@ -65,3 +65,16 @@ export const PAGES = {
 // petcare (detail-modal, create, card)
 
 // werilebis damateba
+
+
+
+
+
+//  "email_used":"",
+//  "invalid_credentials": "",
+//  "invalid_refresh_token": "",
+//  "invalid_otp": "",
+//  "otp_retries_exceeded": "",
+//  "need_one_primary_image": "",
+//  "invalid_old_password": "",
+//  "invalid_email": ""

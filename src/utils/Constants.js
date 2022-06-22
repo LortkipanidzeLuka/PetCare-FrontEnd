@@ -48,7 +48,7 @@ export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
 	{ value: PET_CARE, label: 'Pet Care' },
 	{ value: CHARITY, label: 'Charity' },
-	{ value: ADOPTION, label: 'Pet Adoption' },
+	{ value: ADOPTION, label: 'Pet AdoptionPage' },
 ];
 
 

@@ -1,12 +1,4 @@
 {
   "universal": "Internal error",
-  "weak_password": "Your password is too weak",
-  "email_used":"",
-  "invalid_credentials": "",
-  "invalid_refresh_token": "",
-  "invalid_otp": "",
-  "otp_retries_exceeded": "",
-  "need_one_primary_image": "",
-  "invalid_old_password": "",
-  "invalid_email": ""
+  "weak_password": "Your password is too weak"
 }
