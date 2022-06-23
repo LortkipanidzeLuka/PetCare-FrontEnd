@@ -43,8 +43,11 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 				setPetInfo(null);
 			}
 		};
-		fetchSingleData();
-		fetchSingleImages();
+		console.log(data)
+		if (data && data.data && data.data.advertisementType==='LOST_FOUND'){
+			fetchSingleData();
+			fetchSingleImages();
+		}
 	}, [data]);
 
 	const FormConfig = [

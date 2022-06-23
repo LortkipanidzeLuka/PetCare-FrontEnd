@@ -8,7 +8,7 @@ const ProfileAdvertisementModal = ({ open, closeModal, params }) => {
 			const name = params.data.advertisementType;
 			const newOpenModal = {};
 			newOpenModal[name] = open;
-			setModalsOpened({ ...newOpenModal });
+			setModalsOpened(newOpenModal);
 		} else {
 			setModalsOpened({});
 		}
