@@ -13,7 +13,13 @@ export const PAGES = {
 
 			Card: PetTypeGrids.LOST_FOUND.Card,
 			searchConfig: PetTypeGrids.LOST_FOUND.searchConfig,
-			fetchData: PetTypeGrids.LOST_FOUND.fetchData
+			fetchData: PetTypeGrids.LOST_FOUND.fetchData,
+			gridConfig:{
+				xl:'4',
+				lg:'6',
+				sm:'6',
+				xs:'12'
+			}
 		}
 	},
 	PET_CARE: {
@@ -26,20 +32,23 @@ export const PAGES = {
 
 			Card: PetTypeGrids.PET_CARE.Card,
 			searchConfig: PetTypeGrids.PET_CARE.searchConfig,
-			fetchData: PetTypeGrids.PET_CARE.fetchData
-		}
-	},
-	ADOPTION: {
-		Grid: GenericDataGrid,
-		pageConfig: {
-			DetailModal: PetTypeConfig.ADOPTION.DetailModal,
-			fetchSingle: PetTypeConfig.ADOPTION.fetchSingle,
-			fetchSingleImages: PetTypeConfig.ADOPTION.fetchSingleImages,
-			deleteSingle: PetTypeConfig.ADOPTION.deleteSingle,
-
-			Card: PetTypeGrids.ADOPTION.Card,
-			searchConfig: PetTypeGrids.ADOPTION.searchConfig,
-			fetchData: PetTypeGrids.ADOPTION.fetchData
+			fetchData: PetTypeGrids.PET_CARE.fetchData,
+			gridConfig:{
+				xxl:'6',
+				xl:'12',
+				lg:'12',
+				md:'12',
+				sm:'12',
+				xs:'12'
+			},
+			cardConfig:{
+				noActions:true,
+				topChip: true,
+				chipValueField: 'advertisementType',
+				getColor: (value, type)=>{
+					return 'red';
+				}
+			}
 		}
 	},
 	CHARITY: {

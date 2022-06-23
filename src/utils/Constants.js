@@ -41,14 +41,12 @@ export const PetSex = [
 const LOST_FOUND = "LOST_FOUND";
 const PET_CARE = "PET_CARE";
 const CHARITY = "CHARITY";
-const ADOPTION = "ADOPTION";
 
 
 export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
 	{ value: PET_CARE, label: 'Pet Care' },
 	{ value: CHARITY, label: 'Charity' },
-	{ value: ADOPTION, label: 'Pet AdoptionPage' },
 ];
 
 

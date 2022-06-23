@@ -73,52 +73,6 @@ export const LOST_AND_FOUND_SEARCH = {
 		type: 'LOST'
 	}
 };
-export const ADOPTION_SEARCH = {
-	fields: [
-		[{
-			...DefaultFormConfig,
-			name: 'city',
-			heading: 'City',
-			placeholder: 'Please enter city',
-			component: SelectFormInput,
-			options: City
-		}, {
-			...DefaultFormConfig,
-			name: 'search',
-			heading: 'Header',
-			placeholder: 'Please enter header',
-			component: TextFormInput
-		}, {
-			...DefaultFormConfig,
-			name: 'petType',
-			heading: 'Pet Type',
-			placeholder: 'Please pet type',
-			component: SelectFormInput,
-			options: PetTypesForSearch
-		}, {
-			...DefaultFormConfig,
-			name: 'sex',
-			heading: 'Gender',
-			placeholder: 'Please enter genrder',
-			component: SelectFormInput,
-			options: PetSex
-		}, {
-			...DefaultFormConfig,
-			name: 'color',
-			heading: 'Pet Color',
-			placeholder: 'Please enter pet color',
-			component: SelectFormInput,
-			options: PetColor
-		}, {
-			...DefaultFormConfig,
-			name: 'breed',
-			heading: 'Breed',
-			placeholder: 'Please enter breed',
-			component: TextFormInput
-		}]
-	],
-	initialData: {}
-};
 
 export const PET_SERVICE_SEARCH = {
 	fields:[

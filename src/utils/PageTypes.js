@@ -1,13 +1,12 @@
 import LostPetModal from '../pages/lostfound/LostPetModal';
 import Api from '../services';
 import GenericCardSquare from '../components/item-card/GenericCardSquare';
-import { ADOPTION_SEARCH, LOST_AND_FOUND_SEARCH, PET_SERVICE_SEARCH } from './PageSearch';
+import { LOST_AND_FOUND_SEARCH, PET_SERVICE_SEARCH } from './PageSearch';
 import AddLostPet from '../pages/lostfound/AddLostPet';
 import AddPetCare from '../pages/petcare/AddPetCare';
-import AddAdoption from '../pages/adoption/AddAdoption';
 import AddCharity from '../pages/charity/AddCharity';
-import AdoptionModal from '../pages/adoption/AdoptionModal';
 import PetCareModal from '../pages/petcare/PetCareModal';
+import GenericCardRectangle from '../components/item-card/GenericCardRectangle';
 
 export const PetTypeConfig={
 	LOST_FOUND: {
@@ -23,13 +22,6 @@ export const PetTypeConfig={
 		fetchSingle: Api.Serv.fetchSinglePetService,
 		fetchSingleImages: Api.Serv.fetchSinglePetServiceImages,
 		deleteSingle: Api.Serv.deleteSinglePetService
-	},
-	ADOPTION: {
-		CreateModal: AddAdoption,
-		DetailModal: AdoptionModal,
-		fetchSingle: Api.Adopt.fetchSingleAdoption,
-		fetchSingleImages: Api.Adopt.fetchSingleAdoptionImages,
-		deleteSingle: Api.Adopt.deleteSingleAdoption
 	},
 	CHARITY: {
 		CreateModal: AddCharity,
@@ -47,14 +39,9 @@ export const PetTypeGrids={
 		fetchData: Api.Lost.fetchLostFounds
 	},
 	PET_CARE: {
-		Card: GenericCardSquare,
+		Card: GenericCardRectangle,
 		searchConfig: PET_SERVICE_SEARCH,
 		fetchData: Api.Serv.fetchPetServices
-	},
-	ADOPTION: {
-		Card: GenericCardSquare,
-		searchConfig: ADOPTION_SEARCH,
-		fetchData: Api.Adopt.fetchAdoptions
 	},
 	CHARITY: {
 		Card: GenericCardSquare,
