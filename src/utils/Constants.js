@@ -52,6 +52,12 @@ export const PageTypesOptions = [
 ];
 
 
+export const PetServiceOptions = [
+	{ value: 'PET_WATCH', label: 'Pet Watch' },
+	{ value: 'GROOMING', label: 'Grooming' }
+];
+
+
 export const TagListColorPool = [
 	'tag-success',
 	'tag-danger',

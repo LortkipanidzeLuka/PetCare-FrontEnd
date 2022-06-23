@@ -1,5 +1,13 @@
 import { SelectFormInput } from '../components/form/input/SelectFormInput';
-import { AdvTypesForLostFound, City, PageTypesOptions, PetColor, PetSex, PetTypesForSearch } from './Constants';
+import {
+	AdvTypesForLostFound,
+	City,
+	PageTypesOptions,
+	PetColor,
+	PetServiceOptions,
+	PetSex,
+	PetTypesForSearch
+} from './Constants';
 import { TextFormInput } from '../components/form/input/TextFormInput';
 
 const DefaultFormConfig = {
@@ -112,6 +120,21 @@ export const ADOPTION_SEARCH = {
 	initialData: {}
 };
 
+export const PET_SERVICE_SEARCH = {
+	fields:[
+		[{
+			...DefaultFormConfig,
+			name: 'type',
+			heading: 'Pet Service',
+			placeholder: 'Please enter pet service',
+			component: SelectFormInput,
+			options: PetServiceOptions
+		}],
+	],
+	initialData: {
+		type: 'PET_WATCH'
+	}
+}
 
 export const PROFILE_SEARCH = {
 	fields: [
