@@ -10,7 +10,7 @@ import AddPetCare from './AddPetCare';
 
 const PetCarePage = () => {
 	const [, modalOpen, , toggleModal] = useModal();
-	const { Grid, pageConfig } = PAGES.PET_CARE;
+	const { Grid, pageConfig } = PAGES.PET_SERVICE;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
 

@@ -121,6 +121,10 @@ textarea {
   display: none;
 }
 
+.auto-width{
+  width: auto !important;
+}
+
 @media screen and (max-width: 575px){
   .responsive-button{
     margin-top: $medium-distance;

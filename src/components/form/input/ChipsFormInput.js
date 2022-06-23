@@ -4,10 +4,11 @@ import { TextType } from '../../styled/text/TextType';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
 
-export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, heading, xl, lg, sm, xs }) => {
+export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, heading, xl, lg, sm, xs, options }) => {
 	const [innerValue, setInnerValue] = useState(null);
 	const [newOption, setNewOption] = useState('');
 	const outerValue = getValue(name);
+	const fixedOption = options && options.length ? options : [];
 	useEffect(() => {
 		if (outerValue){
 			setInnerValue(outerValue.map((cur)=>({value:cur, label:cur})));
@@ -25,9 +26,11 @@ export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, 
 						setValue(name, newValue.map(value => value.value));
 					}}
 					onInputChange={(newValue) => {
-						setNewOption(newValue);
+						if (!fixedOption.length) {
+							setNewOption(newValue);
+						}
 					}}
-					options={newOption ? [{ value: newOption, label: newOption }] : []}
+					options={newOption ? [{ value: newOption, label: newOption }] : fixedOption}
 					isMulti={true}
 					value={innerValue}
 				/>

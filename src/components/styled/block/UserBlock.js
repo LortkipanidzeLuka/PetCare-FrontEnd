@@ -18,6 +18,9 @@ const UserBlock = ({ data }) => {
 							<Text text={`E-mail: ${data.username}`} type={TextType.REGULAR} classNames={['mrl-big']}/>
 						</div>
 					</div>
+					{data.leftData && <div>
+								<Text text={data.leftData} type={TextType.LARGE} styles={{width:"130px"}}/>
+					</div>}
 				</div>
 			</div>
 		</div>

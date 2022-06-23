@@ -3,6 +3,7 @@ import { TextType } from '../styled/text/TextType';
 import TagList from '../styled/tag/TagList';
 import Block from '../styled/block/Block';
 import { Row } from 'reactstrap';
+import Tag from '../styled/tag/Tag';
 
 const GenericCardRectangle = (params) => {
 	const {
@@ -17,11 +18,12 @@ const GenericCardRectangle = (params) => {
 		advertisementType,
 		userInfo,
 		openEditModal,
-		deleteItem
+		deleteItem,
+		cardConfig
 	} = params;
 
 	return (
-		<Block bigBorder noShadow>
+		<Block bigBorder noShadow className={'auto-width'}>
 			<div className='pet-card-rectangle'>
 				<div className={'pet-card-rectangle-main d-flex'}>
 					<div className='card-img-wrap'
@@ -38,7 +40,7 @@ const GenericCardRectangle = (params) => {
 										<Text text={createDate} type={TextType.REGULAR} icon={'mdi mdi-calendar mdi-18px'}
 													classNames={['faint-text']} />
 									</div>
-									<div className={'d-flex flex-row'}>
+									{(!cardConfig || !cardConfig.noActions) && <div className={'d-flex flex-row'}>
 										<div className={'card-action-icon edit-action mrr-small'} onClick={(event) => {
 											event.preventDefault();
 											openEditModal(advertisementType);
@@ -50,7 +52,11 @@ const GenericCardRectangle = (params) => {
 										}}>
 											<i className={'mdi mdi-dark mdi-delete mdi-24px delete-action'} />
 										</div>
-									</div>
+									</div>}
+									{cardConfig && cardConfig.topChip &&
+										<div>
+											<Tag text={params[cardConfig.chipValueField]} noHashTag={true} color={cardConfig.getColor(params[cardConfig.chipValueField])}/>
+										</div>}
 								</div>
 							</Row>
 

@@ -28,7 +28,7 @@ const ProfileAdvertisementTab = () => {
 			text: 'Add Lost And Found'
 		},
 		{
-			keyWord: 'PET_CARE',
+			keyWord: 'PET_SERVICE',
 			text: 'Add Pet Care'
 		},
 		{

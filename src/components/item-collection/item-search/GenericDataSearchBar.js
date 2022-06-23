@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 const GenericDataSearchBar = ({ searchConfig, setParams }) => {
 
-	const FormConfig = searchConfig.fields.map(val => (val.map(innerVal => ({ ...innerVal }))));
 	const [initialData, setInitialData] = useState({});
+	const FormConfig = searchConfig.fields.map(val => (val.map(innerVal => ({ ...innerVal }))));
 	const onSubmit = async (data) => {
 		setParams(data);
 	};
@@ -19,7 +19,7 @@ const GenericDataSearchBar = ({ searchConfig, setParams }) => {
 	return (
 		<Row>
 			<Col className={'pet-card-col'}>
-				<Block noShadow>
+				<Block noShadow className={'auto-width'}>
 					<div className={'p-all-medium'}>
 						<FormInput data={initialData} FormConfig={FormConfig} buttonName={'Search'} fullButton onSubmit={onSubmit} />
 					</div>

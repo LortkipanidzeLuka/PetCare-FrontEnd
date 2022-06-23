@@ -15,7 +15,9 @@ const GenericDataGrid = ({
 													 fetchSingle,
 													 fetchSingleImages,
 													 searchConfig,
-													 updateData
+													 updateData,
+													 cardConfig,
+													 gridConfig
 												 }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params, setParams] = useState(searchConfig.initialData);
@@ -39,10 +41,8 @@ const GenericDataGrid = ({
 
 					<ApiLoader loading={loading}>
 						<Row>
-							{data.map((value, index) => (<Col className='pet-card-col' xl='4' lg='6' sm='6' xs='12' key={index}>
-								<Card
-									openModal={toggleModal}
-									{...value} />
+							{data.map((value, index) => (<Col className='pet-card-col' {...gridConfig} key={index}>
+								<Card openModal={toggleModal} {...value} cardConfig={cardConfig} />
 							</Col>))}
 						</Row>
 						<GenericDataPagination

@@ -73,3 +73,24 @@
     background-color: $header-background-color;
   }
 }
+.applicable-block{
+  .colored-block {
+    padding: $medium-distance;
+  }
+  .applicable-block-row{
+    display: flex;
+    .left{
+      display: flex;
+      width: 30%;
+      div{
+        display: block;
+      }
+    }
+    .right{
+      width: 70%;
+      div {
+        justify-content: end;
+      }
+    }
+  }
+}

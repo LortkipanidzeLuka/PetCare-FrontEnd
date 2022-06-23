@@ -39,13 +39,13 @@ export const PetSex = [
 ];
 
 const LOST_FOUND = "LOST_FOUND";
-const PET_CARE = "PET_CARE";
+const PET_SERVICE = "PET_SERVICE";
 const CHARITY = "CHARITY";
 
 
 export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
-	{ value: PET_CARE, label: 'Pet Care' },
+	{ value: PET_SERVICE, label: 'Pet Care' },
 	{ value: CHARITY, label: 'Charity' },
 ];
 
@@ -55,6 +55,10 @@ export const PetServiceOptions = [
 	{ value: 'GROOMING', label: 'Grooming' }
 ];
 
+export const PetServiceOptionsMap = {
+	PET_WATCH: 'Pet Watch',
+	GROOMING: 'Grooming'
+}
 
 export const TagListColorPool = [
 	'tag-success',

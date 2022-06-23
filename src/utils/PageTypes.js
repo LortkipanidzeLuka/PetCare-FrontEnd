@@ -16,7 +16,7 @@ export const PetTypeConfig={
 		fetchSingleImages: Api.Lost.fetchSingleLostFoundImages,
 		deleteSingle: Api.Lost.deleteSingleLostFound
 	},
-	PET_CARE: {
+	PET_SERVICE: {
 		CreateModal: AddPetCare,
 		DetailModal: PetCareModal,
 		fetchSingle: Api.Serv.fetchSinglePetService,
@@ -38,7 +38,7 @@ export const PetTypeGrids={
 		searchConfig: LOST_AND_FOUND_SEARCH,
 		fetchData: Api.Lost.fetchLostFounds
 	},
-	PET_CARE: {
+	PET_SERVICE: {
 		Card: GenericCardRectangle,
 		searchConfig: PET_SERVICE_SEARCH,
 		fetchData: Api.Serv.fetchPetServices

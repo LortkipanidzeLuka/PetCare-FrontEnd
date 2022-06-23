@@ -22,17 +22,17 @@ export const PAGES = {
 			}
 		}
 	},
-	PET_CARE: {
+	PET_SERVICE: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeConfig.PET_CARE.DetailModal,
-			fetchSingle: PetTypeConfig.PET_CARE.fetchSingle,
-			fetchSingleImages: PetTypeConfig.PET_CARE.fetchSingleImages,
-			deleteSingle: PetTypeConfig.PET_CARE.deleteSingle,
+			DetailModal: PetTypeConfig.PET_SERVICE.DetailModal,
+			fetchSingle: PetTypeConfig.PET_SERVICE.fetchSingle,
+			fetchSingleImages: PetTypeConfig.PET_SERVICE.fetchSingleImages,
+			deleteSingle: PetTypeConfig.PET_SERVICE.deleteSingle,
 
-			Card: PetTypeGrids.PET_CARE.Card,
-			searchConfig: PetTypeGrids.PET_CARE.searchConfig,
-			fetchData: PetTypeGrids.PET_CARE.fetchData,
+			Card: PetTypeGrids.PET_SERVICE.Card,
+			searchConfig: PetTypeGrids.PET_SERVICE.searchConfig,
+			fetchData: PetTypeGrids.PET_SERVICE.fetchData,
 			gridConfig:{
 				xxl:'6',
 				xl:'12',
