@@ -2,9 +2,9 @@ import Text from '../text/Text';
 import { TextType } from '../text/TextType';
 
 const ApplicableBlock = ({ data }) => {
-	const serviceicons={
-	//TODO
-	}
+	// const serviceicons={
+	// //TODO
+	// }
 
 
 	return (
@@ -12,11 +12,11 @@ const ApplicableBlock = ({ data }) => {
 			<div className={'border-block colored-block full-width'}>
 				<div className={'applicable-block-row'}>
 					<div className={'left'}>
-						<Text text={'Animals'} type={TextType.LARGE} classNames={['faint-text']} align={'left'}/>
+						<Text text={'Animals'} type={TextType.MEDIUM} classNames={['faint-text']} align={'left'}/>
 					</div>
 					<div className={'right'}>
-						{data.applicablePetList.map((value => (
-							<Text text={value} type={TextType.MEDIUM} icon={'mdi mdi-circle-medium text-success mr-1'}/>
+						{data.applicablePetList.map(((value, index) => (
+							<Text key={index} text={value} type={TextType.MEDIUM} icon={'mdi mdi-circle-medium text-success mr-1'}/>
 						)))}
 					</div>
 				</div>

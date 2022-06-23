@@ -4,7 +4,7 @@ import { TextType } from '../../styled/text/TextType';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
 
-export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, heading, xl, lg, sm, xs, options }) => {
+export const ChipsFormInput = ({ register,requiredMessage,getValue, setError, placeholder, setValue, errors, name, heading, xl, lg, sm, xs, options }) => {
 	const [innerValue, setInnerValue] = useState(null);
 	const [newOption, setNewOption] = useState('');
 	const outerValue = getValue(name);
@@ -14,14 +14,20 @@ export const ChipsFormInput = ({ getValue, placeholder, setValue, errors, name, 
 			setInnerValue(outerValue.map((cur)=>({value:cur, label:cur})));
 		}
 	}, [outerValue]);
-
+	useEffect(()=>{
+		console.log(errors)
+	},[errors])
 	return (<Col xl={xl} lg={lg} sm={sm} xs={xs}>
 			<Row className={'mrb-medium'}>
 				<Text text={heading} type={TextType.MEDIUM} classNames={['mrb-small']} />
 				<Select
+					{...register(name, { required: requiredMessage })}
 					className={'no-padding'}
 					placeholder={placeholder}
 					onChange={(newValue) => {
+						if (newValue && newValue.length){
+							setError(name, null)
+						}
 						setInnerValue(newValue);
 						setValue(name, newValue.map(value => value.value));
 					}}
