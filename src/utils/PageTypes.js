@@ -3,7 +3,7 @@ import Api from '../services';
 import GenericCardSquare from '../components/item-card/GenericCardSquare';
 import { ADOPTION_SEARCH, LOST_AND_FOUND_SEARCH } from './PageSearch';
 import AddLostPet from '../pages/lostfound/AddLostPet';
-import AddPetCare from '../pages/advertisment/AddPetCare';
+import AddPetCare from '../pages/petcare/AddPetCare';
 import AddAdoption from '../pages/adoption/AddAdoption';
 import AddCharity from '../pages/charity/AddCharity';
 import AdoptionModal from '../pages/adoption/AdoptionModal';

@@ -1,7 +1,7 @@
 import AdoptionPage from '../pages/adoption/AdoptionPage';
 import Charity from '../pages/charity/Charity';
 import LostPetPage from '../pages/lostfound/LostPetPage';
-import Advertisement from '../pages/advertisment/Advertisement';
+import Advertisement from '../pages/petcare/Advertisement';
 import ProfilePage from '../pages/profile/ProfilePage';
 import LandingPage from '../pages/landing/LandingPage';
 
