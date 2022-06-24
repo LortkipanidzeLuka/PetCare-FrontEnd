@@ -1,4 +1,4 @@
-import PetCharity from '../../assets/images/ach-donation.png';
+import PetDonation from '../../assets/images/ach-donation.png';
 import PetHug from '../../assets/images/ach-adoption-ach.png';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
@@ -50,7 +50,7 @@ const LandingAchievement = ({ id }) => {
 						</div>
 					</div>
 					<div>
-						<img src={PetCharity} alt={'donation from ipad'} />
+						<img src={PetDonation} alt={'donation from ipad'} />
 					</div>
 				</div>
 			</div>

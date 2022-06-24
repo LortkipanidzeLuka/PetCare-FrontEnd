@@ -85,12 +85,17 @@ export const PAGES = {
 // TODO
 // textebi
 // errorebi
-// donation (detail-modal, create)
-// adoption chasheneba lost-foundtan
-// petcare (detail-modal, create, card) +
 // formebis required ebis gadaxedva
-// gatestva
 // werilebis damateba (~)
+
+// adoption chasheneba lost-foundtan
+// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption
+// gatestva
+// constantebshi pet service tu ragaca ro miweria magisi washla
+
+// donation (detail-modal, create) +
+// petcare (detail-modal, create, card) +
+
 
 
 

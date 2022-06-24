@@ -1,7 +1,7 @@
 import PetFound from '../../assets/images/square-found.svg';
 import PetCare from '../../assets/images/square-petcare.svg';
 import Adoption from '../../assets/images/square-adoption.png';
-import Charity from '../../assets/images/square-charity.svg';
+import Donation from '../../assets/images/square-donation.svg';
 import { Link } from 'react-router-dom';
 import Text from '../../components/styled/text/Text';
 import { TextType } from '../../components/styled/text/TextType';
@@ -16,7 +16,7 @@ const LandingPageSquares = () => {
 	}, {
 		imgUrl: Adoption, text: 'Adoption', url: '/lost-found'
 	}, {
-		imgUrl: Charity, text: 'Donation', url: '/donation'
+		imgUrl: Donation, text: 'Donation', url: '/donation'
 	}];
 	return (
 		<div className={'d-flex justify-content-between landing-page-content-width full-width'}>
