@@ -178,7 +178,7 @@ const AddPetCare=({ data, open, closeModal, fetchData })=>{
 	return(
 		<Modal isOpen={open} toggle={closeModal} className={'big-modal'}>
 			<ModalHeader>
-				<Text text={`Create Pet Care Advertisement`} type={TextType.LARGE} />
+				<Text text={`Create Pet Service Advertisement`} type={TextType.LARGE} />
 			</ModalHeader>
 			<ModalBody>
 				<FormInput data={petInfo} FormConfig={FormConfig}

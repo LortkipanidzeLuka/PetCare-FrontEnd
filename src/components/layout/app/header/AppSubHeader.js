@@ -15,7 +15,7 @@ const AppSubHeader = () => {
 		},
 		{
 			path: '/pet-care',
-			text: 'Pet Care'
+			text: 'Pet Service'
 		},
 		{
 			path: '/charity',

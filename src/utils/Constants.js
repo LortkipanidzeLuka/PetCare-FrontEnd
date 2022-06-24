@@ -45,7 +45,7 @@ const CHARITY = "CHARITY";
 
 export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
-	{ value: PET_SERVICE, label: 'Pet Care' },
+	{ value: PET_SERVICE, label: 'Pet Service' },
 	{ value: CHARITY, label: 'Charity' },
 ];
 
@@ -57,7 +57,15 @@ export const PetServiceOptions = [
 
 export const PetServiceOptionsMap = {
 	PET_WATCH: 'Pet Watch',
-	GROOMING: 'Grooming'
+	GROOMING: 'Grooming',
+	PET_SERVICE:'Pet Service'
+}
+
+export const PetServiceColors = {
+	PET_WATCH:'#50a5f1',
+	GROOMING: '#989898',
+	PET_SERVICE:'#989898'
+
 }
 
 export const TagListColorPool = [

@@ -29,7 +29,7 @@ const ProfileAdvertisementTab = () => {
 		},
 		{
 			keyWord: 'PET_SERVICE',
-			text: 'Add Pet Care'
+			text: 'Add Pet Service'
 		},
 		{
 			keyWord: 'ADOPTION',

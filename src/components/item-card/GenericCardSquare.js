@@ -5,7 +5,7 @@ import TagList from '../styled/tag/TagList';
 
 const GenericCardSquare = ({ createDate, city, header, description, primaryImage, tags, openModal, id }) => {
 		return (
-			<Block>
+			<Block className={'auto-width'}>
 				<div className='pet-card-content' onClick={() => openModal({ data: { id: id } })}>
 					<div className='card-img-wrap'>
 						<img src={primaryImage && primaryImage.content} alt={'this is card '} />

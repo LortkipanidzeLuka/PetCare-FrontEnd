@@ -73,6 +73,7 @@
     background-color: $header-background-color;
   }
 }
+
 .applicable-block{
   .colored-block {
     padding: $medium-distance;
@@ -93,4 +94,8 @@
       }
     }
   }
+}
+
+.white-card{
+  background-color: $white;
 }

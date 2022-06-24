@@ -2,10 +2,6 @@ import Text from '../text/Text';
 import { TextType } from '../text/TextType';
 
 const ApplicableBlock = ({ data }) => {
-	// const serviceicons={
-	// //TODO
-	// }
-
 
 	return (
 		<div className={'d-flex full-width applicable-block'}>

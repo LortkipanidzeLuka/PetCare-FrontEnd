@@ -1,5 +1,6 @@
 import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
 import { PetTypeGrids, PetTypeConfig } from './PageTypes';
+import { PetServiceColors } from './Constants';
 
 
 export const PAGES = {
@@ -45,8 +46,8 @@ export const PAGES = {
 				noActions:true,
 				topChip: true,
 				chipValueField: 'advertisementType',
-				getColor: (value, type)=>{
-					return 'red';
+				getColor: (type)=>{
+					return PetServiceColors[type];
 				}
 			}
 		}

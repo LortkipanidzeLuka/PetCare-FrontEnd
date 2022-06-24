@@ -75,7 +75,7 @@ export const LOST_AND_FOUND_SEARCH = {
 };
 
 export const PET_SERVICE_SEARCH = {
-	fields:[
+	fields: [
 		[{
 			...DefaultFormConfig,
 			name: 'type',
@@ -84,11 +84,26 @@ export const PET_SERVICE_SEARCH = {
 			component: SelectFormInput,
 			options: PetServiceOptions
 		}],
+		[{
+			...DefaultFormConfig,
+			name: 'city',
+			heading: 'City',
+			placeholder: 'Please enter city',
+			component: SelectFormInput,
+			options: City
+		}],
+		[{
+			...DefaultFormConfig,
+			name: 'search',
+			heading: 'Header',
+			placeholder: 'Please enter header',
+			component: TextFormInput
+		}]
 	],
 	initialData: {
 		type: 'PET_WATCH'
 	}
-}
+};
 
 export const PROFILE_SEARCH = {
 	fields: [

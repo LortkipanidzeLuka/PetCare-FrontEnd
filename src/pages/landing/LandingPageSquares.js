@@ -12,7 +12,7 @@ const LandingPageSquares = () => {
 	const squares = [{
 		imgUrl: PetFound, text: 'Lost and found', url: '/lost-found'
 	}, {
-		imgUrl: PetCare, text: 'Pet care', url: '/pet-care'
+		imgUrl: PetCare, text: 'Pet service', url: '/pet-care'
 	}, {
 		imgUrl: Adoption, text: 'Adoption', url: '/adoption'
 	}, {

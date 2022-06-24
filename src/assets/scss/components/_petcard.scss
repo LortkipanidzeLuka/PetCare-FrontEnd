@@ -60,6 +60,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  margin-top: $small-distance;
 }
 
 
@@ -78,7 +79,7 @@
     }
 
     .pet-card-content-wrap {
-      padding: 0 $medium-distance;
+      padding-left: $medium-distance;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
