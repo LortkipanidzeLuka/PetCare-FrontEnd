@@ -14,9 +14,9 @@ const LandingPageSquares = () => {
 	}, {
 		imgUrl: PetCare, text: 'Pet service', url: '/pet-care'
 	}, {
-		imgUrl: Adoption, text: 'Adoption', url: '/adoption'
+		imgUrl: Adoption, text: 'Adoption', url: '/lost-found'
 	}, {
-		imgUrl: Charity, text: 'Charity', url: '/charity'
+		imgUrl: Charity, text: 'Donation', url: '/donation'
 	}];
 	return (
 		<div className={'d-flex justify-content-between landing-page-content-width full-width'}>

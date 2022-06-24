@@ -1,3 +1,8 @@
+const LOST_FOUND = "LOST_FOUND";
+const PET_SERVICE = "PET_SERVICE";
+const DONATION = "DONATION";
+
+
 export const PetTypes = [
 	{ label: 'DOG', value: 'DOG' },
 	{ label: 'CAT', value: 'CAT' }
@@ -38,15 +43,10 @@ export const PetSex = [
 	{ label: 'FEMALE', value: 'FEMALE' }
 ];
 
-const LOST_FOUND = "LOST_FOUND";
-const PET_SERVICE = "PET_SERVICE";
-const CHARITY = "CHARITY";
-
-
 export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
 	{ value: PET_SERVICE, label: 'Pet Service' },
-	{ value: CHARITY, label: 'Charity' },
+	{ value: DONATION, label: 'DONATION' },
 ];
 
 
@@ -60,6 +60,11 @@ export const PetServiceOptionsMap = {
 	GROOMING: 'Grooming',
 	PET_SERVICE:'Pet Service'
 }
+
+export const DonationOptions = [
+	{ value: 'NEED_DONATION', label: 'Need Donation' },
+	{ value: 'ABLE_TO_DONATE', label: 'Able To Donate' }
+]
 
 export const PetServiceColors = {
 	PET_WATCH:'#50a5f1',

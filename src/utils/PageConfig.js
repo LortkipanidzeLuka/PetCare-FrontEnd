@@ -52,17 +52,17 @@ export const PAGES = {
 			}
 		}
 	},
-	CHARITY: {
+	Donation: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeConfig.CHARITY.DetailModal,
-			fetchSingle: PetTypeConfig.CHARITY.fetchSingle,
-			fetchSingleImages: PetTypeConfig.CHARITY.fetchSingleImages,
-			deleteSingle: PetTypeConfig.CHARITY.deleteSingle,
+			DetailModal: PetTypeConfig.Donation.DetailModal,
+			fetchSingle: PetTypeConfig.Donation.fetchSingle,
+			fetchSingleImages: PetTypeConfig.Donation.fetchSingleImages,
+			deleteSingle: PetTypeConfig.Donation.deleteSingle,
 
-			Card: PetTypeGrids.CHARITY.Card,
-			searchConfig: PetTypeGrids.CHARITY.searchConfig,
-			fetchData: PetTypeGrids.CHARITY.fetchData
+			Card: PetTypeGrids.Donation.Card,
+			searchConfig: PetTypeGrids.Donation.searchConfig,
+			fetchData: PetTypeGrids.Donation.fetchData
 		}
 	}
 };
@@ -70,11 +70,12 @@ export const PAGES = {
 // TODO
 // textebi
 // errorebi
-// charity (detail-modal, create)
-// adoption (detail-modal, create)
-// petcare (detail-modal, create, card)
-
-// werilebis damateba
+// donation (detail-modal, create)
+// adoption chasheneba lost-foundtan
+// petcare (detail-modal, create, card) +
+// formebis required ebis gadaxedva
+// gatestva
+// werilebis damateba (~)
 
 
 

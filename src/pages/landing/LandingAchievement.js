@@ -50,7 +50,7 @@ const LandingAchievement = ({ id }) => {
 						</div>
 					</div>
 					<div>
-						<img src={PetCharity} alt={'charity from ipad'} />
+						<img src={PetCharity} alt={'donation from ipad'} />
 					</div>
 				</div>
 			</div>

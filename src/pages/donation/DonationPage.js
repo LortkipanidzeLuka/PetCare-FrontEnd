@@ -1,6 +1,6 @@
 
 
-const Charity = ()=> {
+const DonationPage = ()=> {
     return(
         <div>
             CHARITYYYYYYYY
@@ -9,4 +9,4 @@ const Charity = ()=> {
 }
 
 
-export default Charity
+export default DonationPage

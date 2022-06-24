@@ -36,8 +36,8 @@ const ProfileAdvertisementTab = () => {
 			text: 'Add Adoption'
 		},
 		{
-			keyWord: 'CHARITY',
-			text: 'Add Charity'
+			keyWord: 'Donation',
+			text: 'Add Donation'
 		}
 
 	];
