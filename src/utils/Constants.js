@@ -66,10 +66,23 @@ export const DonationOptions = [
 	{ value: 'ABLE_TO_DONATE', label: 'Able To Donate' }
 ]
 
+export const DonationOptionsMap = {
+	NEED_DONATION: 'I Need Donation',
+	ABLE_TO_DONATE: 'I Am Able To Donate',
+	PET_SERVICE:'Pet Service'
+}
+
 export const PetServiceColors = {
 	PET_WATCH:'#50a5f1',
 	GROOMING: '#989898',
 	PET_SERVICE:'#989898'
+
+}
+
+export const DonationColors = {
+	NEED_DONATION:'#f46a6a',
+	ABLE_TO_DONATE: '#34c38f',
+	DONATION:'#34c38f'
 
 }
 

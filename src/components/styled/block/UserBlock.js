@@ -19,7 +19,7 @@ const UserBlock = ({ data }) => {
 						</div>
 					</div>
 					{data.leftData && <div>
-								<Text text={data.leftData} type={TextType.LARGE} styles={{width:"130px"}}/>
+								<Text text={data.leftData} type={TextType.LARGE} styles={{width:"170px"}} classNames={['mrr-small']} align={'right'}/>
 					</div>}
 				</div>
 			</div>

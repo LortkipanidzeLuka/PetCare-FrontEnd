@@ -1,7 +1,7 @@
 import { SelectFormInput } from '../components/form/input/SelectFormInput';
 import {
 	AdvTypesForLostFound,
-	City,
+	City, DonationOptions,
 	PageTypesOptions,
 	PetColor,
 	PetServiceOptions,
@@ -104,6 +104,22 @@ export const PET_SERVICE_SEARCH = {
 		type: 'PET_WATCH'
 	}
 };
+
+export const DONATION_SEARCH = {
+	fields:[
+		[{
+			...HorizontalFormConfig,
+			name: 'type',
+			heading: 'Donation Type',
+			placeholder: 'Select Donation Type',
+			component: SelectFormInput,
+			options: DonationOptions
+		}],
+	],
+	initialData: {
+		type: 'NEED_DONATION'
+	}
+}
 
 export const PROFILE_SEARCH = {
 	fields: [

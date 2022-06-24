@@ -22,7 +22,8 @@ export const deleteAuthHeader = () => {
 	delete instance.defaults.headers.common[authToken];
 	// TODO
 	window.location.reload();
-	window.location.href = '/';
+	console.log(window.location.href)
+	// window.location.href = '/';
 };
 
 export const checkAuthHeader = () => {

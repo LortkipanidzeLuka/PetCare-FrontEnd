@@ -1,6 +1,7 @@
 import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
 import { PetTypeGrids, PetTypeConfig } from './PageTypes';
-import { PetServiceColors } from './Constants';
+import { DonationColors, PetServiceColors } from './Constants';
+import GenericDataList from '../components/item-collection/data-components/GenericDataList';
 
 
 export const PAGES = {
@@ -53,7 +54,7 @@ export const PAGES = {
 		}
 	},
 	Donation: {
-		Grid: GenericDataGrid,
+		Grid: GenericDataList,
 		pageConfig: {
 			DetailModal: PetTypeConfig.Donation.DetailModal,
 			fetchSingle: PetTypeConfig.Donation.fetchSingle,
@@ -62,7 +63,21 @@ export const PAGES = {
 
 			Card: PetTypeGrids.Donation.Card,
 			searchConfig: PetTypeGrids.Donation.searchConfig,
-			fetchData: PetTypeGrids.Donation.fetchData
+			fetchData: PetTypeGrids.Donation.fetchData,
+			gridConfig:{
+				xl:'4',
+				lg:'6',
+				sm:'6',
+				xs:'12'
+			},
+			cardConfig:{
+				noActions:true,
+				topChip: true,
+				chipValueField: 'advertisementType',
+				getColor: (type)=>{
+					return DonationColors[type];
+				}
+			}
 		}
 	}
 };

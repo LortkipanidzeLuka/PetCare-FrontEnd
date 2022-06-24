@@ -8,7 +8,19 @@ import GenericDataPagination from '../item-pagination/GenericDataPagination';
 import GenericDataSearchList from '../item-search/GenericDataSearchList';
 import NoData from '../../styled/data/NoData';
 
-const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle, fetchSingleImages, cardConfig, searchConfig, toggleEditModal, updateData }) => {
+const GenericDataList = ({
+													 deleteItem,
+													 DetailModal,
+													 Card,
+													 fetchData,
+													 fetchSingle,
+													 fetchSingleImages,
+													 cardConfig,
+													 searchConfig,
+													 toggleEditModal,
+													 updateData,
+													 className
+												 }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params, setParams] = useState(searchConfig.initialData);
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
@@ -21,7 +33,7 @@ const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle
 	}, [error, setMessage]);
 
 	return (
-		<Row className={'advertisement-list'}>
+		<Row className={className ? className + ' advertisement-list' : 'advertisement-list'}>
 			<Col xl={'12'}>
 				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} />
 			</Col>
@@ -32,7 +44,7 @@ const GenericDataList = ({ deleteItem, DetailModal, Card, fetchData, fetchSingle
 							{data.map((value, index) => (
 								<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
 									<Card
-										{...cardConfig}
+										cardConfig={cardConfig}
 										openEditModal={(advertisementType) => {
 											toggleEditModal({
 												data: {
