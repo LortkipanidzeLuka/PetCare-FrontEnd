@@ -24,7 +24,7 @@ export const PetTypeConfig={
 		fetchSingleImages: Api.Serv.fetchSinglePetServiceImages,
 		deleteSingle: Api.Serv.deleteSinglePetService
 	},
-	Donation: {
+	DONATION: {
 		CreateModal: AddDonation,
 		DetailModal: DonationModal,
 		fetchSingle: Api.Donat.fetchSingleDonations,

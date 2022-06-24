@@ -14,9 +14,7 @@ export const ChipsFormInput = ({ register,requiredMessage,getValue, setError, pl
 			setInnerValue(outerValue.map((cur)=>({value:cur, label:cur})));
 		}
 	}, [outerValue]);
-	useEffect(()=>{
-		console.log(errors)
-	},[errors])
+
 	return (<Col xl={xl} lg={lg} sm={sm} xs={xs}>
 			<Row className={'mrb-medium'}>
 				<Text text={heading} type={TextType.MEDIUM} classNames={['mrb-small']} />

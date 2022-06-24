@@ -115,6 +115,21 @@ export const DONATION_SEARCH = {
 			component: SelectFormInput,
 			options: DonationOptions
 		}],
+		[{
+			...HorizontalFormConfig,
+			name: 'search',
+			heading: 'Header',
+			placeholder: 'Please enter header',
+			component: TextFormInput
+		}],
+		[{
+			...HorizontalFormConfig,
+			name: 'city',
+			heading: 'City',
+			placeholder: 'Please enter city',
+			component: SelectFormInput,
+			options: City
+		}],
 	],
 	initialData: {
 		type: 'NEED_DONATION'

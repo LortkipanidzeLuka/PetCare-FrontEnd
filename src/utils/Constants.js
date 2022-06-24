@@ -46,7 +46,7 @@ export const PetSex = [
 export const PageTypesOptions = [
 	{ value: LOST_FOUND, label: 'Lost And Found' },
 	{ value: PET_SERVICE, label: 'Pet Service' },
-	{ value: DONATION, label: 'DONATION' },
+	{ value: DONATION, label: 'Donation' },
 ];
 
 

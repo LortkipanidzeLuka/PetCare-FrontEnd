@@ -24,11 +24,10 @@ const AddDonation = ({ data, open, closeModal, fetchData }) => {
 		sm: '5',
 		xs: '12'
 	};
-
 	useEffect(() => {
 		const fetchSingleData = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await Api.Donat.fetchDonations({ id: data.data.id }, false);
+				const res = await Api.Donat.fetchSingleDonations({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, ...res.data, 'lat-lon': latLonTranslate.encrypt(res.data) }));
 			} else {
 				setPetInfo(null);
@@ -42,7 +41,6 @@ const AddDonation = ({ data, open, closeModal, fetchData }) => {
 				setPetInfo(null);
 			}
 		};
-		console.log(data);
 		if (data && data.data && data.data.advertisementType === 'DONATION') {
 			fetchSingleData();
 			fetchSingleImages();
@@ -153,10 +151,9 @@ const AddDonation = ({ data, open, closeModal, fetchData }) => {
 
 		const params = {
 			...data,
-			advertisementType: 'LOST_FOUND',
+			advertisementType: 'DONATION',
 			...latLonTranslate.decrypt(data['lat-lon'])
 		};
-		console.log(params);
 		try {
 			if (isEditMode()) {
 				await Api.Donat.updateDonations(params);

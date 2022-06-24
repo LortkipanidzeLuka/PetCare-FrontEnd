@@ -23,9 +23,11 @@ const DonationPage = () => {
 					<Text text={'Add Advertisement'} type={TextType.MEDIUM} />
 				</Button> : null}
 			</div>
-			<Grid {...pageConfig} updateData={updateData} className={'minus-ml-left-med'}/>
-			{isLoggedIn ? <AddDonation open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}
-																 fetchData={fetchData} /> : null}
+			<div className={'pet-card-col'}>
+				<Grid {...pageConfig} updateData={updateData} className={'minus-ml-left-med'}/>
+				{isLoggedIn ? <AddDonation open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}
+																	 fetchData={fetchData} /> : null}
+			</div>
 		</div>
 	);
 };

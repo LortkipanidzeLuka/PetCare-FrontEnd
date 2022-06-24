@@ -42,7 +42,7 @@ const AddPetCare=({ data, open, closeModal, fetchData })=>{
 				setPetInfo(null);
 			}
 		};
-		console.log(data)
+
 		if (data && data.data && data.data.advertisementType==='PET_SERVICE'){
 			fetchSingleData();
 			fetchSingleImages();
@@ -153,7 +153,7 @@ const AddPetCare=({ data, open, closeModal, fetchData })=>{
 
 		const params = {
 			...data,
-			advertisementType: 'LOST_FOUND',
+			advertisementType: 'PET_SERVICE',
 			...latLonTranslate.decrypt(data['lat-lon'])
 		};
 
