@@ -44,7 +44,7 @@ export const PetTypeGrids={
 		searchConfig: PET_SERVICE_SEARCH,
 		fetchData: Api.Serv.fetchPetServices
 	},
-	Donation: {
+	DONATION: {
 		Card: GenericCardRectangle,
 		searchConfig: DONATION_SEARCH,
 		fetchData: Api.Donat.fetchDonations

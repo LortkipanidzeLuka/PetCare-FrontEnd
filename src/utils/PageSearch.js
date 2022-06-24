@@ -26,7 +26,8 @@ export const LOST_AND_FOUND_SEARCH = {
 			heading: 'Type',
 			placeholder: 'Please enter type',
 			component: SelectFormInput,
-			options: AdvTypesForLostFound
+			options: AdvTypesForLostFound,
+			isClearable: false
 		}, {
 			...DefaultFormConfig,
 			name: 'city',
@@ -82,7 +83,8 @@ export const PET_SERVICE_SEARCH = {
 			heading: 'Pet Service',
 			placeholder: 'Please enter pet service',
 			component: SelectFormInput,
-			options: PetServiceOptions
+			options: PetServiceOptions,
+			isClearable: false
 		}],
 		[{
 			...DefaultFormConfig,
@@ -113,7 +115,8 @@ export const DONATION_SEARCH = {
 			heading: 'Donation Type',
 			placeholder: 'Select Donation Type',
 			component: SelectFormInput,
-			options: DonationOptions
+			options: DonationOptions,
+			isClearable: false
 		}],
 		[{
 			...HorizontalFormConfig,
@@ -144,7 +147,8 @@ export const PROFILE_SEARCH = {
 			heading: 'Advertisement Type',
 			placeholder: 'Select Advertisement Type',
 			component: SelectFormInput,
-			options: PageTypesOptions
+			options: PageTypesOptions,
+			isClearable: false
 		}],
 		[{
 			...HorizontalFormConfig,

@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from 'react';
 export const SelectFormInput = ({
 																	getValue,
 																	setValue,
+																	setError,
 																	options,
 																	register,
 																	errors,
@@ -17,13 +18,20 @@ export const SelectFormInput = ({
 																	xl,
 																	lg,
 																	sm,
-																	xs
+																	xs,
+																	isClearable
 																}) => {
 	const [value, setInnerValue] = useState(null);
 	const SelectOnChange = useCallback((newValue) => {
-		setValue(name, newValue.value);
+		const value = newValue && newValue.value ? newValue.value : null;
+		setValue(name, value);
 		setInnerValue(newValue);
-	}, [setInnerValue, setValue, name]);
+		if (newValue && newValue.value) {
+			setError(name, '');
+		} else if (requiredMessage) {
+			setError(name, { type: 'required', message: requiredMessage });
+		}
+	}, [setInnerValue, setValue, name, setError, requiredMessage]);
 	const outerValue = getValue(name);
 
 	register(name, { required: requiredMessage });
@@ -32,7 +40,7 @@ export const SelectFormInput = ({
 		if (data) {
 			for (let i = 0; i < options.length; i++) {
 				if (String(options[i].label).toLowerCase() === String(data).toLowerCase()
-					|| String(options[i].value).toLowerCase() === String(data).toLowerCase()){
+					|| String(options[i].value).toLowerCase() === String(data).toLowerCase()) {
 					SelectOnChange(options[i]);
 					break;
 				}
@@ -52,6 +60,7 @@ export const SelectFormInput = ({
 					onChange={SelectOnChange}
 					isMulti={false}
 					value={value}
+					isClearable={isClearable !== false}
 				/>
 				{errors[name] && errors[name].message &&
 					<Text text={errors[name]['message']} type={TextType.SMALL} classNames={['error-text']} />}

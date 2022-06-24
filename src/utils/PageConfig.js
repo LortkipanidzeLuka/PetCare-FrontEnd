@@ -53,17 +53,17 @@ export const PAGES = {
 			}
 		}
 	},
-	Donation: {
+	DONATION: {
 		Grid: GenericDataList,
 		pageConfig: {
-			DetailModal: PetTypeConfig.Donation.DetailModal,
-			fetchSingle: PetTypeConfig.Donation.fetchSingle,
-			fetchSingleImages: PetTypeConfig.Donation.fetchSingleImages,
-			deleteSingle: PetTypeConfig.Donation.deleteSingle,
+			DetailModal: PetTypeConfig.DONATION.DetailModal,
+			fetchSingle: PetTypeConfig.DONATION.fetchSingle,
+			fetchSingleImages: PetTypeConfig.DONATION.fetchSingleImages,
+			deleteSingle: PetTypeConfig.DONATION.deleteSingle,
 
-			Card: PetTypeGrids.Donation.Card,
-			searchConfig: PetTypeGrids.Donation.searchConfig,
-			fetchData: PetTypeGrids.Donation.fetchData,
+			Card: PetTypeGrids.DONATION.Card,
+			searchConfig: PetTypeGrids.DONATION.searchConfig,
+			fetchData: PetTypeGrids.DONATION.fetchData,
 			gridConfig:{
 				xl:'4',
 				lg:'6',

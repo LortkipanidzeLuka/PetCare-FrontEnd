@@ -11,7 +11,7 @@ import AddDonation from './AddDonation';
 
 const DonationPage = () => {
 	const [, modalOpen, , toggleModal] = useModal();
-	const { Grid, pageConfig } = PAGES.Donation;
+	const { Grid, pageConfig } = PAGES.DONATION;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
 
