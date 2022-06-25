@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { TextType } from '../styled/text/TextType';
 import Text from '../styled/text/Text';
 
-const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) => {
+const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children, className}) => {
 
 	useEffect(() => {
 		if (defaultTab) {
@@ -14,7 +14,7 @@ const TabNavigation = ({setActiveTab, tabs, defaultTab, activeTab, children}) =>
 
 	return (
 		<Col lg={12}>
-			<Nav pills className='nav-justified'>
+			<Nav pills className={`nav-justified ${className}`}>
 				{tabs.map((val, index) => {
 					return (
 						<NavItem key={index}>

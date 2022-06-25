@@ -30,7 +30,7 @@ const MapFormInput = ({ heading, setValue, register, name, xl, lg, sm, xs, encry
 					required={false}
 				/>
 				<Text text={heading} type={TextType.MEDIUM} classNames={['mrb-small']} />
-				<MapContainer center={position} zoom={5} style={{ height: '300px' }} whenReady={(map) => {
+				<MapContainer className={'map-leaflet'} center={position} zoom={5} style={{ height: '300px' }} whenReady={(map) => {
 					map.target.on('click', function(e) {
 						const { lat, lng } = e.latlng;
 						setPosition([lat, lng]);
