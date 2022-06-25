@@ -28,7 +28,7 @@ const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, dat
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmitForm)} className={horizontal ? 'd-flex horizontal-form' : ''}>
+		<form onSubmit={handleSubmit(onSubmitForm)} noValidate={true} className={horizontal ? 'd-flex horizontal-form' : ''}>
 			{FormConfig.map((value, index) => {
 
 				return (

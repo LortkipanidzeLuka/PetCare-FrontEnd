@@ -27,3 +27,13 @@
     flex-direction: column;
   }
 }
+
+.invisible-form{
+  height: 0;
+  border: none;
+  display: none;
+}
+
+.invisible-form:focus{
+  border: none;
+}

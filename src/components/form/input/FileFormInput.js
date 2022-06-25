@@ -5,7 +5,7 @@ import Text from '../../styled/text/Text';
 import { TextType } from '../../styled/text/TextType';
 import { TransformImageArrToBase64 } from '../../../utils/UtilActions';
 
-export const FileFormInput = ({setValue, getValue, register, errors, name, xl, lg, sm, xs, clearErrors }) => {
+export const FileFormInput = ({ setError, requiredMessage,setValue, getValue, register, errors, name, xl, lg, sm, xs }) => {
 	const outerValue = getValue(name);
 	const [inputFiles, setInputFiles] = useState([]);
 
@@ -33,7 +33,7 @@ export const FileFormInput = ({setValue, getValue, register, errors, name, xl, l
 		}
 		setValue(name, modified);
 		setInputFiles(modified);
-		clearErrors();
+		setError(name, '');
 	};
 
 	const deleteFile = (index) => {
@@ -48,6 +48,11 @@ export const FileFormInput = ({setValue, getValue, register, errors, name, xl, l
 		}
 		setValue(name, modified);
 		setInputFiles(modified);
+		if (modified.length === 0) {
+			setError(name, { type: 'required', message: requiredMessage });
+		}else {
+			setError(name, '');
+		}
 	};
 
 	return (
@@ -61,11 +66,10 @@ export const FileFormInput = ({setValue, getValue, register, errors, name, xl, l
 						return (
 							<div {...getRootProps()} className={'form-control drop-wrapper'}>
 								<input
-									name={name}
-									{...register(name)}
 									type={'file'}
 									id='fileUploader'
 									multiple
+									required={false}
 								/>
 								<div className={''}>
 									<i className='mdi mdi-file-upload mdi-24px' />
@@ -75,6 +79,13 @@ export const FileFormInput = ({setValue, getValue, register, errors, name, xl, l
 						);
 					}}
 				</Dropzone>
+				<input
+					name={name}
+					{...register(name, { required: requiredMessage })}
+					type={'text'}
+					className={'invisible-form'}
+					required={false}
+				/>
 				<div className='mrt-medium no-padding' id='file-contents'>
 					{inputFiles.map((file, index) => {
 						return (

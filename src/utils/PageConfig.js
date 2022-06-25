@@ -87,9 +87,12 @@ export const PAGES = {
 // errorebi
 // formebis required ebis gadaxedva
 // werilebis damateba (~)
+// logout gasworeba redirect
+// searchshi map is damateba
+// messangeris chasheneba
+// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption
 
 // adoption chasheneba lost-foundtan
-// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption
 // gatestva
 // constantebshi pet service tu ragaca ro miweria magisi washla
 

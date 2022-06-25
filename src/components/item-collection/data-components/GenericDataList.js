@@ -24,7 +24,7 @@ const GenericDataList = ({
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params, setParams] = useState(searchConfig.initialData);
 	const [data, loading, error, pages, currentPage, goToNextPage, goToPreviousPage, changePage] = useGrid({
-		itemsPerPage: 10, params: params, fetchData: fetchData, updateData
+		itemsPerPage: 6, params: params, fetchData: fetchData, updateData
 	});
 	const { setMessage } = useToast(ToastType.ERROR);
 
