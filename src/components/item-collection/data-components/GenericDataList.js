@@ -35,7 +35,7 @@ const GenericDataList = ({
 	return (
 		<Row className={className ? className + ' advertisement-list' : 'advertisement-list'}>
 			<Col xl={'12'}>
-				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} />
+				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} changePage={changePage}/>
 			</Col>
 			<Col xl={'12'} className={'d-flex justify-content-center flex-column min-height-list'}>
 				<NoData noData={(!data || !data.length) && !loading}>

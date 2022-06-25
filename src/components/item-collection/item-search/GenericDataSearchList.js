@@ -3,11 +3,12 @@ import Block from '../../styled/block/Block';
 import FormInput from '../../form/FormInput';
 import { useEffect, useState } from 'react';
 
-const GenericDataSearchList = ({ searchConfig, setParams }) => {
+const GenericDataSearchList = ({ searchConfig, setParams, changePage}) => {
 
 	const FormConfig = searchConfig.fields.map(val => (val.map(innerVal => ({ ...innerVal }))));
 	const [initialData, setInitialData] = useState({});
 	const onSubmit = async (data) => {
+		changePage({target:{textContent:"1"}});
 		setParams(data);
 	};
 	useEffect(() => {

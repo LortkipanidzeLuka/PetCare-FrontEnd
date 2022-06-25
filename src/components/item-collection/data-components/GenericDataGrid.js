@@ -34,7 +34,7 @@ const GenericDataGrid = ({
 
 		<Row>
 			<Col xl={'3'}>
-				<GenericDataSearchBar searchConfig={searchConfig} setParams={setParams} />
+				<GenericDataSearchBar searchConfig={searchConfig} setParams={setParams} changePage={changePage}/>
 			</Col>
 			<Col xl={'9'} className={'d-flex justify-content-center flex-column'}>
 				<NoData noData={(!data || !data.length) && !loading}>

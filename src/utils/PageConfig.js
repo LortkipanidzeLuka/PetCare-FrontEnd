@@ -85,7 +85,7 @@ export const PAGES = {
 // TODO
 // textebi
 // errorebi
-// formebis required ebis gadaxedva
+// formebis required ebis gadaxedva +
 // werilebis damateba (~)
 // logout gasworeba redirect
 // searchshi map is damateba
