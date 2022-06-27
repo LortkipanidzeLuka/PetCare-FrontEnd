@@ -26,14 +26,15 @@ const LandingPageSquares = () => {
 					{squares.map((value, index) => {
 						return (
 							<Col key={index} xl={3} xxl={3} sm={12} xs={12} lg={6} md={6} className={'landing-square'}>
-								<Block className={'full-width'}>
-									<div className='full-width pet-card-content d-flex flex-column  align-items-center  home-page-square'>
-										<img src={value.imgUrl} alt={value.text} />
-										<Link className={'unset-list-style'} to={value.url}>
+								<Link className={'unset-list-style'} to={value.url}>
+									<Block className={'full-width'}>
+										<div
+											className='full-width pet-card-content d-flex flex-column  align-items-center  home-page-square'>
+											<img src={value.imgUrl} alt={value.text} />
 											<Text text={value.text} type={TextType.EXTRA_LARGE} />
-										</Link>
-									</div>
-								</Block>
+										</div>
+									</Block>
+								</Link>
 							</Col>
 						);
 					})}
