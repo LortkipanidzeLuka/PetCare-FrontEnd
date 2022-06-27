@@ -8,12 +8,20 @@ import { TextType } from '../../components/styled/text/TextType';
 import { useSelector } from 'react-redux';
 import { userSelectors } from '../../storage/user/Selector';
 
-const LostPetPage = () => {
+const LostPetPage = (params) => {
 	const [, modalOpen, , toggleModal] = useModal();
 	const { Grid, pageConfig } = PAGES.LOST_FOUND;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
-
+	if (params && params.isAdoption){
+		pageConfig.searchConfig.initialData={
+			type: 'ADOPTION'
+		}
+	}else {
+		pageConfig.searchConfig.initialData={
+			type: 'LOST'
+		}
+	}
 	return (
 		<div>
 			<div className={'d-flex justify-content-between'}>

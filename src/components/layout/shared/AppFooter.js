@@ -31,20 +31,20 @@ const AppFooter = () => {
 									<Link to={'/lost-found'} className={'unset-list-style'}>
 										<Text text={'Found Pets'} type={TextType.MEDIUM} />
 									</Link>
-									<Link to={'/lost-found'} className={'unset-list-style'}>
+									<Link to={'/adoption'} className={'unset-list-style'}>
 										<Text text={'Pet Adoption'} type={TextType.MEDIUM} />
 									</Link>
 								</div>
 								<div className={'d-flex flex-column divided-info'}>
 
-									<Link to={'/lost-found'} className={'unset-list-style'}>
-										<Text text={'Lost Pets'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
+									<Link to={'/donation'} className={'unset-list-style'}>
+										<Text text={'I Need Donation'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
 									</Link>
-									<Link to={'/lost-found'} className={'unset-list-style'}>
-										<Text text={'Found Pets'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
+									<Link to={'/pet-care'} className={'unset-list-style'}>
+										<Text text={'Pet Services'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
 									</Link>
-									<Link to={'/lost-found'} className={'unset-list-style'}>
-										<Text text={'Pet Adoption'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
+									<Link to={'/donation'} className={'unset-list-style'}>
+										<Text text={'Able To Donate'} type={TextType.MEDIUM} classNames={['justify-content-end']} />
 									</Link>
 								</div>
 							</div>
