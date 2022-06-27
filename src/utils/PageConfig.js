@@ -89,10 +89,11 @@ export const PAGES = {
 // donation (detail-modal, create) +
 // petcare (detail-modal, create, card) +
 // adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption+
+// header responsive+
+// messangeris chasheneba +
 // logout gasworeba redirect
 // errorebi
-// messangeris chasheneba
-// header responsive
+
 
 // adoption chasheneba lost-foundtan
 // gatestva

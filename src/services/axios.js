@@ -12,6 +12,24 @@ let authTokenRequest;
 const instance = axios.create({ baseURL });
 const noAuth = axios.create({ baseURL });
 
+//TODO UNCOMMENT
+// const instance = axios.create({
+// 	baseURL,
+// 	headers: {
+// 		'Access-Control-Allow-Origin': '*'
+// 	}
+// });
+// const noAuth = axios.create({
+// 	baseURL,
+// 	headers: {
+// 		common:{
+// 			'Access-Control-Allow-Origin': '*'
+// 		}
+// 	}
+// });
+// instance.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+// noAuth.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
 function resetAuthTokenRequest() {
 	authTokenRequest = null;
 }
@@ -22,8 +40,6 @@ export const deleteAuthHeader = () => {
 	delete instance.defaults.headers.common[authToken];
 	// TODO
 	window.location.reload();
-	console.log(window.location.href)
-	// window.location.href = '/';
 };
 
 export const checkAuthHeader = () => {
