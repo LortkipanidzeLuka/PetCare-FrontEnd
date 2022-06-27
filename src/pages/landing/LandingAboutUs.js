@@ -28,47 +28,38 @@ const LandingAboutUs = ({ id }) => {
 							<div>
 								<Text text={'Work the neighborhood'} type={TextType.HEADING} />
 								<Text classNames={['mrt-small faint-text']}
-											text={'Speak with neighbors, postal carriers, landscapers,' +
-												' and anyone else in the vicinity who might’ve seen your pet ' +
-												'and post your lost pet flyer in local vet offices and other ' +
-												'community spots (grocery store, municipal building, etc.) ' +
-												'Recruit friends and family to speed up and widen the search. ' +
-												'Remember: 67% of households are pet owners and many will be glad ' +
-												'to help.\n'} type={TextType.REGULAR} />
+											text={'Speak with neighbors, postal carriers, landscapers, ' +
+												'and anyone else in the vicinity who might know who the ' +
+												'animal belongs to.\n'} type={TextType.REGULAR} />
 							</div>
 						</div>
 						<div className={'d-flex flex-row'}>
 							<div className={'mrr-medium'}>
-								<i className={'mdi-account-circle mdi-36px mdi'} />
+								<i className={'mdi-registered-trademark mdi-36px mdi'} />
 								<div className={'about-us-line'}/>
 							</div>
 							<div>
-								<Text text={'Work the neighborhood'} type={TextType.HEADING} />
+								<Text text={'Register the pet on PetCare'} type={TextType.HEADING} />
 								<Text classNames={['mrt-small faint-text']}
-											text={'Speak with neighbors, postal carriers, landscapers,' +
-												' and anyone else in the vicinity who might’ve seen your pet ' +
-												'and post your lost pet flyer in local vet offices and other ' +
-												'community spots (grocery store, municipal building, etc.) ' +
-												'Recruit friends and family to speed up and widen the search. ' +
-												'Remember: 67% of households are pet owners and many will be glad ' +
-												'to help.\n'} type={TextType.REGULAR} />
+											text={'Frantic parents may be sharing pics of their missing pet and you can' +
+												' help make the critical connection. Take a photo of the found pet, upload' +
+												' it, and search the PetCare lost and found database. If there’s no match, ' +
+												'create a free advertisement of the pet you found wait for the owner to reach you. \n'} type={TextType.REGULAR} />
 							</div>
 						</div>
-						<div className={'d-flex flex-row'}>
+						<div className={'d-flex flex-row mrt-medium'}>
 							<div className={'mrr-medium'}>
-								<i className={'mdi-account-circle mdi-36px mdi'} />
+								<i className={'mdi-cellphone mdi-36px mdi'} />
 								<div className={'about-us-line'}/>
 							</div>
 							<div>
-								<Text text={'Work the neighborhood'} type={TextType.HEADING} />
+								<Text text={'Make a call\n'} type={TextType.HEADING} />
 								<Text classNames={['mrt-small faint-text']}
-											text={'Speak with neighbors, postal carriers, landscapers,' +
-												' and anyone else in the vicinity who might’ve seen your pet ' +
-												'and post your lost pet flyer in local vet offices and other ' +
-												'community spots (grocery store, municipal building, etc.) ' +
-												'Recruit friends and family to speed up and widen the search. ' +
-												'Remember: 67% of households are pet owners and many will be glad ' +
-												'to help.\n'} type={TextType.REGULAR} />
+											text={'Contact your local animal shelter, non-emergency police number' +
+												' or animal control office, as they might know if a dog or cat has ' +
+												'been reported missing and can take a found pet report. If someone ' +
+												'contacts you to claim their pet, be sure to confirm proof of ownership' +
+												' (i.e., veterinary records, pet’s photo on your phone, etc.). \n'} type={TextType.REGULAR} />
 							</div>
 						</div>
 					</div>

@@ -14,7 +14,7 @@ const LandingPageSquares = () => {
 	}, {
 		imgUrl: PetCare, text: 'Pet service', url: '/pet-care'
 	}, {
-		imgUrl: Adoption, text: 'Adoption', url: '/lost-found'
+		imgUrl: Adoption, text: 'Adoption', url: '/adoption'
 	}, {
 		imgUrl: Donation, text: 'Donation', url: '/donation'
 	}];

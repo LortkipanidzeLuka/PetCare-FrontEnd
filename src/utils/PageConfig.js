@@ -86,18 +86,17 @@ export const PAGES = {
 // textebi
 // errorebi
 // formebis required ebis gadaxedva +
-// werilebis damateba (~)
 // logout gasworeba redirect
-// searchshi map is damateba
+// searchshi map is damateba +
 // messangeris chasheneba
 // adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption
+// donation (detail-modal, create) +
+// petcare (detail-modal, create, card) +
 
 // adoption chasheneba lost-foundtan
 // gatestva
 // constantebshi pet service tu ragaca ro miweria magisi washla
 
-// donation (detail-modal, create) +
-// petcare (detail-modal, create, card) +
 
 
 
@@ -112,3 +111,7 @@ export const PAGES = {
 //  "need_one_primary_image": "",
 //  "invalid_old_password": "",
 //  "invalid_email": ""
+
+
+
+// werilebis damateba (~)

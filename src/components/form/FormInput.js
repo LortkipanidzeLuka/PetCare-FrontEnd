@@ -35,7 +35,6 @@ const FormInput = ({ horizontal, FormConfig, buttonName, fullButton = false, dat
 					<div className={`d-flex pl-small pr-small row`} key={`input-row buttonName ${index}`}>
 						{value.map((cur, innerIndex) => {
 							const FormInputComponent = cur.component;
-							// setError()
 							return (
 								<React.Fragment key={(index + 9) * 10 + innerIndex}>
 									<FormInputComponent {...cur} errors={errors} clearErrors={clearErrors} getValue={getValues}
