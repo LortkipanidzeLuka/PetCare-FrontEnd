@@ -18,3 +18,9 @@
   min-width: 100%;
   min-height: 100%;
 }
+
+@media screen and (max-width: 500px) {
+  .content-width {
+    max-width: 90% !important;
+  }
+}

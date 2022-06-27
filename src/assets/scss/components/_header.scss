@@ -71,15 +71,67 @@
   cursor: pointer;
 }
 
-.landing-subheader{
-  li{
+.landing-subheader {
+  li {
     margin-left: $very-big-distance;
     margin-right: 0 !important;
   }
 }
 
-@media screen and (max-width: 1200px){
-  .landing-header{
+@media screen and (max-width: 500px) {
+  .landing-header {
+    .header-right > nav > ul > li {
+      margin-left: 15px !important;
+    }
+
+    padding: 0 !important;
+  }
+  .app-subheader {
+    .subheader-list {
+      li {
+        margin-right: 12px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) and (min-width: 500px) {
+  .landing-header {
+    .header-right > nav > ul > li {
+      margin-left: 25px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .landing-header {
+    height: calc(2 * #{$header-height});
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      .header-right > nav > ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .header-left > a > div {
+      flex-direction: row !important;
+      justify-content: center !important;
+    }
+  }
+  .content-landing {
+    min-height: calc(100vh - (2 * #{$header-height})) !important;
+    padding-top: calc(2 * #{$header-height}) !important;
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-header {
     padding: 0 $big-distance;
   }
 }

@@ -83,15 +83,16 @@ export const PAGES = {
 };
 
 // TODO
-// textebi
-// errorebi
+// textebi +
 // formebis required ebis gadaxedva +
-// logout gasworeba redirect
 // searchshi map is damateba +
-// messangeris chasheneba
-// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption
 // donation (detail-modal, create) +
 // petcare (detail-modal, create, card) +
+// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption+
+// logout gasworeba redirect
+// errorebi
+// messangeris chasheneba
+// header responsive
 
 // adoption chasheneba lost-foundtan
 // gatestva

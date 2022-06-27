@@ -23,7 +23,7 @@ const AppSubHeader = () => {
 		}
 	];
 	return (
-		<div className='subheader'>
+		<div className='subheader app-subheader'>
 			<ol className='subheader-list content-width'>
 				{tabs.map((value, index) => (
 						<li key={index}>
