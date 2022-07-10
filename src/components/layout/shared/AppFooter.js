@@ -25,10 +25,10 @@ const AppFooter = () => {
 						<div className={'d-flex flex-column '}>
 							<div className={'d-flex flex-row justify-content-between'}>
 								<div className={'d-flex flex-column divided-info'}>
-									<Link to={'/lost-found'} className={'unset-list-style'}>
+									<Link to={'/animal-help'} className={'unset-list-style'}>
 										<Text text={'Lost Pets'} type={TextType.MEDIUM} />
 									</Link>
-									<Link to={'/lost-found'} className={'unset-list-style'}>
+									<Link to={'/animal-help'} className={'unset-list-style'}>
 										<Text text={'Found Pets'} type={TextType.MEDIUM} />
 									</Link>
 									<Link to={'/adoption'} className={'unset-list-style'}>

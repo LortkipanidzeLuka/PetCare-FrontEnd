@@ -39,7 +39,7 @@ export const deleteAuthHeader = () => {
 	storage('refreshToken').unset();
 	delete instance.defaults.headers.common[authToken];
 	// TODO
-	window.location.reload();
+	// window.location.reload();
 };
 
 export const checkAuthHeader = () => {

@@ -5,17 +5,17 @@ import GenericDataList from '../components/item-collection/data-components/Gener
 
 
 export const PAGES = {
-	LOST_FOUND: {
+	ANIMAL_HELP: {
 		Grid: GenericDataGrid,
 		pageConfig: {
-			DetailModal: PetTypeConfig.LOST_FOUND.DetailModal,
-			fetchSingle: PetTypeConfig.LOST_FOUND.fetchSingle,
-			fetchSingleImages: PetTypeConfig.LOST_FOUND.fetchSingleImages,
-			deleteSingle: PetTypeConfig.LOST_FOUND.deleteSingle,
+			DetailModal: PetTypeConfig.ANIMAL_HELP.DetailModal,
+			fetchSingle: PetTypeConfig.ANIMAL_HELP.fetchSingle,
+			fetchSingleImages: PetTypeConfig.ANIMAL_HELP.fetchSingleImages,
+			deleteSingle: PetTypeConfig.ANIMAL_HELP.deleteSingle,
 
-			Card: PetTypeGrids.LOST_FOUND.Card,
-			searchConfig: PetTypeGrids.LOST_FOUND.searchConfig,
-			fetchData: PetTypeGrids.LOST_FOUND.fetchData,
+			Card: PetTypeGrids.ANIMAL_HELP.Card,
+			searchConfig: PetTypeGrids.ANIMAL_HELP.searchConfig,
+			fetchData: PetTypeGrids.ANIMAL_HELP.fetchData,
 			gridConfig:{
 				xl:'4',
 				lg:'6',

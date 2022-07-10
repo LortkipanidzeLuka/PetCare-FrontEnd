@@ -1,6 +1,6 @@
 import { SelectFormInput } from '../components/form/input/SelectFormInput';
 import {
-	AdvTypesForLostFound,
+	AdvTypesForAnimalHelp,
 	City, DonationOptions,
 	PageTypesOptions,
 	PetColor,
@@ -26,7 +26,7 @@ export const LOST_AND_FOUND_SEARCH = {
 			heading: 'Type',
 			placeholder: 'Please enter type',
 			component: SelectFormInput,
-			options: AdvTypesForLostFound,
+			options: AdvTypesForAnimalHelp,
 			isClearable: false
 		}, {
 			...DefaultFormConfig,
@@ -159,6 +159,6 @@ export const PROFILE_SEARCH = {
 		}]
 	],
 	initialData: {
-		type: 'LOST_FOUND'
+		type: 'ANIMAL_HELP'
 	}
 };

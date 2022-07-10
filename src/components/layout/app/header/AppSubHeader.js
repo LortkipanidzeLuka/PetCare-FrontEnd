@@ -10,8 +10,8 @@ const AppSubHeader = () => {
 	};
 	const tabs = [
 		{
-			path: '/lost-found',
-			text: 'Lost And Found'
+			path: '/animal-help',
+			text: 'Animal Help'
 		},
 		{
 			path: '/pet-care',

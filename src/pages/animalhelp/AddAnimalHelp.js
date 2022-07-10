@@ -15,7 +15,7 @@ import { TextType } from '../../components/styled/text/TextType';
 import MapFormInput from '../../components/form/input/MapFormInput';
 import { latLonTranslate } from '../../utils/UtilActions';
 
-const AddLostPet = ({ data, open, closeModal, fetchData }) => {
+const AddAnimalHelp = ({ data, open, closeModal, fetchData }) => {
 	const { setMessage: setSuccessMessage } = useToast(ToastType.SUCCESS);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const [petInfo, setPetInfo] = useState(null);
@@ -29,7 +29,7 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	useEffect(() => {
 		const fetchSingleData = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await Api.Lost.fetchSingleLostFound({ id: data.data.id }, false);
+				const res = await Api.Help.fetchSingleAnimalHelp({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, ...res.data, 'lat-lon': latLonTranslate.encrypt(res.data) }));
 			} else {
 				setPetInfo(null);
@@ -37,13 +37,13 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		};
 		const fetchSingleImages = async () => {
 			if (data && data.data && data.data.id) {
-				const res = await Api.Lost.fetchSingleLostFoundImages({ id: data.data.id }, false);
+				const res = await Api.Help.fetchSingleAnimalHelpImages({ id: data.data.id }, false);
 				setPetInfo(prev => ({ ...prev, images: res.data }));
 			} else {
 				setPetInfo(null);
 			}
 		};
-		if (data && data.data && data.data.advertisementType==='LOST_FOUND'){
+		if (data && data.data && data.data.advertisementType==='ANIMAL_HELP'){
 			fetchSingleData();
 			fetchSingleImages();
 		}
@@ -220,16 +220,16 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 		}
 		const params = {
 			...data,
-			advertisementType: 'LOST_FOUND',
+			advertisementType: 'ANIMAL_HELP',
 			...latLonTranslate.decrypt(data['lat-lon'])
 		};
 
 		try {
 			if (isEditMode()) {
-				await Api.Lost.updateLostFound(params);
+				await Api.Help.updateAnimalHelp(params);
 				setSuccessMessage('item-updated');
 			} else {
-				await Api.Lost.createLostFound(params);
+				await Api.Help.createAnimalHelps(params);
 				setSuccessMessage('item-added');
 			}
 			fetchData();
@@ -258,4 +258,4 @@ const AddLostPet = ({ data, open, closeModal, fetchData }) => {
 	);
 };
 
-export default AddLostPet;
+export default AddAnimalHelp;

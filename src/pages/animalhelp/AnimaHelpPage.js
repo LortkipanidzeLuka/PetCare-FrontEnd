@@ -1,4 +1,4 @@
-import AddLostPet from './AddLostPet';
+import AddAnimalHelp from './AddAnimalHelp';
 import { useModal } from '../../hooks/UseModal';
 import { Button } from 'reactstrap';
 import { PAGES } from '../../utils/PageConfig';
@@ -8,9 +8,9 @@ import { TextType } from '../../components/styled/text/TextType';
 import { useSelector } from 'react-redux';
 import { userSelectors } from '../../storage/user/Selector';
 
-const LostPetPage = (params) => {
+const AnimaHelpPage = (params) => {
 	const [, modalOpen, , toggleModal] = useModal();
-	const { Grid, pageConfig } = PAGES.LOST_FOUND;
+	const { Grid, pageConfig } = PAGES.ANIMAL_HELP;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
 	if (params && params.isAdoption){
@@ -25,16 +25,16 @@ const LostPetPage = (params) => {
 	return (
 		<div>
 			<div className={'d-flex justify-content-between'}>
-				<Text text={'Lost And Found Pets'} type={TextType.LARGE} />
+				<Text text={'Animal That Need Help'} type={TextType.LARGE} />
 				{isLoggedIn ? <Button onClick={toggleModal} className={'add-button'}>
 					<Text text={'Add Advertisement'} type={TextType.MEDIUM} />
 				</Button> : null}
 			</div>
 			<Grid {...pageConfig} updateData={updateData} />
-			{isLoggedIn ? <AddLostPet open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}
-																fetchData={fetchData} /> : null}
+			{isLoggedIn ? <AddAnimalHelp open={modalOpen} closeModal={toggleModal} fetchSingle={pageConfig.fetchSingle}
+																	 fetchData={fetchData} /> : null}
 		</div>
 	);
 };
 
-export default LostPetPage;
+export default AnimaHelpPage;

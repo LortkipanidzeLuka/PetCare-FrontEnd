@@ -1,4 +1,4 @@
-const LOST_FOUND = "LOST_FOUND";
+const ANIMAL_HELP = "ANIMAL_HELP";
 const PET_SERVICE = "PET_SERVICE";
 const DONATION = "DONATION";
 
@@ -14,9 +14,10 @@ export const PetTypesForSearch = [
 ];
 
 
-export const AdvTypesForLostFound = [
+export const AdvTypesForAnimalHelp = [
 	{ label: 'LOST', value: 'LOST' },
-	{ label: 'FOUND', value: 'FOUND' }
+	{ label: 'FOUND', value: 'FOUND' },
+	{ label: 'ADOPTION', value: 'ADOPTION'}
 ];
 
 
@@ -35,7 +36,8 @@ export const PetColor = [
 
 export const PetAdType = [
 	{ label: 'LOST', value: 'LOST' },
-	{ label: 'FOUND', value: 'FOUND' }
+	{ label: 'FOUND', value: 'FOUND' },
+	{ label: 'ADOPTION', value: 'ADOPTION'}
 ];
 
 export const PetSex = [
@@ -44,7 +46,7 @@ export const PetSex = [
 ];
 
 export const PageTypesOptions = [
-	{ value: LOST_FOUND, label: 'Lost And Found' },
+	{ value: ANIMAL_HELP, label: 'Animals Needing Help' },
 	{ value: PET_SERVICE, label: 'Pet Service' },
 	{ value: DONATION, label: 'Donation' },
 ];

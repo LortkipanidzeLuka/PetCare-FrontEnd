@@ -10,7 +10,7 @@ import { Col, Row } from 'reactstrap';
 
 const LandingPageSquares = () => {
 	const squares = [{
-		imgUrl: PetFound, text: 'Lost and found', url: '/lost-found'
+		imgUrl: PetFound, text: 'Lost and found', url: '/animal-help'
 	}, {
 		imgUrl: PetCare, text: 'Pet service', url: '/pet-care'
 	}, {

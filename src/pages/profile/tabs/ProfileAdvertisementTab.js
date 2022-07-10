@@ -24,8 +24,8 @@ const ProfileAdvertisementTab = () => {
 	const { setMessage: setSuccess } = useToast(ToastType.SUCCESS);
 	const createMenuData = [
 		{
-			keyWord: 'LOST_FOUND',
-			text: 'Add Lost And Found'
+			keyWord: 'ANIMAL_HELP',
+			text: 'Add Animal Needing Help'
 		},
 		{
 			keyWord: 'PET_SERVICE',

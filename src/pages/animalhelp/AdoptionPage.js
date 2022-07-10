@@ -1,8 +1,8 @@
-import LostPetPage from './LostPetPage';
+import AnimaHelpPage from './AnimaHelpPage';
 
 const AdoptionPage = () => {
 	return (
-		<LostPetPage isAdoption/>
+		<AnimaHelpPage isAdoption/>
 	);
 };
 

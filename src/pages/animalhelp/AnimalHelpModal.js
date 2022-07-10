@@ -11,7 +11,7 @@ import ApiLoader from '../../components/styled/data/ApiLoader';
 import ItemMap from '../../components/item-map/ItemMap';
 
 
-const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {
+const AnimalHelpModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params }) => {
 	const { setMessage: setError } = useToast(ToastType.ERROR);
 	const [dataLoading, setDataLoading] = useState(false);
 	const [imagesLoading, setImagesLoading] = useState(false);
@@ -108,4 +108,4 @@ const LostPetModal = ({ open, closeModal, fetchSingle, fetchSingleImages, params
 	);
 };
 
-export default LostPetModal;
+export default AnimalHelpModal;
