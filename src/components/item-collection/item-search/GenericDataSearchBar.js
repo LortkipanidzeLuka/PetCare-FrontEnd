@@ -28,9 +28,14 @@ const GenericDataSearchBar = ({ searchConfig, setParams, changePage }) => {
 		changePage({ target: { textContent: '1' } });
 		setParams(data);
 	};
+
 	const onMapSubmit = async (data) => {
-		setParams({...latLonTranslate.decrypt(data['lat-lon']), ...initialData});
+		const { latitude, longitude } = latLonTranslate.decrypt(data['lat-lon']);
+		setParams(prev => {
+			return ({ ...prev, latitude: latitude, longitude: longitude });
+		});
 	};
+
 	useEffect(() => {
 		if (searchConfig.initialData) {
 			setInitialData(searchConfig.initialData);
