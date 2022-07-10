@@ -1,5 +1,6 @@
 import toastr from 'toastr';
 import { useCallback, useEffect, useState } from 'react';
+import { Messages } from '../utils/Messages';
 
 export const ToastType = {
 	INFO: 'INFO',
@@ -29,10 +30,12 @@ const useToast = (toastType) => {
 					toastr.info(message);
 					break;
 				case ToastType.ERROR:
-					toastr.error(message);
+					const translatedError = Messages.error[message];
+					toastr.error(translatedError ? translatedError: message);
 					break;
 				case ToastType.SUCCESS:
-					toastr.success(message);
+					const translatedSuccess = Messages.success[message];
+					toastr.success(translatedSuccess);
 					break;
 				default:
 					toastr.error(message);

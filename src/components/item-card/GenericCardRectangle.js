@@ -50,7 +50,7 @@ const GenericCardRectangle = (params) => {
 													</div>
 												);
 											}else {
-												return (<></>)
+												return (<span key={idx}/>)
 											}
 										})}
 									</div>}

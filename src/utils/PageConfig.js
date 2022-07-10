@@ -151,12 +151,9 @@ export const PROFILE_PAGE = {
 // constantebshi pet service tu ragaca ro miweria magisi washla +
 // adoption chasheneba lost-foundtan+
 // logout gasworeba redirect+
+// refresh and list icons config+
 
-// refresh and list icons config
 // errorebi
-
-
-
 // gatestva
 
 
