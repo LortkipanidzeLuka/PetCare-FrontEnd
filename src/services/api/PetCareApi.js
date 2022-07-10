@@ -1,6 +1,8 @@
 import { del, get, post, put } from 'src/services/axios';
 
 const api = {
+	refreshSinglePetService: (params, _loading) =>
+		put(`advertisements/petservice/${params.id}/refresh`,  {} ).then((data) => data),
 	fetchPetServices: (params, _loading) =>
 		get(`advertisements/petservice/search/${params.type}?${new URLSearchParams(params).toString()}`,  {} ).then((data) => data),
 	createPetService:(params, _loading) =>

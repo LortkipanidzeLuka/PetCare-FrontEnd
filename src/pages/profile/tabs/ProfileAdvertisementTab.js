@@ -18,6 +18,8 @@ import ConfirmationModal from '../../../components/confirmation/ConfirmationModa
 const ProfileAdvertisementTab = () => {
 	const [modalData, modalOpen, , toggleModal] = useModal();
 	const [deleteModalData, deleteModalOpen, , toggleDeleteModal] = useModal();
+	const [restoreModalData, restoreModalOpen, , toggleRestoreModal] = useModal();
+
 	const [updateData, fetchData] = useFetchTrigger();
 	const [createMenu, setCreateMenu] = useState(false);
 	const { setMessage: setError } = useToast(ToastType.ERROR);
@@ -42,11 +44,27 @@ const ProfileAdvertisementTab = () => {
 		toggleDeleteModal(data);
 	};
 
+	const restoreItem = (data) => {
+		toggleRestoreModal(data);
+	};
+
 	const deleteItemCallBack = async ({ data }) => {
 		try {
 			if (data.advertisementType && data.id && PetTypeConfig[data.advertisementType]) {
 				await PetTypeConfig[data.advertisementType].deleteSingle(data);
 				setSuccess('advertisement-deleted');
+				fetchData();
+			}
+		} catch (error) {
+			setError(error);
+		}
+	};
+
+	const restoreItemCallBack = async ({ data }) => {
+		try {
+			if (data.advertisementType && data.id && PetTypeConfig[data.advertisementType]) {
+				await PetTypeConfig[data.advertisementType].refreshSingle(data);
+				setSuccess('advertisement-reactivated');
 				fetchData();
 			}
 		} catch (error) {
@@ -90,6 +108,7 @@ const ProfileAdvertisementTab = () => {
 				toggleEditModal={toggleModal}
 				updateData={updateData}
 				deleteItem={deleteItem}
+				restoreItem={restoreItem}
 			/>
 			<ProfileCreateModal data={modalData} open={modalOpen} closeModal={toggleModal} fetchData={fetchData} />
 			<ConfirmationModal
@@ -100,6 +119,15 @@ const ProfileAdvertisementTab = () => {
 					deleteItemCallBack(params);
 				}}
 				params={deleteModalData} />
+
+			<ConfirmationModal
+				text={'Are you sure you want to restore this expired advertisement '}
+				open={restoreModalOpen}
+				toggle={toggleRestoreModal}
+				callback={(params) => {
+					restoreItemCallBack(params);
+				}}
+				params={restoreModalData} />
 		</Block>
 	);
 };

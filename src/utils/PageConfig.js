@@ -1,6 +1,6 @@
 import GenericDataGrid from '../components/item-collection/data-components/GenericDataGrid';
 import { PetTypeGrids, PetTypeConfig } from './PageTypes';
-import { DonationColors, PetServiceColors } from './Constants';
+import { DonationColors, DonationOptionsMap, PetServiceColors, PetServiceOptionsMap } from './Constants';
 import GenericDataList from '../components/item-collection/data-components/GenericDataList';
 
 
@@ -12,6 +12,7 @@ export const PAGES = {
 			fetchSingle: PetTypeConfig.ANIMAL_HELP.fetchSingle,
 			fetchSingleImages: PetTypeConfig.ANIMAL_HELP.fetchSingleImages,
 			deleteSingle: PetTypeConfig.ANIMAL_HELP.deleteSingle,
+			refreshSingle: PetTypeConfig.ANIMAL_HELP.refreshSingle,
 
 			Card: PetTypeGrids.ANIMAL_HELP.Card,
 			searchConfig: PetTypeGrids.ANIMAL_HELP.searchConfig,
@@ -31,6 +32,7 @@ export const PAGES = {
 			fetchSingle: PetTypeConfig.PET_SERVICE.fetchSingle,
 			fetchSingleImages: PetTypeConfig.PET_SERVICE.fetchSingleImages,
 			deleteSingle: PetTypeConfig.PET_SERVICE.deleteSingle,
+			refreshSingle: PetTypeConfig.PET_SERVICE.refreshSingle,
 
 			Card: PetTypeGrids.PET_SERVICE.Card,
 			searchConfig: PetTypeGrids.PET_SERVICE.searchConfig,
@@ -46,9 +48,12 @@ export const PAGES = {
 			cardConfig:{
 				noActions:true,
 				topChip: true,
-				chipValueField: 'advertisementType',
+				chipValueField: 'petServiceType',
 				getColor: (type)=>{
 					return PetServiceColors[type];
+				},
+				getTitle: (type)=>{
+					return PetServiceOptionsMap[type];
 				}
 			}
 		}
@@ -60,6 +65,7 @@ export const PAGES = {
 			fetchSingle: PetTypeConfig.DONATION.fetchSingle,
 			fetchSingleImages: PetTypeConfig.DONATION.fetchSingleImages,
 			deleteSingle: PetTypeConfig.DONATION.deleteSingle,
+			refreshSingle: PetTypeConfig.DONATION.refreshSingle,
 
 			Card: PetTypeGrids.DONATION.Card,
 			searchConfig: PetTypeGrids.DONATION.searchConfig,
@@ -73,15 +79,17 @@ export const PAGES = {
 			cardConfig:{
 				noActions:true,
 				topChip: true,
-				chipValueField: 'advertisementType',
+				chipValueField: 'donationAdvertisementType',
 				getColor: (type)=>{
 					return DonationColors[type];
+				},
+				getTitle: (type)=>{
+					return DonationOptionsMap[type];
 				}
 			}
 		}
 	}
 };
-
 // TODO
 // textebi +
 // formebis required ebis gadaxedva +
@@ -91,14 +99,16 @@ export const PAGES = {
 // adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption+
 // header responsive+
 // messangeris chasheneba +
-// logout gasworeba redirect
+// constantebshi pet service tu ragaca ro miweria magisi washla +
+// adoption chasheneba lost-foundtan+
+// logout gasworeba redirect+
+
+// refresh and list icons config
 // errorebi
 
 
-// adoption chasheneba lost-foundtan
-// gatestva
-// constantebshi pet service tu ragaca ro miweria magisi washla
 
+// gatestva
 
 
 

@@ -19,7 +19,8 @@ const GenericDataList = ({
 													 searchConfig,
 													 toggleEditModal,
 													 updateData,
-													 className
+													 className,
+													 restoreItem
 												 }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params, setParams] = useState(searchConfig.initialData);
@@ -35,28 +36,33 @@ const GenericDataList = ({
 	return (
 		<Row className={className ? className + ' advertisement-list' : 'advertisement-list'}>
 			<Col xl={'12'}>
-				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} changePage={changePage}/>
+				<GenericDataSearchList searchConfig={searchConfig} setParams={setParams} changePage={changePage} />
 			</Col>
 			<Col xl={'12'} className={'d-flex justify-content-center flex-column min-height-list'}>
 				<NoData noData={(!data || !data.length) && !loading}>
 					<ApiLoader loading={loading}>
 						<Row>
-							{data.map((value, index) => (
-								<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
-									<Card
-										cardConfig={cardConfig}
-										openEditModal={(advertisementType) => {
-											toggleEditModal({
-												data: {
-													id: value.id,
-													advertisementType: advertisementType
-												}
-											});
-										}}
-										openModal={toggleModal}
-										deleteItem={deleteItem}
-										{...value} />
-								</Col>))}
+							{data.map((value, index) => {
+								console.log(value)
+								return (
+									<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
+										<Card
+											cardConfig={cardConfig}
+											openEditModal={(advertisementType) => {
+												toggleEditModal({
+													data: {
+														id: value.id,
+														advertisementType: advertisementType
+													}
+												});
+											}}
+											openModal={toggleModal}
+											deleteItem={deleteItem}
+											restoreItem={restoreItem}
+											{...value} />
+									</Col>
+								);
+							})}
 						</Row>
 						<GenericDataPagination
 							pages={pages}

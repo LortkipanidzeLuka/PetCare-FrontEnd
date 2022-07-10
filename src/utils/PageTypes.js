@@ -15,21 +15,24 @@ export const PetTypeConfig={
 		DetailModal: AnimalHelpModal,
 		fetchSingle: Api.Help.fetchSingleAnimalHelp,
 		fetchSingleImages: Api.Help.fetchSingleAnimalHelpImages,
-		deleteSingle: Api.Help.deleteSingleAnimalHelp
+		deleteSingle: Api.Help.deleteSingleAnimalHelp,
+		refreshSingle: Api.Help.refreshSingleAnimalHelp
 	},
 	PET_SERVICE: {
 		CreateModal: AddPetCare,
 		DetailModal: PetCareModal,
 		fetchSingle: Api.Serv.fetchSinglePetService,
 		fetchSingleImages: Api.Serv.fetchSinglePetServiceImages,
-		deleteSingle: Api.Serv.deleteSinglePetService
+		deleteSingle: Api.Serv.deleteSinglePetService,
+		refreshSingle: Api.Serv.refreshSinglePetService
 	},
 	DONATION: {
 		CreateModal: AddDonation,
 		DetailModal: DonationModal,
 		fetchSingle: Api.Donat.fetchSingleDonations,
 		fetchSingleImages: Api.Donat.fetchSingleDonationsImages,
-		deleteSingle: Api.Donat.deleteSingleDonations
+		deleteSingle: Api.Donat.deleteSingleDonations,
+		refreshSingle: Api.Donat.refreshSingleDonation
 	},
 }
 

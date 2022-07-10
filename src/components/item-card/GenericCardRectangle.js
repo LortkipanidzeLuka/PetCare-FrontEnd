@@ -4,7 +4,6 @@ import TagList from '../styled/tag/TagList';
 import Block from '../styled/block/Block';
 import { Row } from 'reactstrap';
 import Tag from '../styled/tag/Tag';
-import { PetServiceOptionsMap } from '../../utils/Constants';
 
 const GenericCardRectangle = (params) => {
 	const {
@@ -20,7 +19,8 @@ const GenericCardRectangle = (params) => {
 		userInfo,
 		openEditModal,
 		deleteItem,
-		cardConfig
+		cardConfig,
+		restoreItem
 	} = params;
 
 	return (
@@ -42,6 +42,12 @@ const GenericCardRectangle = (params) => {
 													classNames={['faint-text']} />
 									</div>
 									{(!cardConfig || !cardConfig.noActions) && <div className={'d-flex flex-row'}>
+										<div className={'card-action-icon refresh-action mrr-small'} onClick={() => {
+											restoreItem({ data: { id: id, advertisementType: advertisementType } });
+										}}>
+											<i className={'mdi mdi-dark mdi-refresh mdi-24px refresh-action'} />
+										</div>
+
 										<div className={'card-action-icon edit-action mrr-small'} onClick={(event) => {
 											event.preventDefault();
 											openEditModal(advertisementType);
@@ -56,7 +62,7 @@ const GenericCardRectangle = (params) => {
 									</div>}
 									{cardConfig && cardConfig.topChip &&
 										<div>
-											<Tag style={{minWidth:"100px"}} text={PetServiceOptionsMap[params[cardConfig.chipValueField]]} noHashTag={true} color={cardConfig.getColor(params[cardConfig.chipValueField])}/>
+											<Tag style={{minWidth:"100px"}} text={cardConfig.getTitle(params[cardConfig.chipValueField])} noHashTag={true} color={cardConfig.getColor(params[cardConfig.chipValueField])}/>
 										</div>}
 								</div>
 							</Row>

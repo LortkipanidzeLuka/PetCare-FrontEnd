@@ -104,6 +104,10 @@
         .delete-action:before {
           color: $danger !important;
         }
+
+        .refresh-action:before {
+          color: $info !important;
+        }
       }
 
       .edit-action {
@@ -112,6 +116,10 @@
 
       .delete-action {
         border-color: $danger !important;
+      }
+
+      .refresh-action {
+        border-color: $info !important;
       }
     }
   }

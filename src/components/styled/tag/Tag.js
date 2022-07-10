@@ -9,7 +9,7 @@ const Tag = (params) => {
 	return (
 		<div style={{ backgroundColor: `${params.color} !important` ? params.color : '', ...params.style }}
 				 className={`tag ${params.className ? params.className : ''}`}>
-			<Text text={`${text}`} type={TextType.REGULAR} />
+			<Text text={`${text}`} type={TextType.REGULAR} align={'center'}/>
 			{params.children}
 		</div>
 
