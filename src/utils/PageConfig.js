@@ -139,37 +139,6 @@ export const PROFILE_PAGE = {
 		}
 	}
 
-}// TODO
-// textebi +
-// formebis required ebis gadaxedva +
-// searchshi map is damateba +
-// donation (detail-modal, create) +
-// petcare (detail-modal, create, card) +
-// adoption squarze ro daachers lost-foundze gadavies da dzebnashi iyos monishnuli adoption+
-// header responsive+
-// messangeris chasheneba +
-// constantebshi pet service tu ragaca ro miweria magisi washla +
-// adoption chasheneba lost-foundtan+
-// logout gasworeba redirect+
-// refresh and list icons config+
-
-// errorebi
+}
+// TODO
 // gatestva
-
-
-
-
-
-
-//  "email_used":"",
-//  "invalid_credentials": "",
-//  "invalid_refresh_token": "",
-//  "invalid_otp": "",
-//  "otp_retries_exceeded": "",
-//  "need_one_primary_image": "",
-//  "invalid_old_password": "",
-//  "invalid_email": ""
-
-
-
-// werilebis damateba (~)
