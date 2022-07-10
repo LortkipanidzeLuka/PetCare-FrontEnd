@@ -38,8 +38,9 @@ export const deleteAuthHeader = () => {
 	storage('accessToken').unset();
 	storage('refreshToken').unset();
 	delete instance.defaults.headers.common[authToken];
-	// TODO
-	// window.location.reload();
+	if (window.location.pathname==='/profile'){
+		window.location.assign("/");
+	}
 };
 
 export const checkAuthHeader = () => {
