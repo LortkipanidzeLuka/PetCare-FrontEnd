@@ -40,6 +40,8 @@ export const deleteAuthHeader = () => {
 	delete instance.defaults.headers.common[authToken];
 	if (window.location.pathname==='/profile'){
 		window.location.assign("/");
+	}else {
+		window.location.reload();
 	}
 };
 
