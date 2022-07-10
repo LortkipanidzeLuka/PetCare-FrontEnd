@@ -19,7 +19,7 @@ export const userSelectors = {
 		(state) => state.user,
 		user => {
 			return user.userInfo?.full_name && user.userInfo?.full_name.includes(' ')
-				? `${user.userInfo?.full_name[0].toUpperCase() + '.' + user.userInfo?.full_name.split(' ')[1]}`
+				? `${user.userInfo?.full_name[0].toUpperCase() + '.' + user.userInfo?.full_name.split(' ')[1][0]}`
 				: user.userInfo?.full_name ? user.userInfo?.full_name : '';
 		}
 	)

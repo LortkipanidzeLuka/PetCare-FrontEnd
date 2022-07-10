@@ -115,8 +115,8 @@ const AddAnimalHelp = ({ data, open, closeModal, fetchData }) => {
 				requiredMessage: 'Age until is required',
 				component: NumberFormInput,
 				minMax: {
-					min: {
-						value: 30,
+					max: {
+						value: 99,
 						message: 'Value must be more than 30'
 					}
 				}

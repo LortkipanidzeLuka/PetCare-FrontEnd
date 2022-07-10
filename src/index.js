@@ -6,7 +6,7 @@ import '../src/assets/scss/app.scss';
 import { createStore } from 'redux';
 import rootReducer from './storage';
 import { Provider } from 'react-redux';
-// import MessengerCustomerChat from 'react-messenger-customer-chat';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,11 +21,10 @@ root.render(
 	<Provider store={store}>
 		<BrowserRouter>
 			<App />
-			{/*TODO UNCOMMENT*/}
-			{/*<MessengerCustomerChat*/}
-			{/*	pageId="108539998574817"*/}
-			{/*	appId="1767431093432033"*/}
-			{/*/>*/}
+			<MessengerCustomerChat
+				pageId="108539998574817"
+				appId="1767431093432033"
+			/>
 		</BrowserRouter>
 	</Provider>
 );

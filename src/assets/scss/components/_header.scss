@@ -136,3 +136,19 @@
   }
 }
 
+.header-user-circle{
+  background-color: #ffffff;
+  border-radius: 50%;
+  .circle-wrapper {
+    width: $very-big-distance;
+    height: $very-big-distance;
+  }
+}
+
+.header-item:focus{
+  box-shadow: none;
+}
+
+.header-user-circle-focus{
+  box-shadow: 0 0 0 0.25rem $circle-focus;
+}

@@ -1,34 +1,14 @@
 import axios from 'axios';
 import storage from '../utils/Storage';
-// import { useDispatch } from 'react-redux';
-// import UserActions from '../storage/user/Store';
 
 const baseURL = process.env.REACT_APP_API_BASE_URL;
 export const authToken = String(process.env.REACT_APP_AUTH_TOKEN);
-// const dispatch = useDispatch()
 
 let authTokenRequest;
 
 const instance = axios.create({ baseURL });
 const noAuth = axios.create({ baseURL });
 
-//TODO UNCOMMENT
-// const instance = axios.create({
-// 	baseURL,
-// 	headers: {
-// 		'Access-Control-Allow-Origin': '*'
-// 	}
-// });
-// const noAuth = axios.create({
-// 	baseURL,
-// 	headers: {
-// 		common:{
-// 			'Access-Control-Allow-Origin': '*'
-// 		}
-// 	}
-// });
-// instance.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-// noAuth.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 function resetAuthTokenRequest() {
 	authTokenRequest = null;

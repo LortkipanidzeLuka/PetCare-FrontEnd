@@ -14,7 +14,7 @@ const ProfileBlock = ({ data }) => {
 			<div className={'profile-image-overlay'}>
 				<div className={'d-flex justify-content-center align-items-center'}>
 					<div className={'mrt-medium profile-name-image d-flex justify-content-center align-items-center'}>
-						<Text text={initials.substring(0,3)} type={TextType.EXTRA_LARGE} />
+						<Text text={initials} type={TextType.EXTRA_LARGE} />
 					</div>
 				</div>
 			</div>

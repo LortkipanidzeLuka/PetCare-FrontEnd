@@ -13,8 +13,13 @@ const ProfileDropdown = ({ user }) => {
 		<React.Fragment>
 			<Dropdown isOpen={menu} toggle={() => setMenu(!menu)} className='d-inline-block'>
 				<DropdownToggle className='btn header-item waves-effect' id='page-header-user-dropdown' tag='button'>
-					<span className='mrl-small'>{user}</span>
-
+					<div className={`header-user-circle ${menu?' header-user-circle-focus ':''}`}>
+						<div className={`circle-wrapper d-flex justify-content-center align-items-center`}>
+							<div className={'d-flex justify-content-center align-items-center'}>
+								<Text text={user} type={TextType.LARGE} />
+							</div>
+						</div>
+					</div>
 				</DropdownToggle>
 				<DropdownMenu end>
 					<DropdownItem tag='a' href='/profile?tab=0'>
