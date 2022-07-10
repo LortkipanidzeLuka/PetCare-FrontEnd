@@ -8,19 +8,15 @@ import GenericDataPagination from '../item-pagination/GenericDataPagination';
 import GenericDataSearchList from '../item-search/GenericDataSearchList';
 import NoData from '../../styled/data/NoData';
 
-const GenericDataList = ({
-													 deleteItem,
-													 DetailModal,
+const GenericDataList = ({ DetailModal,
 													 Card,
 													 fetchData,
 													 fetchSingle,
 													 fetchSingleImages,
 													 cardConfig,
 													 searchConfig,
-													 toggleEditModal,
 													 updateData,
-													 className,
-													 restoreItem
+													 className
 												 }) => {
 	const [modalData, petModalOpen, , toggleModal] = useModal();
 	const [params, setParams] = useState(searchConfig.initialData);
@@ -43,22 +39,11 @@ const GenericDataList = ({
 					<ApiLoader loading={loading}>
 						<Row>
 							{data.map((value, index) => {
-								console.log(value)
 								return (
 									<Col className={'mrb-medium'} xl={12} lg={12} md={12} sm={12} xs={12} xxl={6} key={index}>
 										<Card
 											cardConfig={cardConfig}
-											openEditModal={(advertisementType) => {
-												toggleEditModal({
-													data: {
-														id: value.id,
-														advertisementType: advertisementType
-													}
-												});
-											}}
 											openModal={toggleModal}
-											deleteItem={deleteItem}
-											restoreItem={restoreItem}
 											{...value} />
 									</Col>
 								);

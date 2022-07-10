@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import Block from '../../../components/styled/block/Block';
-import Api from '../../../services';
 import { useModal } from '../../../hooks/UseModal';
-import GenericDataList from '../../../components/item-collection/data-components/GenericDataList';
-import GenericCardRectangle from '../../../components/item-card/GenericCardRectangle';
-import ProfileAdvertisementModal from './ProfileAdvertisementModal';
 import useFetchTrigger from '../../../hooks/UseFetchTrigger';
 import { PetTypeConfig } from '../../../utils/PageTypes';
 import useToast, { ToastType } from '../../../hooks/UseToast';
-import { PROFILE_SEARCH } from '../../../utils/PageSearch';
 import Text from '../../../components/styled/text/Text';
 import { TextType } from '../../../components/styled/text/TextType';
 import { Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'reactstrap';
 import ProfileCreateModal from './ProfileCreateModal';
 import ConfirmationModal from '../../../components/confirmation/ConfirmationModal';
+import { PROFILE_PAGE } from '../../../utils/PageConfig';
 
 const ProfileAdvertisementTab = () => {
+	const {	Grid, pageConfig } = PROFILE_PAGE;
+
 	const [modalData, modalOpen, , toggleModal] = useModal();
 	const [deleteModalData, deleteModalOpen, , toggleDeleteModal] = useModal();
 	const [restoreModalData, restoreModalOpen, , toggleRestoreModal] = useModal();
@@ -37,16 +35,25 @@ const ProfileAdvertisementTab = () => {
 			keyWord: 'Donation',
 			text: 'Add Donation'
 		}
-
 	];
 
-	const deleteItem = (data) => {
-		toggleDeleteModal(data);
-	};
-
-	const restoreItem = (data) => {
-		toggleRestoreModal(data);
-	};
+	pageConfig.cardConfig.actionMethods = {
+		REFRESH_ACTION:({ data })=>{
+			toggleRestoreModal({
+				data: data.params
+			});
+		},
+		EDIT_ACTION:({ data })=>{
+			toggleModal({
+				data: data.params
+			});
+		},
+		DELETE_ACTION:({ data })=>{
+			toggleDeleteModal({
+				data: data.params
+			});
+		}
+	}
 
 	const deleteItemCallBack = async ({ data }) => {
 		try {
@@ -100,15 +107,10 @@ const ProfileAdvertisementTab = () => {
 					</Col>
 				</Row>
 			</div>
-			<GenericDataList
-				searchConfig={PROFILE_SEARCH}
-				DetailModal={ProfileAdvertisementModal}
-				Card={GenericCardRectangle}
-				fetchData={Api.Prof.advertisements}
+			<Grid
 				toggleEditModal={toggleModal}
 				updateData={updateData}
-				deleteItem={deleteItem}
-				restoreItem={restoreItem}
+				{...pageConfig}
 			/>
 			<ProfileCreateModal data={modalData} open={modalOpen} closeModal={toggleModal} fetchData={fetchData} />
 			<ConfirmationModal

@@ -1,5 +1,5 @@
 import { useModal } from '../../hooks/UseModal';
-import { PAGES } from '../../utils/PageConfig';
+import { ARTEFACT_PAGES } from '../../utils/PageConfig';
 import useFetchTrigger from '../../hooks/UseFetchTrigger';
 import { useSelector } from 'react-redux';
 import { userSelectors } from '../../storage/user/Selector';
@@ -11,7 +11,7 @@ import AddDonation from './AddDonation';
 
 const DonationPage = () => {
 	const [, modalOpen, , toggleModal] = useModal();
-	const { Grid, pageConfig } = PAGES.DONATION;
+	const { Grid, pageConfig } = ARTEFACT_PAGES.DONATION;
 	const [updateData, fetchData] = useFetchTrigger();
 	const isLoggedIn = useSelector(userSelectors.isLoggedIn);
 

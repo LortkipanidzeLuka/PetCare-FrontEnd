@@ -2,9 +2,13 @@ import GenericDataGrid from '../components/item-collection/data-components/Gener
 import { PetTypeGrids, PetTypeConfig } from './PageTypes';
 import { DonationColors, DonationOptionsMap, PetServiceColors, PetServiceOptionsMap } from './Constants';
 import GenericDataList from '../components/item-collection/data-components/GenericDataList';
+import { PROFILE_SEARCH } from './PageSearch';
+import ProfileAdvertisementModal from '../pages/profile/tabs/ProfileAdvertisementModal';
+import GenericCardRectangle from '../components/item-card/GenericCardRectangle';
+import Api from '../services';
 
 
-export const PAGES = {
+export const ARTEFACT_PAGES = {
 	ANIMAL_HELP: {
 		Grid: GenericDataGrid,
 		pageConfig: {
@@ -90,7 +94,52 @@ export const PAGES = {
 		}
 	}
 };
-// TODO
+
+export const PROFILE_PAGE = {
+	Grid: GenericDataList,
+	pageConfig: {
+		DetailModal: ProfileAdvertisementModal,
+
+		Card: GenericCardRectangle,
+		searchConfig: PROFILE_SEARCH,
+		fetchData: Api.Prof.advertisements,
+		cardConfig:{
+			noActions:false,
+			topChip: false,
+			chipValueField: null,
+			getColor: ()=>{ },
+			getTitle: ()=>{ },
+			actions:[
+				{
+					name:'REFRESH_ACTION',
+					divClassName:'refresh-action',
+					icon:'mdi-refresh',
+					display:(data)=>{
+						return data && data.expired;
+					}
+				},
+				{
+					name:'EDIT_ACTION',
+					divClassName:'edit-action',
+					icon:'mdi-pencil',
+					display:()=>{
+						return true;
+					}
+				},
+				{
+					name:'DELETE_ACTION',
+					divClassName:'delete-action',
+					icon:'mdi-delete',
+					display:()=>{
+						return true;
+					}
+				}
+			],
+			actionMethods:[],
+		}
+	}
+
+}// TODO
 // textebi +
 // formebis required ebis gadaxedva +
 // searchshi map is damateba +

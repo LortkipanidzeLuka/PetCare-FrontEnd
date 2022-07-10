@@ -17,10 +17,7 @@ const GenericCardRectangle = (params) => {
 		id,
 		advertisementType,
 		userInfo,
-		openEditModal,
-		deleteItem,
-		cardConfig,
-		restoreItem
+		cardConfig
 	} = params;
 
 	return (
@@ -42,27 +39,25 @@ const GenericCardRectangle = (params) => {
 													classNames={['faint-text']} />
 									</div>
 									{(!cardConfig || !cardConfig.noActions) && <div className={'d-flex flex-row'}>
-										<div className={'card-action-icon refresh-action mrr-small'} onClick={() => {
-											restoreItem({ data: { id: id, advertisementType: advertisementType } });
-										}}>
-											<i className={'mdi mdi-dark mdi-refresh mdi-24px refresh-action'} />
-										</div>
-
-										<div className={'card-action-icon edit-action mrr-small'} onClick={(event) => {
-											event.preventDefault();
-											openEditModal(advertisementType);
-										}}>
-											<i className={'mdi mdi-dark mdi-pencil mdi-24px edit-action'} />
-										</div>
-										<div className={'card-action-icon delete-action'} onClick={() => {
-											deleteItem({ data: { id: id, advertisementType: advertisementType } });
-										}}>
-											<i className={'mdi mdi-dark mdi-delete mdi-24px delete-action'} />
-										</div>
+										{cardConfig.actions.map((val, idx) => {
+											if (val.display(params)) {
+												const iconAction = cardConfig.actionMethods[val.name];
+												return (
+													<div key={idx} className={`card-action-icon ${val.divClassName} mrr-small`} onClick={() => {
+														iconAction({ data: { params } });
+													}}>
+														<i className={`mdi mdi-dark ${val.icon} mdi-24px ${val.divClassName}`} />
+													</div>
+												);
+											}else {
+												return (<></>)
+											}
+										})}
 									</div>}
 									{cardConfig && cardConfig.topChip &&
 										<div>
-											<Tag style={{minWidth:"100px"}} text={cardConfig.getTitle(params[cardConfig.chipValueField])} noHashTag={true} color={cardConfig.getColor(params[cardConfig.chipValueField])}/>
+											<Tag style={{ minWidth: '100px' }} text={cardConfig.getTitle(params[cardConfig.chipValueField])}
+													 noHashTag={true} color={cardConfig.getColor(params[cardConfig.chipValueField])} />
 										</div>}
 								</div>
 							</Row>
